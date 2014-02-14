@@ -1,7 +1,7 @@
 My StepCounter
 ==============
 
-Xamarin.iOS Starter pedotmeter sample App
+Xamarin.iOS Starter pedometer.
 
 ![](http://i1.wp.com/micjames.co.uk/wp-content/uploads/2013/12/medium.png?zoom=1&resize=281%2C540) 
 
