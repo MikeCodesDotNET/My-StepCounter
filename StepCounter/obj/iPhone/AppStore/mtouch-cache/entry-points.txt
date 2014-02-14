@@ -1,0 +1,10 @@
+monotouch_release_managed_ref
+monotouch_create_managed_ref
+xamarin_get_block_descriptor
+CreateZStream
+CloseZStream
+Flush
+ReadZStream
+WriteZStream
+monotouch_start_wwan
+monotouch_log

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepCounter", "StepCounter\StepCounter.csproj", "{E0535745-3089-4824-AF07-D1472F404A0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		Ad-Hoc|iPhoneSimulator = Ad-Hoc|iPhoneSimulator
+		AppStore|iPhone = AppStore|iPhone
+		AppStore|iPhoneSimulator = AppStore|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Ad-Hoc|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.AppStore|iPhoneSimulator.ActiveCfg = AppStore|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhone.Build.0 = Release|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = StepCounter\StepCounter.csproj
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+# Version: 7.0.6.168 (2ed9bc9)
+# [first argument, ignore] # /Users/mike/Git Respositories/StepCounter/StepCounter/bin/iPhoneSimulator/Release/mtouch.exe
+/Developer/MonoTouch/usr/bin/mtouch \
+	-sdkroot \
+	/Applications/Xcode.app/Contents/Developer \
+	--cache \
+	"/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhoneSimulator/Release/mtouch-cache" \
+	--nomanifest \
+	--nosign \
+	-sim \
+	"/Users/mike/Git Respositories/StepCounter/StepCounter/bin/iPhoneSimulator/Release/StepCounter.app" \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Xml.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/System.Core.dll \
+	-r \
+	/Developer/MonoTouch/usr/lib/mono/2.1/monotouch.dll \
+	-r \
+	"/Users/mike/Git Respositories/StepCounter/Components/irate-1.8.0/lib/ios/MTiRate.dll" \
+	-r \
+	"/Users/mike/Git Respositories/StepCounter/Components/parse-1.2.9/lib/ios/Parse.iOS.dll" \
+	-r \
+	"/Users/mike/Git Respositories/StepCounter/Components/raygun4net-1.1.1/lib/ios/Mindscape.Raygun4Net.Xamarin.iOS.dll" \
+	-nolink \
+	-sdk \
+	7.0 \
+	-targetver \
+	7.0 \
+	--abi=i386 \
+	"/Users/mike/Git Respositories/StepCounter/StepCounter/bin/iPhoneSimulator/Release/StepCounter.exe" \

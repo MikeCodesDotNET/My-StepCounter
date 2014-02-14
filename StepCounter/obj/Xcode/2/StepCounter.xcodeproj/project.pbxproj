@@ -1,0 +1,314 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		336EE8CD0000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FFF56B0000000000000000 /* UIKit.framework */; };
+		15048C000000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895989E0000000000000000 /* MapKit.framework */; };
+		2A37F4980000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DC901360000000000000000 /* Foundation.framework */; };
+		1DA2D6E10000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2133E37F0000000000000000 /* CoreGraphics.framework */; };
+		850938D00000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE1A02B00000000000000000 /* Info.plist */; };
+		1D83FC250000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 211508C30000000000000000 /* Entitlements.plist */; };
+		30D56CE00000000000000000 /* StepCounterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3466797E0000000000000000 /* StepCounterViewController.xib */; };
+		EDA037500000000000000000 /* ProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 126B10130000000000000000 /* ProgressView.xib */; };
+		294D8D6C0000000000000000 /* UnsupportedDevice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDE9A0A0000000000000000 /* UnsupportedDevice.xib */; };
+		3ABD064A0000000000000000 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E4E12E80000000000000000 /* Images.xcassets */; };
+		8FE4D6800000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8F5A0600000000000000000 /* Default-568h@2x.png */; };
+		2C75E8780000000000000000 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3006F5160000000000000000 /* Icon-60@2x.png */; };
+		1AA0A9620000000000000000 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E31B6000000000000000000 /* Icon@2x.png */; };
+		36F62B360000000000000000 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8737D40000000000000000 /* Icon.png */; };
+		2520EC200000000000000000 /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B1F8BE0000000000000000 /* Icon-Small-40@2x.png */; };
+		1766DF400000000000000000 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5077A9200000000000000000 /* Icon-Small.png */; };
+		F87BD5000000000000000000 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1318C9EE0000000000000000 /* Icon-Small@2x.png */; };
+		1D990CAC0000000000000000 /* stepCounterBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 212A194A0000000000000000 /* stepCounterBg.png */; };
+		BC3CD9600000000000000000 /* stepCounterBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F54DA3400000000000000000 /* stepCounterBg@2x.png */; };
+		39EE8E800000000000000000 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D7F9B1E0000000000000000 /* Default@2x.png */; };
+		28194F6A0000000000000000 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BAA5C080000000000000000 /* Default.png */; };
+		362A9EC60000000000000000 /* UnsupportedDevice.png in Resources */ = {isa = PBXBuildFile; fileRef = 39BBAB640000000000000000 /* UnsupportedDevice.png */; };
+		24555FB00000000000000000 /* UnsupportedDevice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27E66C4E0000000000000000 /* UnsupportedDevice@2x.png */; };
+		224084B70000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 25D191550000000000000000 /* AppDelegate.h */; };
+		AF8412600000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E894DC400000000000000000 /* AppDelegate.m */; };
+		1F4300D00000000000000000 /* StepCounterViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5853CAB00000000000000000 /* StepCounterViewController.h */; };
+		355F12560000000000000000 /* StepCounterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F01EF40000000000000000 /* StepCounterViewController.m */; };
+		370E27170000000000000000 /* ProgressView.h in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F33B50000000000000000 /* ProgressView.h */; };
+		51F767300000000000000000 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0831100000000000000000 /* ProgressView.m */; };
+		6CE8B3400000000000000000 /* UnsupportedDevice.h in Sources */ = {isa = PBXBuildFile; fileRef = A5F97D200000000000000000 /* UnsupportedDevice.h */; };
+		3DCA7A1B0000000000000000 /* UnsupportedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B86B900000000000000000 /* UnsupportedDevice.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3AABE9440000000000000000 /* StepCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "StepCounter.app"; path = "StepCounter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		36FFF56B0000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		1895989E0000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		2DC901360000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		2133E37F0000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		BE1A02B00000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		211508C30000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		3466797E0000000000000000 /* StepCounterViewController.xib */ = {isa = PBXFileReference; name = "StepCounterViewController.xib"; path = "Views/StepCounterViewController.xib"; sourceTree = "<group>"; };
+		126B10130000000000000000 /* ProgressView.xib */ = {isa = PBXFileReference; name = "ProgressView.xib"; path = "Views/ProgressView.xib"; sourceTree = "<group>"; };
+		2CDE9A0A0000000000000000 /* UnsupportedDevice.xib */ = {isa = PBXFileReference; name = "UnsupportedDevice.xib"; path = "Views/UnsupportedDevice.xib"; sourceTree = "<group>"; };
+		3E4E12E80000000000000000 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images.xcassets"; path = "Images.xcassets"; sourceTree = "<group>"; };
+		C8F5A0600000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3006F5160000000000000000 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		1E31B6000000000000000000 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3A8737D40000000000000000 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon.png"; path = "Icon.png"; sourceTree = "<group>"; };
+		28B1F8BE0000000000000000 /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-40@2x.png"; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
+		5077A9200000000000000000 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		1318C9EE0000000000000000 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		212A194A0000000000000000 /* stepCounterBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stepCounterBg.png"; path = "stepCounterBg.png"; sourceTree = "<group>"; };
+		F54DA3400000000000000000 /* stepCounterBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stepCounterBg@2x.png"; path = "stepCounterBg@2x.png"; sourceTree = "<group>"; };
+		3D7F9B1E0000000000000000 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2BAA5C080000000000000000 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default.png"; path = "Default.png"; sourceTree = "<group>"; };
+		39BBAB640000000000000000 /* UnsupportedDevice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnsupportedDevice.png"; path = "UnsupportedDevice.png"; sourceTree = "<group>"; };
+		27E66C4E0000000000000000 /* UnsupportedDevice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "UnsupportedDevice@2x.png"; path = "UnsupportedDevice@2x.png"; sourceTree = "<group>"; };
+		25D191550000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		E894DC400000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		5853CAB00000000000000000 /* StepCounterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "StepCounterViewController.h"; path = "StepCounterViewController.h"; sourceTree = "<group>"; };
+		38F01EF40000000000000000 /* StepCounterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "StepCounterViewController.m"; path = "StepCounterViewController.m"; sourceTree = "<group>"; };
+		3A9F33B50000000000000000 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ProgressView.h"; path = "ProgressView.h"; sourceTree = "<group>"; };
+		8B0831100000000000000000 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ProgressView.m"; path = "ProgressView.m"; sourceTree = "<group>"; };
+		A5F97D200000000000000000 /* UnsupportedDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UnsupportedDevice.h"; path = "UnsupportedDevice.h"; sourceTree = "<group>"; };
+		15B86B900000000000000000 /* UnsupportedDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UnsupportedDevice.m"; path = "UnsupportedDevice.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		359EAB010000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				336EE8CD0000000000000000 /* UIKit.framework in Frameworks */,
+				15048C000000000000000000 /* MapKit.framework in Frameworks */,
+				2A37F4980000000000000000 /* Foundation.framework in Frameworks */,
+				1DA2D6E10000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15B81C8F0000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				51D0DB000000000000000000 /* StepCounter */,
+				23FC4F070000000000000000 /* Frameworks */,
+				B04F6B500000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B04F6B500000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AABE9440000000000000000 /* StepCounter.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		23FC4F070000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36FFF56B0000000000000000 /* UIKit.framework */,
+				1895989E0000000000000000 /* MapKit.framework */,
+				2DC901360000000000000000 /* Foundation.framework */,
+				2133E37F0000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		51D0DB000000000000000000 /* StepCounter */ = {
+			isa = PBXGroup;
+			children = (
+				25D191550000000000000000 /* AppDelegate.h */,
+				2BAA5C080000000000000000 /* Default.png */,
+				3D7F9B1E0000000000000000 /* Default@2x.png */,
+				C8F5A0600000000000000000 /* Default-568h@2x.png */,
+				211508C30000000000000000 /* Entitlements.plist */,
+				3A8737D40000000000000000 /* Icon.png */,
+				1E31B6000000000000000000 /* Icon@2x.png */,
+				3006F5160000000000000000 /* Icon-60@2x.png */,
+				5077A9200000000000000000 /* Icon-Small.png */,
+				1318C9EE0000000000000000 /* Icon-Small@2x.png */,
+				28B1F8BE0000000000000000 /* Icon-Small-40@2x.png */,
+				3E4E12E80000000000000000 /* Images.xcassets */,
+				BE1A02B00000000000000000 /* Info.plist */,
+				3A9F33B50000000000000000 /* ProgressView.h */,
+				212A194A0000000000000000 /* stepCounterBg.png */,
+				F54DA3400000000000000000 /* stepCounterBg@2x.png */,
+				5853CAB00000000000000000 /* StepCounterViewController.h */,
+				A5F97D200000000000000000 /* UnsupportedDevice.h */,
+				39BBAB640000000000000000 /* UnsupportedDevice.png */,
+				27E66C4E0000000000000000 /* UnsupportedDevice@2x.png */,
+				227132900000000000000000 /* Supporting Files */,
+				9CCC53200000000000000000 /* Views */,
+			);
+			name = "StepCounter";
+			sourceTree = "<group>";
+		};
+		9CCC53200000000000000000 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				126B10130000000000000000 /* ProgressView.xib */,
+				3466797E0000000000000000 /* StepCounterViewController.xib */,
+				2CDE9A0A0000000000000000 /* UnsupportedDevice.xib */,
+			);
+			name = "Views";
+			sourceTree = "<group>";
+		};
+		227132900000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E894DC400000000000000000 /* AppDelegate.m */,
+				8B0831100000000000000000 /* ProgressView.m */,
+				38F01EF40000000000000000 /* StepCounterViewController.m */,
+				15B86B900000000000000000 /* UnsupportedDevice.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F601A160000000000000000 /* StepCounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FF8C36A0000000000000000 /* Build configuration list for PBXNativeTarget "StepCounter" */;
+			buildPhases = (
+				20385F4D0000000000000000 /* Sources */,
+				359EAB010000000000000000 /* Frameworks */,
+				922FED800000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StepCounter";
+			productName = "StepCounter";
+			productReference = 3AABE9440000000000000000 /* StepCounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24ACF43C0000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 21B490F20000000000000000 /* Build configuration list for PBXProject "StepCounter" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 15B81C8F0000000000000000;
+			productRefGroup = B04F6B500000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F601A160000000000000000 /* StepCounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		922FED800000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				850938D00000000000000000 /* Info.plist in Resources */,
+				1D83FC250000000000000000 /* Entitlements.plist in Resources */,
+				30D56CE00000000000000000 /* StepCounterViewController.xib in Resources */,
+				EDA037500000000000000000 /* ProgressView.xib in Resources */,
+				294D8D6C0000000000000000 /* UnsupportedDevice.xib in Resources */,
+				3ABD064A0000000000000000 /* Images.xcassets in Resources */,
+				8FE4D6800000000000000000 /* Default-568h@2x.png in Resources */,
+				2C75E8780000000000000000 /* Icon-60@2x.png in Resources */,
+				1AA0A9620000000000000000 /* Icon@2x.png in Resources */,
+				36F62B360000000000000000 /* Icon.png in Resources */,
+				2520EC200000000000000000 /* Icon-Small-40@2x.png in Resources */,
+				1766DF400000000000000000 /* Icon-Small.png in Resources */,
+				F87BD5000000000000000000 /* Icon-Small@2x.png in Resources */,
+				1D990CAC0000000000000000 /* stepCounterBg.png in Resources */,
+				BC3CD9600000000000000000 /* stepCounterBg@2x.png in Resources */,
+				39EE8E800000000000000000 /* Default@2x.png in Resources */,
+				28194F6A0000000000000000 /* Default.png in Resources */,
+				362A9EC60000000000000000 /* UnsupportedDevice.png in Resources */,
+				24555FB00000000000000000 /* UnsupportedDevice@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20385F4D0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				224084B70000000000000000 /* AppDelegate.h in Sources */,
+				AF8412600000000000000000 /* AppDelegate.m in Sources */,
+				1F4300D00000000000000000 /* StepCounterViewController.h in Sources */,
+				355F12560000000000000000 /* StepCounterViewController.m in Sources */,
+				370E27170000000000000000 /* ProgressView.h in Sources */,
+				51F767300000000000000000 /* ProgressView.m in Sources */,
+				6CE8B3400000000000000000 /* UnsupportedDevice.h in Sources */,
+				3DCA7A1B0000000000000000 /* UnsupportedDevice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2330C2970000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		17016B180000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "StepCounter";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21B490F20000000000000000 /* Build configuration list for PBXProject "StepCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2330C2970000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		2FF8C36A0000000000000000 /* Build configuration list for PBXNativeTarget "StepCounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17016B180000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24ACF43C0000000000000000 /* Project object */;
+}

@@ -1,0 +1,25 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Michael's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/AppDelegate.cs">
+    <Files>
+      <File FileName="StepCounter/AppDelegate.cs" Line="28" Column="4" />
+      <File FileName="StepCounter/Main.cs" Line="19" Column="1" />
+      <File FileName="StepCounter/Views/StepCounterViewController.cs" Line="59" Column="29" />
+      <File FileName="StepCounter/Views/StepCounterViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Views/ProgressView.cs" Line="10" Column="30" />
+      <File FileName="StepCounter/StepManager.cs" Line="11" Column="11" />
+      <File FileName="StepCounter/Views/UnsupportedDevice.cs" Line="31" Column="1" />
+      <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/mike/Git Respositories/StepCounter/StepCounter/Views/StepCounterViewController.cs" line="64" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StepCounter>
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="37Y4Z8A9XA" TeamId="BCTYCQPYCZ" />
+    <IPhoneTestFlightSettings_27CAd-Hoc ApiToken="1c1039339b30c6e0df1812b75f3d212a_MTU0OTk0MjIwMTQtMDEtMDYgMTc6Mzg6MjUuOTY0ODA5" TeamToken="371858be818a3646893de47ca4847b92_MzIwOTQ5MjAxNC0wMS0wNiAxNzo0NDoxNy42MzU5MDY" ReleaseNotes="First Release" NotifyTeamMembers="True" ReplaceBinaries="False" DistributionLists="Xamarin Friends" UploadDSYMs="False" />
+  </MonoDevelop.Ide.ItemProperties.StepCounter>
+</Properties>
