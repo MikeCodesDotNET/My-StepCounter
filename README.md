@@ -14,8 +14,8 @@ Xamarin.iOS Starter pedometer.
 * [Sketch.app](http://www.bohemiancoding.com/sketch/) - All artwork is available in a Sketch file included with the project.
 
 ####Optional Components
-* [RayGun error tracking] (https://components.xamarin.com/view/raygun4net/) - A fantastic error reporting component! 
-* [Parse Analytics] (https://components.xamarin.com/view/parse) - Get stats on how often your App is used!
+* [RayGun error tracking] (https://components.xamarin.com/view/raygun4net/) - A fantastic error reporting component.
+* [Parse Analytics] (https://components.xamarin.com/view/parse) - Get stats on how often your App is used.
 * [iRate] (https://components.xamarin.com/view/irate) - Prompt users to give AppStore ratings. 
 
 
