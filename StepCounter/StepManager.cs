@@ -45,6 +45,5 @@ namespace StepCounter
 
         public event DailyStepCountChangedEventHandler DailyStepCountChanged;
 
-        //Fields
     }
 }

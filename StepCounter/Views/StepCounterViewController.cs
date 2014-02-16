@@ -94,7 +94,8 @@ namespace StepCounter.Views
 
 			//Update progress filler view
 		    _progressView.SetStepCount(stepCount);
-		    AnimateToPercentage(Conversion.StepCountToPercentage(stepCount));
+            if (stepCount <= 10000)
+		       AnimateToPercentage(Conversion.StepCountToPercentage(stepCount));
 		}
 
 		private static string DateString
