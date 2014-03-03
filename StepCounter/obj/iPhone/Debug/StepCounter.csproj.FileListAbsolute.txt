@@ -1,4 +1,0 @@
-Z:\Git Respositories\StepCounter Public\StepCounter\bin\iPhone\Debug\StepCounter.exe
-Z:\Git Respositories\StepCounter Public\StepCounter\bin\iPhone\Debug\StepCounter.pdb
-Z:\Git Respositories\StepCounter Public\StepCounter\obj\iPhone\Debug\StepCounter.exe
-Z:\Git Respositories\StepCounter Public\StepCounter\obj\iPhone\Debug\StepCounter.pdb

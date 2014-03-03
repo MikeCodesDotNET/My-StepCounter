@@ -4,8 +4,8 @@
 // actions made in the UI designer. If it is removed, they will be lost.
 // Manual changes to this file may not be handled correctly.
 //
-
 using MonoTouch.Foundation;
+using System.CodeDom.Compiler;
 
 namespace StepCounter.Views
 {
@@ -28,10 +28,21 @@ namespace StepCounter.Views
 		MonoTouch.UIKit.UILabel lblStepCount { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UILabel lblSteps { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblTodayYouveTaken { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIView progressContainer { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnDistance != null) {
+				btnDistance.Dispose ();
+				btnDistance = null;
+			}
+
 			if (lblCalories != null) {
 				lblCalories.Dispose ();
 				lblCalories = null;
@@ -57,9 +68,14 @@ namespace StepCounter.Views
 				progressContainer = null;
 			}
 
-			if (btnDistance != null) {
-				btnDistance.Dispose ();
-				btnDistance = null;
+			if (lblTodayYouveTaken != null) {
+				lblTodayYouveTaken.Dispose ();
+				lblTodayYouveTaken = null;
+			}
+
+			if (lblSteps != null) {
+				lblSteps.Dispose ();
+				lblSteps = null;
 			}
 		}
 	}

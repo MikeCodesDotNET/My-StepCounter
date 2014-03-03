@@ -8,7 +8,7 @@ namespace StepCounter
     {
         public delegate void DailyStepCountChangedEventHandler(int stepCount);
 
-        private DateTime _midnight;
+        private DateTime _resetTime;
         private NSOperationQueue _queue;
         private CMStepCounter _stepCounter;
 
@@ -20,15 +20,26 @@ namespace StepCounter
 
         public void ForceUpdate()
         {
-            _midnight = DateTime.Today; //Forces update as the day may have changed.
-            NSDate sMidnight = DateTime.SpecifyKind(_midnight, DateTimeKind.Utc);
+            //If the last reset date wasn't today then we should update this.
+            if (_resetTime.Date.Day != DateTime.Now.Date.Day)
+            {
+                _resetTime = DateTime.Today; //Forces update as the day may have changed.
+            }
 
+            NSDate sMidnight = DateTime.SpecifyKind(_resetTime, DateTimeKind.Utc);
+           
             if (_queue == null)
                 _queue = NSOperationQueue.CurrentQueue;
             if (_stepCounter == null)
                 _stepCounter = new CMStepCounter();
 
             _stepCounter.QueryStepCount(sMidnight, NSDate.Now, _queue, DailyStepQueryHandler);
+        }
+
+        public void StartCountingFrom(DateTime date)
+        {
+            _resetTime = date;
+            ForceUpdate();
         }
 
         private void DailyStepQueryHandler(int stepCount, NSError error)
@@ -38,12 +49,10 @@ namespace StepCounter
 
         private void Updater(int stepCount, NSDate date, NSError error)
         {
-            DateTime midnight = DateTime.Today;
-            NSDate sMidnight = DateTime.SpecifyKind(midnight, DateTimeKind.Utc);
+            NSDate sMidnight = DateTime.SpecifyKind(_resetTime, DateTimeKind.Utc);
             _stepCounter.QueryStepCount(sMidnight, NSDate.Now, _queue, DailyStepQueryHandler);
         }
 
         public event DailyStepCountChangedEventHandler DailyStepCountChanged;
-
     }
 }

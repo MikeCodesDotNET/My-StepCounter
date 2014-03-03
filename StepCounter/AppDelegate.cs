@@ -14,8 +14,8 @@ namespace StepCounter.Views
 			UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
             _window = new UIWindow (UIScreen.MainScreen.Bounds);
             _stepCounter = new StepCounterViewController();
-			_window.RootViewController = _stepCounter;
 
+            _window.RootViewController = _stepCounter;
 			_window.MakeKeyAndVisible ();			
 			return true;
 		}
@@ -29,6 +29,7 @@ namespace StepCounter.Views
         {
             _stepCounter.RefreshView();
         }
-	}
+	
+    }
 }
 

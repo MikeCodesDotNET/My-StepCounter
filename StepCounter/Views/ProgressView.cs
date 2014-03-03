@@ -69,6 +69,6 @@ namespace StepCounter.Views
             var tempCol = UIColor.FromRGB(_redArray[percentage], _greenArray[percentage], _blueArray[percentage]);
             _tmpCol = tempCol;
             return tempCol;
-        }
+        }       
     }
 }

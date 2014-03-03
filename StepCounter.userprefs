@@ -1,16 +1,28 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Michael's iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/Views/StepCounterViewController.cs">
     <Files>
-      <File FileName="StepCounter/AppDelegate.cs" Line="28" Column="4" />
-      <File FileName="StepCounter/Main.cs" Line="19" Column="1" />
-      <File FileName="StepCounter/Views/StepCounterViewController.cs" Line="59" Column="29" />
+      <File FileName="StepCounter/AppDelegate.cs" Line="18" Column="1" />
+      <File FileName="StepCounter/Main.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Views/StepCounterViewController.cs" Line="57" Column="88" />
       <File FileName="StepCounter/Views/StepCounterViewController.designer.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Views/ProgressView.cs" Line="10" Column="30" />
-      <File FileName="StepCounter/StepManager.cs" Line="11" Column="11" />
-      <File FileName="StepCounter/Views/UnsupportedDevice.cs" Line="31" Column="1" />
+      <File FileName="StepCounter/Views/ProgressView.cs" Line="72" Column="10" />
+      <File FileName="StepCounter/StepManager.cs" Line="41" Column="30" />
+      <File FileName="StepCounter/Views/UnsupportedDevice.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Info.plist" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="StepCounter" expanded="True" selected="True">
+            <Node name="Views" expanded="True">
+              <Node name="StepCounterViewController.xib" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
