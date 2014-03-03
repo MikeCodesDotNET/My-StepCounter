@@ -1,8 +1,0 @@
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/StepCounter.exe
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/monotouch.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/Parse.iOS.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/System.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/System.Net.Http.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/mscorlib.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/Mindscape.Raygun4Net.Xamarin.iOS.dll
-/Users/mike/Git Respositories/StepCounter/StepCounter/obj/iPhone/Ad-Hoc/mtouch-cache/Link/System.Core.dll
