@@ -1,6 +1,6 @@
+using System;
 using MonoTouch.CoreMotion;
 using MonoTouch.Foundation;
-using System;
 
 namespace StepCounter
 {
@@ -8,8 +8,8 @@ namespace StepCounter
     {
         public delegate void DailyStepCountChangedEventHandler(int stepCount);
 
-        private DateTime _resetTime;
         private NSOperationQueue _queue;
+        private DateTime _resetTime;
         private CMStepCounter _stepCounter;
 
         public StepManager()
@@ -27,7 +27,7 @@ namespace StepCounter
             }
 
             NSDate sMidnight = DateTime.SpecifyKind(_resetTime, DateTimeKind.Utc);
-           
+
             if (_queue == null)
                 _queue = NSOperationQueue.CurrentQueue;
             if (_stepCounter == null)
