@@ -2,17 +2,20 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/MainActivity.cs">
     <Files>
-      <File FileName="StepCounter.Android/MainActivity.cs" Line="149" Column="14" />
+      <File FileName="StepCounter.Android/MainActivity.cs" Line="78" Column="54" />
       <File FileName="StepCounter.Android/Helpers/Settings.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Settings/SettingsActivity.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="30" Column="84" />
       <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Analysis/Program.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Helpers/Conversion.cs" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/values/dimen.xml" Line="3" Column="45" />
+      <File FileName="StepCounter.Android/Resources/values/color.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="19" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

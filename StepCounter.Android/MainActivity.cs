@@ -172,7 +172,11 @@ namespace MyStepCounterAndroid
 		{
 			base.OnStart ();
 
+			if (!Utils.IsKitKatWithStepCounter (PackageManager)) {
 
+				Console.WriteLine("Not compatible with sensors, stopping service.");
+				return;
+			}
 
 			if (IsBound)
 				return;

@@ -26,6 +26,14 @@ namespace MyStepCounterAndroid
 
 		public override StartCommandResult OnStartCommand (Intent intent, StartCommandFlags flags, int startId)
 		{
+			//check if kit kat can sensor compatible
+			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
+
+				Console.WriteLine("Not compatible with sensors, stopping service.");
+				StopSelf ();
+				return StartCommandResult.NotSticky;
+			}
+
 			if (!isRunning) {
 				RegisterListeners (SensorType.StepCounter);
 			}
@@ -57,17 +65,20 @@ namespace MyStepCounterAndroid
 
 
 		void RegisterListeners(SensorType sensorType) {
-
+	
 
 			var sensorManager = (SensorManager) GetSystemService(Context.SensorService);
 			var sensor = sensorManager.GetDefaultSensor(sensorType);
 
-			sensorManager.RegisterListener(this, sensor, SensorDelay.Ui);
+			sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
 			Console.WriteLine("Sensor listener registered of type: " + sensorType);
 		}
 
 
 		void UnregisterListeners() {
+
+			if (!isRunning)
+				return;
 
 			var sensorManager = (SensorManager) GetSystemService(Context.SensorService);
 			sensorManager.UnregisterListener(this);
