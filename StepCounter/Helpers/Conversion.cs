@@ -49,6 +49,9 @@ namespace StepCounter.Helpers
 				/// <param name="lbs">Lbs.</param>
 				public static string CaloriesBurnt(float miles, float lbs)
 				{
+					if (lbs <= 0)
+						return CaloriesBurnt (miles);
+
 					var adjusted_weight = lbs / 2.2;
 					var val = Math.Round (((adjusted_weight * 3.5) / 3) * miles);
 					return val <= 0 ? "0" : val.ToString ("###");

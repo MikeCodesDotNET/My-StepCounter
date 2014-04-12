@@ -29,6 +29,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -68,6 +69,9 @@
     <Compile Include="Database\StepEntryRepositoryADO.cs" />
     <Compile Include="Controls\ProgressView.cs" />
     <Compile Include="Settings\IntEditTextPreference.cs" />
+    <Compile Include="..\StepCounter\Views\ProgressViewCommon.cs">
+      <Link>Controls\ProgressViewCommon.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -87,12 +91,11 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_unsupporteddevice.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_unsupporteddevice.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_unsupporteddevice.png" />
-    <AndroidResource Include="Resources\layout\unsupported_device.axml" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\values\dimen.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -106,6 +109,5 @@
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
 </Project>

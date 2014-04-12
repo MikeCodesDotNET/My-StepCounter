@@ -17,7 +17,7 @@ namespace MyStepCounterAndroid
 
 	}
 
-	[Activity (Label = "My StepCounter", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity (Label = "Step Counter", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
@@ -50,6 +50,7 @@ namespace MyStepCounterAndroid
 		}
 
 
+
 		private StepServiceConnection serviceConnection;
 
 		private TextView stepCount, calorieCount, distance, percentage;
@@ -62,28 +63,32 @@ namespace MyStepCounterAndroid
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.main);
 
+			topLayer = FindViewById<FrameLayout> (Resource.Id.top_layer);
+
+			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
+				//no step detector detected :(
+				var counter_layout = FindViewById<FrameLayout> (Resource.Id.counter_layout);
+				var no_sensor = FindViewById<LinearLayout> (Resource.Id.no_sensor_box);
+				var sensor_image = FindViewById<ImageView> (Resource.Id.no_sensor_image);
+				sensor_image.SetImageResource (Resource.Drawable.ic_unsupporteddevice);
+				no_sensor.Visibility = Android.Views.ViewStates.Visible;
+				counter_layout.Visibility = Android.Views.ViewStates.Gone;
+				this.Title = Resources.GetString (Resource.String.app_name);
+				var handler = new Handler ();
+				handler.PostDelayed (() => AnimateTopLayer (0), 500);
+				return;
+			}
+
 			stepCount = FindViewById<TextView> (Resource.Id.stepcount);
 			calorieCount = FindViewById<TextView> (Resource.Id.calories);
 			distance = FindViewById<TextView> (Resource.Id.distance);
 			percentage = FindViewById<TextView> (Resource.Id.percentage);
 			progressView = FindViewById<ProgressView> (Resource.Id.progressView);
-			topLayer = FindViewById<FrameLayout> (Resource.Id.top_layer);
 
 			calorieString = Resources.GetString (Resource.String.calories);
 			distanceString = Resources.GetString (Helpers.Settings.UseKilometeres ? Resource.String.kilometeres : Resource.String.miles);
 			percentString = Resources.GetString (Resource.String.percent_complete);
 			completedString = Resources.GetString (Resource.String.completed);
-			
-
-			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
-				//no step detector detected :(
-				var counter_layout = FindViewById<LinearLayout> (Resource.Id.counter_layout);
-				var no_sensor = FindViewById<LinearLayout> (Resource.Id.no_step_sensor);
-				FindViewById<ImageView> (Resource.Id.no_sensor_image).SetImageResource (Resource.Drawable.ic_unsupporteddevice);
-				no_sensor.Visibility = Android.Views.ViewStates.Visible;
-				counter_layout.Visibility = Android.Views.ViewStates.Gone;
-				return;
-			}
 
 			this.Title = Utils.DateString;
 
@@ -103,14 +108,16 @@ namespace MyStepCounterAndroid
 
 		}
 
+	
+
 		private void AnimateTopLayer(float percent)
 		{
 			if (!canAnimate)
 				return;
 				
-			if (height == 0) {
+			if (height <= 0) {
 				height = (float)topLayer.MeasuredHeight;
-				if (height == 0)
+				if (height <= 0)
 					return;
 			}
 
@@ -148,6 +155,8 @@ namespace MyStepCounterAndroid
 
 			animation.FillAfter = true;
 			topLayer.StartAnimation(animation);
+			if (topLayer.Visibility != Android.Views.ViewStates.Visible)
+				topLayer.Visibility = Android.Views.ViewStates.Visible;
 		}
 
 		protected override void OnDestroy ()
@@ -171,6 +180,12 @@ namespace MyStepCounterAndroid
 			var serviceIntent = new Intent ("com.refractored.mystepcounter.StepService");
 			serviceConnection = new StepServiceConnection (this);
 			BindService (serviceIntent, serviceConnection, Bind.AdjustWithActivity);
+		}
+
+		protected override void OnResume ()
+		{
+			base.OnResume ();
+			UpdateUI ();
 		}
 
 
@@ -205,6 +220,9 @@ namespace MyStepCounterAndroid
 
 		private void UpdateUI()
 		{
+			if (progressView == null)
+				return;
+
 			RunOnUiThread (() => {
 
 

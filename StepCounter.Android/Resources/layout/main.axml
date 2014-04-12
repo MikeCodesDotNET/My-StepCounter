@@ -9,37 +9,37 @@
         android:layout_height="fill_parent"
         android:background="@drawable/background"
         android:id="@+id/top_layer"
-        android:padding="15dp" />
+        android:visibility="invisible" />
     <LinearLayout
-        android="@+id/no_sensor_box"
-        android:layout_width="filll_parent"
-        android:layout_height="filll_parent"
+        android:id="@+id/no_sensor_box"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:visibility="gone"
         android:gravity="center"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/standard_padding">
         <ImageView
-            android="@+id/no_sensor_image"
+            android:id="@+id/no_sensor_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_gravity="center" />
         <TextView
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/standard_padding"
             android:text="@string/no_step_sensor"
             android:id="@+id/no_step_sensor"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="?android:attr/actionBarSize"
             android:fontFamily="sans-serif-light"
-            android:gravity="center_horizontal"
             android:textColor="@color/white" />
     </LinearLayout>
     <FrameLayout
-        android="@+id/counter_layout"
+        android:id="@+id/counter_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="15dp">
+        android:padding="@dimen/standard_padding">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
