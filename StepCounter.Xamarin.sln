@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepCounter.iOS", "StepCounter\StepCounter.iOS.csproj", "{E0535745-3089-4824-AF07-D1472F404A0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StepCounter.Android", "StepCounter.Android\StepCounter.Android.csproj", "{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Release|iPhone.Build.0 = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{CE7D99E2-F6C4-4741-AAAB-F1FFF182C56B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhone.Build.0 = Debug|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhone.ActiveCfg = Release|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhone.Build.0 = Release|iPhone
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = StepCounter.Android\StepCounter.Android.csproj
+	EndGlobalSection
+EndGlobal

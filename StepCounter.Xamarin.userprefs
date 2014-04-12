@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Settings/SettingsActivity.cs">
+    <Files>
+      <File FileName="StepCounter.Android/MainActivity.cs" Line="67" Column="4" />
+      <File FileName="StepCounter.Android/Helpers/Settings.cs" Line="35" Column="56" />
+      <File FileName="StepCounter.Android/Settings/SettingsActivity.cs" Line="23" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" />
+</Properties>

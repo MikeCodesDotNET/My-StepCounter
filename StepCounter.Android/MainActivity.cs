@@ -11,6 +11,12 @@ using Android.Views.Animations;
 
 namespace MyStepCounterAndroid
 {
+
+	internal class MainActivityState : Java.Lang.Object
+	{
+
+	}
+
 	[Activity (Label = "My StepCounter", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
@@ -71,12 +77,11 @@ namespace MyStepCounterAndroid
 
 			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
 				//no step detector detected :(
-				stepCount.Visibility = Android.Views.ViewStates.Gone;
-				calorieCount.Visibility = Android.Views.ViewStates.Gone;
-				distance.Visibility = Android.Views.ViewStates.Gone;
-				percentage.Visibility = Android.Views.ViewStates.Gone;
-				var no_sensor = FindViewById<TextView> (Resource.Id.no_step_sensor);
+				var counter_layout = FindViewById<LinearLayout> (Resource.Id.counter_layout);
+				var no_sensor = FindViewById<LinearLayout> (Resource.Id.no_step_sensor);
+				FindViewById<ImageView> (Resource.Id.no_sensor_image).SetImageResource (Resource.Drawable.ic_unsupporteddevice);
 				no_sensor.Visibility = Android.Views.ViewStates.Visible;
+				counter_layout.Visibility = Android.Views.ViewStates.Gone;
 				return;
 			}
 

@@ -64,7 +64,10 @@ namespace MyStepCounterAndroid
 			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int ic_unsupporteddevice = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Drawable()
 			{
@@ -79,32 +82,38 @@ namespace MyStepCounterAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090007
-			public const int calories = 2131296263;
-			
-			// aapt resource value: 0x7f090008
-			public const int distance = 2131296264;
-			
 			// aapt resource value: 0x7f090009
-			public const int menu_settings = 2131296265;
+			public const int calories = 2131296265;
+			
+			// aapt resource value: 0x7f09000a
+			public const int distance = 2131296266;
+			
+			// aapt resource value: 0x7f09000b
+			public const int menu_settings = 2131296267;
 			
 			// aapt resource value: 0x7f090002
-			public const int no_step_sensor = 2131296258;
+			public const int no_sensor_box = 2131296258;
 			
-			// aapt resource value: 0x7f090006
-			public const int percentage = 2131296262;
+			// aapt resource value: 0x7f090003
+			public const int no_sensor_image = 2131296259;
+			
+			// aapt resource value: 0x7f090004
+			public const int no_step_sensor = 2131296260;
+			
+			// aapt resource value: 0x7f090008
+			public const int percentage = 2131296264;
 			
 			// aapt resource value: 0x7f090000
 			public const int progressView = 2131296256;
 			
-			// aapt resource value: 0x7f090004
-			public const int stepcount = 2131296260;
+			// aapt resource value: 0x7f090006
+			public const int stepcount = 2131296262;
+			
+			// aapt resource value: 0x7f090007
+			public const int steps = 2131296263;
 			
 			// aapt resource value: 0x7f090005
-			public const int steps = 2131296261;
-			
-			// aapt resource value: 0x7f090003
-			public const int today = 2131296259;
+			public const int today = 2131296261;
 			
 			// aapt resource value: 0x7f090001
 			public const int top_layer = 2131296257;
@@ -124,6 +133,9 @@ namespace MyStepCounterAndroid
 			
 			// aapt resource value: 0x7f030000
 			public const int main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int unsupported_device = 2130903041;
 			
 			static Layout()
 			{
