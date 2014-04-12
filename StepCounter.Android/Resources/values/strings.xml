@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">My StepCounter</string>
+	<string name="menu_settings">Settings</string>
+	<string name="about">About</string>
+	<string name="about_title">My StepCounter 1.0</string>
+	<string name="category_general_preferences">General</string>
+	<string name="steps">Steps</string>
+	<string name="today">Today you\'ve taken</string>
+	<string name="percent_complete">{0}% Complete</string>
+	<string name="completed">Completed</string>
+	<string name="calories">{0} Calories</string>
+	<string name="miles">{0} mi</string>
+	<string name="kilometeres">{0} km</string>
+	<string name="weight_kg">{0} kg</string>
+	<string name="weight_lbs">{0} lbs</string>
+	<string name="weight_title_kg">Weight (kg)</string>
+	<string name="weight_title_lbs">Weight (lbs)</string>
+	<string name="enhanced">Enhanced</string>
+	<string name="enhanced_summary">Enter additional information for more accurate statistics.</string>
+	<string name="created_by">Created by</string>
+	<string name="created_by_summary">James Montemagno</string>
+	<string name="inspired_by">Inspired by</string>
+	<string name="inspired_by_summary">Michael James</string>
+	<string name="copyright">Copyright 2014 Refractored LLC</string>
+	<string name="version">v1.0</string>
+	<string name="created_with">Created with</string>
+	<string name="created_with_summary">C# and Xamarin</string>
+	<string name="ok">OK</string>
+	<string name="no_step_sensor">I am sorry there is no step sensor on your device :( My StepCounter requires a device with this sensor.</string>
+</resources>

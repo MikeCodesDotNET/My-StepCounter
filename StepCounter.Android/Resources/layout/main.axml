@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mystepcounterandroid.controls.ProgressView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/progressView">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background"
+        android:id="@+id/top_layer" />
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="15dp">
+        <TextView
+            android:text="@string/no_step_sensor"
+            android:id="@+id/no_step_sensor"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:visibility="gone"
+            android:layout_marginBottom="?android:attr/actionBarSize"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal">
+            <TextView
+                android:text="@string/today"
+                android:id="@+id/today"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white" />
+            <mystepcounterandroid.controls.FontFitTextView
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="fill_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/stepcount"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:minHeight="100dp"
+                android:textColor="@color/white" />
+            <TextView
+                android:text="@string/steps"
+                android:id="@+id/steps"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_gravity="right"
+                android:textColor="@color/white" />
+            <TextView
+                android:text="@string/percent_complete"
+                android:id="@+id/percentage"
+                android:layout_marginTop="100dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/white" />
+        </LinearLayout>
+        <TextView
+            android:text="@string/calories"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/calories"
+            android:layout_gravity="bottom|left"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white" />
+        <TextView
+            android:text="@string/miles"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/distance"
+            android:layout_gravity="bottom|right"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white" />
+    </FrameLayout>
+</mystepcounterandroid.controls.ProgressView>

@@ -1,3 +1,6 @@
+using System;
+using System.Globalization;
+
 namespace StepCounter.Helpers
 {
     public static class Conversion
@@ -29,11 +32,26 @@ namespace StepCounter.Helpers
             return miles*1.609344f;
         }
 
+
         public static string CaloriesBurnt(float miles)
         {
             const int caloriesBurntPerMile = 100;
             var val = miles*caloriesBurntPerMile;
-            return val.ToString("###");
+						return val <= 0 ? "0" : val.ToString("###");
         }
-    }
+
+				/// <summary>
+				/// Calorieses the burnt with weight entered
+				/// view-source:http://walking.about.com/library/cal/uccalc1.htm
+				/// </summary>
+				/// <returns>The burnt calories.</returns>
+				/// <param name="miles">Miles.</param>
+				/// <param name="lbs">Lbs.</param>
+				public static string CaloriesBurnt(float miles, float lbs)
+				{
+					var adjusted_weight = lbs / 2.2;
+					var val = Math.Round (((adjusted_weight * 3.5) / 3) * miles);
+					return val <= 0 ? "0" : val.ToString ("###");
+				}
+  }
 }
