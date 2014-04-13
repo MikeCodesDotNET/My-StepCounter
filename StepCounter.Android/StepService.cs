@@ -51,7 +51,7 @@ namespace MyStepCounterAndroid
 				return;
 			}
 
-			CrunchDates ();
+			CrunchDates (true);
 
 			if (!isRunning) {
 				RegisterListeners (SensorType.StepCounter);
@@ -125,12 +125,12 @@ namespace MyStepCounterAndroid
 
 		}
 
-		private void CrunchDates()
+		private void CrunchDates(bool startup = false)
 		{
 			if (!Utils.IsSameDay) {
 				//save our day from yesterday
 				var yesterday = DateTime.Today.AddDays (-1);
-				var dayEntry = StepEntryManager.GetStepEntry ();
+				var dayEntry = StepEntryManager.GetStepEntry (yesterday);
 				if (dayEntry == null) {
 					dayEntry = new StepEntry ();
 					dayEntry.Date = yesterday;
@@ -143,6 +143,8 @@ namespace MyStepCounterAndroid
 				Helpers.Settings.CurrentDaySteps = 0;
 				Helpers.Settings.StepsBeforeToday = Helpers.Settings.TotalSteps;
 				StepsToday = 0;
+			} else if (startup) {
+				StepsToday = Helpers.Settings.TotalSteps - Helpers.Settings.StepsBeforeToday;
 			}
 		}
 

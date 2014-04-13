@@ -9,7 +9,7 @@ namespace MyStepCounterAndroid.Settings
 	/// <summary>
 	/// Parent setting activity, all ti does is load up the headers
 	/// </summary>
-	[Activity (Label = "Settings", Theme = "@style/ThemeActionBar")]
+	[Activity (Label = "Settings", Icon="@drawable/ic_launcher_home", Theme = "@style/ThemeActionBar")]
 	public class SettingsActivity : PreferenceActivity, ISharedPreferencesOnSharedPreferenceChangeListener
 	{
 

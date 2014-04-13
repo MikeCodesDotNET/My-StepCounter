@@ -17,7 +17,7 @@ namespace MyStepCounterAndroid
 
 	}
 
-	[Activity (Label = "Step Counter", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher_home", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
@@ -28,6 +28,7 @@ namespace MyStepCounterAndroid
 		private ProgressView progressView;
 		private FrameLayout topLayer;
 		private bool canAnimate = true;
+		private bool fullAnimation = true;
 
 		public StepServiceBinder Binder 
 		{
@@ -92,8 +93,6 @@ namespace MyStepCounterAndroid
 
 			this.Title = Utils.DateString;
 
-			AnimateTopLayer (0);
-
 			UpdateUI ();
 
 			var service = new Intent (this, typeof(StepService));
@@ -123,7 +122,7 @@ namespace MyStepCounterAndroid
 
 			canAnimate = false;
 
-			var start = lastY;
+			var start = animation == null ? -height : lastY;
 			var time = 300;
 			IInterpolator interpolator;
 
@@ -132,16 +131,21 @@ namespace MyStepCounterAndroid
 				percent = 0;
 			else if (percent > 100)
 				percent = 100;
+
 			lastY = -height * (percent / 100F);
+
 			if ((int)lastY == (int)start) {
 				canAnimate = true;
 				return;
 			}
-			if (animation == null || !Utils.IsSameDay) {
+
+			//is new so do bound, else linear
+			if (fullAnimation || !Utils.IsSameDay) {
 				interpolator = new BounceInterpolator ();
 				time = 3000;
 				start = -height;
 				lastY = 0;
+				fullAnimation = false;
 			} else {
 				interpolator = new LinearInterpolator ();
 			}

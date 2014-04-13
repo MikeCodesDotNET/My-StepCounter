@@ -44,6 +44,9 @@ namespace MyStepCounterAndroid
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f050001
+			public const int red_background = 2131034113;
+			
 			// aapt resource value: 0x7f050000
 			public const int white = 2131034112;
 			
@@ -83,7 +86,10 @@ namespace MyStepCounterAndroid
 			public const int ic_launcher = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_unsupporteddevice = 2130837506;
+			public const int ic_launcher_home = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int ic_unsupporteddevice = 2130837507;
 			
 			static Drawable()
 			{

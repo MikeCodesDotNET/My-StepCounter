@@ -6,6 +6,7 @@
 		<item name="android:windowActionBarOverlay">true</item>
 		<item name="android:actionBarStyle">@style/MyTheme.ActionBar</item>
 		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowBackground">@color/red_background</item>
 	</style>
 	<style name="MyTheme.ActionBar" parent="android:Widget.Holo.ActionBar">
 		<item name="android:background">@android:color/transparent</item>
