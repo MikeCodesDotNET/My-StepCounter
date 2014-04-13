@@ -31,6 +31,9 @@ namespace MyStepCounterAndroid.Helpers
 		public const string CadenceKey = "Cadence3";
 		private static readonly string CadenceDefault = "3";
 
+		public const string FirstStepEverKey = "FirstStepEver";
+		private static readonly bool FirstStepEverDefault = true;
+
 		public const string EnhancedKey = "Enhanced";
 		private static readonly bool EnhancedDefault = false;
 
@@ -38,14 +41,14 @@ namespace MyStepCounterAndroid.Helpers
 		private static readonly DateTime CurrentDayDefault = DateTime.Today;
 
 		private const string CurrentDayStepsKey = "CurrentDaySteps";
-		private static readonly int CurrentDayStepsDefault = 0;
+		private static readonly Int64 CurrentDayStepsDefault = 0;
 
 
 		private const string StepsBeforeTodayKey = "StepsBeforeToday";
-		private static readonly int StepsBeforeTodayDefault = 0;
+		private static readonly Int64 StepsBeforeTodayDefault = 0;
 
 		private const string TotalStepsKey = "TotalSteps";
-		private static readonly int TotalStepsDefault = 0;
+		private static readonly Int64 TotalStepsDefault = 0;
 
     #endregion
 
@@ -63,7 +66,7 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
-		public static int StepsBeforeToday
+		public static Int64 StepsBeforeToday
 		{
 			get
 			{
@@ -91,7 +94,7 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
-		public static int CurrentDaySteps
+		public static Int64 CurrentDaySteps
 		{
 			get
 			{
@@ -105,7 +108,7 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
-		public static int TotalSteps
+		public static Int64 TotalSteps
 		{
 			get
 			{
@@ -132,6 +135,20 @@ namespace MyStepCounterAndroid.Helpers
           AppSettings.Save();
       }
     }
+
+		public static bool FirstStepEver
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(FirstStepEverKey, FirstStepEverDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(FirstStepEverKey, value))
+					AppSettings.Save();
+			}
+		}
 
 		public static bool Enhanced
 		{
@@ -192,7 +209,7 @@ namespace MyStepCounterAndroid.Helpers
 					value = SharedPreferences.GetBoolean(key, Convert.ToBoolean(defaultValue));
 					break;
 				case TypeCode.Int64:
-					value = SharedPreferences.GetLong(key, Convert.ToInt64(defaultValue));
+						value = SharedPreferences.GetLong(key, Convert.ToInt64(defaultValue));
 					break;
 				case TypeCode.String:
 					value = SharedPreferences.GetString(key, Convert.ToString(defaultValue));
@@ -238,7 +255,7 @@ namespace MyStepCounterAndroid.Helpers
 					SharedPreferencesEditor.PutBoolean(key, Convert.ToBoolean(value));
 					break;
 				case TypeCode.Int64:
-					SharedPreferencesEditor.PutLong(key, Convert.ToInt64(value));
+						SharedPreferencesEditor.PutLong(key, Convert.ToInt64(value));
 					break;
 				case TypeCode.String:
 					SharedPreferencesEditor.PutString(key, Convert.ToString(value));

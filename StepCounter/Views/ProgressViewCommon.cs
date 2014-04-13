@@ -53,6 +53,16 @@ namespace StepCounter.Views
 
 		}
 
+		public void SetStepCount(Int64 count)
+		{
+			if (count <= 0) {
+				SetPercentage (0);
+				return;
+			}
+			var percentage = count > 10000 ? 100F : (float)count/(float)TotalStepsToTake *100F;
+			SetPercentage((int)percentage);
+		}
+
 		public void SetStepCount(int count)
 		{
 			if (count <= 0) {

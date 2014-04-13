@@ -13,7 +13,7 @@ namespace MyStepCounterAndroid.Database
 
 		public int ID { get; set; }
 
-		public int Steps { get; set; }
+		public Int64 Steps { get; set; }
 
 		public DateTime Date { get; set; }
 	}

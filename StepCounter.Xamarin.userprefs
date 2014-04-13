@@ -4,31 +4,28 @@
     <Files>
       <File FileName="StepCounter.Android/Settings/SettingsActivity.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="45" Column="50" />
       <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Database/StepEntry.cs" Line="9" Column="3" />
-      <File FileName="StepCounter.Android/StepService.cs" Line="144" Column="69" />
+      <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="60" Column="8" />
+      <File FileName="StepCounter.Android/Database/StepEntry.cs" Line="16" Column="15" />
+      <File FileName="StepCounter.Android/StepService.cs" Line="11" Column="59" />
+      <File FileName="StepCounter.Android/Database/StepEntryManager.cs" Line="22" Column="1" />
+      <File FileName="StepCounter.Android/Database/StepEntryRepositoryADO.cs" Line="62" Column="1" />
+      <File FileName="StepCounter.Android/Database/StepEntryDatabaseADO.cs" Line="101" Column="26" />
+      <File FileName="StepCounter.Android/Properties/AndroidManifest.xml" Line="9" Column="12" />
+      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/HistoryActivity.cs" Line="70" Column="5" />
+      <File FileName="StepCounter.Android/MainActivity.cs" Line="199" Column="66" />
+      <File FileName="StepCounter.Android/Utils.cs" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/StepServiceConnection.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Helpers/Conversion.cs" Line="13" Column="5" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="StepCounter.Analysis" expanded="True" />
-          <Node name="StepCounter.Android" expanded="True">
-            <Node name="Database" expanded="True" />
-            <Node name="Helpers" expanded="True" />
-            <Node name="Settings" expanded="True" />
-            <Node name="StepService.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="T062005D5Z" />
 </Properties>

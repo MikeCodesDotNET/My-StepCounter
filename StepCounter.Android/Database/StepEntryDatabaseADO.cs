@@ -35,7 +35,7 @@ namespace MyStepCounterAndroid.Database
 
 				connection.Open ();
 				var commands = new[] {
-					"CREATE TABLE [Items] (_id INTEGER PRIMARY KEY ASC, Steps INTEGER, Date NTEXT);"
+					"CREATE TABLE [Items] (_id INTEGER PRIMARY KEY ASC, Steps BIGINT, Date NTEXT);"
 				};
 				foreach (var command in commands) {
 					using (var c = connection.CreateCommand ()) {
@@ -53,7 +53,7 @@ namespace MyStepCounterAndroid.Database
 		StepEntry FromReader (SqliteDataReader r) {
 			var t = new StepEntry ();
 			t.ID = Convert.ToInt32 (r ["_id"]);
-			t.Steps = Convert.ToInt32(r ["Steps"]);
+			t.Steps = Convert.ToInt64(r ["Steps"]);
 			var date = r ["Date"].ToString ();
 			DateTime dateOut;
 			DateTime.TryParse(date, out dateOut );
@@ -116,7 +116,7 @@ namespace MyStepCounterAndroid.Database
 					connection.Open ();
 					using (var command = connection.CreateCommand ()) {
 						command.CommandText = "UPDATE [Items] SET [Steps] = ?, [Date] = ? WHERE [_id] = ?;";
-						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.Steps });
+						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
 						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy") });
 						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.ID });
 						r = command.ExecuteNonQuery ();
@@ -128,7 +128,7 @@ namespace MyStepCounterAndroid.Database
 					connection.Open ();
 					using (var command = connection.CreateCommand ()) {
 						command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?)";
-						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.Steps });
+						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
 						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy") });
 						r = command.ExecuteNonQuery ();
 					}

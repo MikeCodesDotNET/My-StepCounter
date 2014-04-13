@@ -10,6 +10,12 @@ namespace StepCounter.Helpers
             return ((double) per);
         }
 
+				public static double StepCountToPercentage(Int64 stepCount)
+				{
+					var per = (stepCount/(decimal) 10000)*100;
+					return ((double) per);
+				}
+
         public static int PercentageToStepCount(double percent)
         {
             if (!(percent > 0)) return 0;
@@ -25,11 +31,25 @@ namespace StepCounter.Helpers
             return stepCount/stepsPerMile;
         }
 
+				public static float StepsToMiles(Int64 stepCount)
+				{
+					if (stepCount <= 0) return 0.00f;
+					//Average steps in a mile
+					const float stepsPerMile = 2000;
+					return stepCount/stepsPerMile;
+				}
+
         public static float StepsToKilometers(int stepCount)
         {
             var miles = StepsToMiles(stepCount);
             return miles*1.609344f;
         }
+
+				public static float StepsToKilometers(Int64 stepCount)
+				{
+					var miles = StepsToMiles(stepCount);
+					return miles*1.609344f;
+				}
 
 
         public static string CaloriesBurnt(float miles)

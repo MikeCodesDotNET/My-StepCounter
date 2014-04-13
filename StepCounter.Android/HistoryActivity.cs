@@ -68,7 +68,6 @@ namespace MyStepCounterAndroid
 				foreach (var entry in entries)
 					items.Add (entry.Date.ToShortDateString () + " " + string.Format ("{0:n0}", entry.Steps));
 
-				items.Clear ();
 				adapter = new ArrayAdapter (this, Android.Resource.Layout.SimpleListItem1, items);
 			
 				RunOnUiThread (() => {

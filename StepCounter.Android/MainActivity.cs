@@ -196,9 +196,9 @@ namespace MyStepCounterAndroid
 			if (IsBound)
 				return;
 
-			var serviceIntent = new Intent ("com.refractored.mystepcounter.StepService");
+			var serviceIntent = new Intent (this, typeof(StepService));
 			serviceConnection = new StepServiceConnection (this);
-			BindService (serviceIntent, serviceConnection, Bind.AdjustWithActivity);
+			BindService (serviceIntent, serviceConnection, Bind.AutoCreate);
 		}
 
 		protected override void OnPause ()
@@ -262,7 +262,7 @@ namespace MyStepCounterAndroid
 
 			RunOnUiThread (() => {
 
-				int steps = 0;
+				Int64 steps = 0;
 				if(Binder == null){
 					if(Utils.IsSameDay)
 						steps = Helpers.Settings.CurrentDaySteps;

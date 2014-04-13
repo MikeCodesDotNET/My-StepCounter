@@ -12,9 +12,9 @@ namespace MyStepCounterAndroid
 	public class StepService : Service, ISensorEventListener, INotifyPropertyChanged
 	{
 		private bool isRunning;
-		private int stepsToday = 0;
+		private Int64 stepsToday = 0;
 
-		public int StepsToday {
+		public Int64 StepsToday {
 			get{ return stepsToday; }
 			set{
 				if (stepsToday == value)
@@ -103,22 +103,38 @@ namespace MyStepCounterAndroid
 		{
 			//do nothing here
 		}
-
+		Int64 newSteps = 0;
+		Int64 lastSteps = 0;
 		public void OnSensorChanged (SensorEvent e)
 		{
 		
 			if (e.Sensor.Type != SensorType.StepCounter)
 				return;
 
-			var count = (int)e.Values [0];
+			var count = (Int64)e.Values [0];
+
+			//if service rebooted or rebound then this will null out to 0, but count will still be since last boot.
+			if (lastSteps == 0) {
+				lastSteps = count;
+			}
+
+			//calculate new steps
+			newSteps = count - lastSteps;
+			lastSteps = count;
+
+			//if we uninstalled/re-installed app
+			if (Helpers.Settings.FirstStepEver) {
+				Helpers.Settings.StepsBeforeToday = Helpers.Settings.TotalSteps;
+				Helpers.Settings.FirstStepEver = false;
+			}
 
 			//ensure we don't need to re-boot day :)
 			CrunchDates ();
 
 			//save total steps!
-			Helpers.Settings.TotalSteps = count;
+			Helpers.Settings.TotalSteps +=  newSteps;
 
-			StepsToday = count - Helpers.Settings.StepsBeforeToday;
+			StepsToday = Helpers.Settings.TotalSteps - Helpers.Settings.StepsBeforeToday;
 
 			Console.WriteLine ("New step detected by STEP_COUNTER sensor. Total step count: " + stepsToday);
 
