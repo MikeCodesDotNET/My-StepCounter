@@ -91,16 +91,12 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_unsupporteddevice.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_unsupporteddevice.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_unsupporteddevice.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\values\dimen.xml" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher_home.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher_home.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher_home.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher_home.png" />
     <AndroidResource Include="Resources\values\arrays.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

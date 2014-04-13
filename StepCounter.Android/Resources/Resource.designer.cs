@@ -108,10 +108,7 @@ namespace MyStepCounterAndroid
 			public const int ic_launcher = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_launcher_home = 2130837506;
-			
-			// aapt resource value: 0x7f020003
-			public const int ic_unsupporteddevice = 2130837507;
+			public const int ic_unsupporteddevice = 2130837506;
 			
 			static Drawable()
 			{

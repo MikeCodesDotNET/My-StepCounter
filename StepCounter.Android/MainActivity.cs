@@ -17,7 +17,7 @@ namespace MyStepCounterAndroid
 
 	}
 
-	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher_home", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
