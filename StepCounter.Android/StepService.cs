@@ -122,12 +122,6 @@ namespace MyStepCounterAndroid
 			newSteps = count - lastSteps;
 			lastSteps = count;
 
-			//if we uninstalled/re-installed app
-			if (Helpers.Settings.FirstStepEver) {
-				Helpers.Settings.StepsBeforeToday = Helpers.Settings.TotalSteps;
-				Helpers.Settings.FirstStepEver = false;
-			}
-
 			//ensure we don't need to re-boot day :)
 			CrunchDates ();
 

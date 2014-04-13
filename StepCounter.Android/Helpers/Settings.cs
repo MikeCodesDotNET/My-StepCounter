@@ -31,9 +31,6 @@ namespace MyStepCounterAndroid.Helpers
 		public const string CadenceKey = "Cadence3";
 		private static readonly string CadenceDefault = "3";
 
-		public const string FirstStepEverKey = "FirstStepEver";
-		private static readonly bool FirstStepEverDefault = true;
-
 		public const string EnhancedKey = "Enhanced";
 		private static readonly bool EnhancedDefault = false;
 
@@ -135,20 +132,6 @@ namespace MyStepCounterAndroid.Helpers
           AppSettings.Save();
       }
     }
-
-		public static bool FirstStepEver
-		{
-			get
-			{
-				return AppSettings.GetValueOrDefault(FirstStepEverKey, FirstStepEverDefault);
-			}
-			set
-			{
-				//if value has changed then save it!
-				if (AppSettings.AddOrUpdateValue(FirstStepEverKey, value))
-					AppSettings.Save();
-			}
-		}
 
 		public static bool Enhanced
 		{
