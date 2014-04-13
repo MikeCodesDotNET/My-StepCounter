@@ -3,6 +3,7 @@ using Android.App;
 using Android.Hardware;
 using Android.Content;
 using System.ComponentModel;
+using MyStepCounterAndroid.Database;
 
 namespace MyStepCounterAndroid
 {
@@ -21,39 +22,42 @@ namespace MyStepCounterAndroid
 
 				stepsToday = value;
 				OnPropertyChanged ("StepsToday");
+				Helpers.Settings.CurrentDaySteps = value;
 			}
 		}
 
 		public override StartCommandResult OnStartCommand (Intent intent, StartCommandFlags flags, int startId)
+		{
+			Startup ();
+
+			return StartCommandResult.Sticky;
+		}
+
+
+
+		public override void OnStart (Intent intent, int startId)
+		{
+			base.OnStart (intent, startId);
+			Startup ();
+		}
+
+		private void Startup()
 		{
 			//check if kit kat can sensor compatible
 			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
 
 				Console.WriteLine("Not compatible with sensors, stopping service.");
 				StopSelf ();
-				return StartCommandResult.NotSticky;
+				return;
 			}
+
+			CrunchDates ();
 
 			if (!isRunning) {
 				RegisterListeners (SensorType.StepCounter);
 			}
 
-			if (stepsToday == 0)
-				stepsToday = Helpers.Settings.Steps;
-
 			isRunning = true;
-
-
-
-			return StartCommandResult.Sticky;
-		}
-		public override void OnStart (Intent intent, int startId)
-		{
-			base.OnStart (intent, startId);
-			if (isRunning)
-				return;
-
-			RegisterListeners (SensorType.StepCounter);
 		}
 
 		public override void OnDestroy ()
@@ -61,6 +65,7 @@ namespace MyStepCounterAndroid
 			base.OnDestroy ();
 			UnregisterListeners ();
 			isRunning = false;
+			CrunchDates ();
 		}
 
 
@@ -99,7 +104,6 @@ namespace MyStepCounterAndroid
 			//do nothing here
 		}
 
-		int stepCount = 0;
 		public void OnSensorChanged (SensorEvent e)
 		{
 		
@@ -108,14 +112,38 @@ namespace MyStepCounterAndroid
 
 			var count = (int)e.Values [0];
 
-			if (stepCount == 0)
-				stepCount = count;
+			//ensure we don't need to re-boot day :)
+			CrunchDates ();
 
-			StepsToday = count - stepCount;
+			//save total steps!
+			Helpers.Settings.TotalSteps = count;
+
+			StepsToday = count - Helpers.Settings.StepsBeforeToday;
 
 			Console.WriteLine ("New step detected by STEP_COUNTER sensor. Total step count: " + stepsToday);
 
 
+		}
+
+		private void CrunchDates()
+		{
+			if (!Utils.IsSameDay) {
+				//save our day from yesterday
+				var yesterday = DateTime.Today.AddDays (-1);
+				var dayEntry = StepEntryManager.GetStepEntry ();
+				if (dayEntry == null) {
+					dayEntry = new StepEntry ();
+					dayEntry.Date = yesterday;
+				}
+				dayEntry.Steps = Helpers.Settings.CurrentDaySteps;
+
+				StepEntryManager.SaveStepEntry (dayEntry);
+
+				Helpers.Settings.CurrentDay = DateTime.Today;
+				Helpers.Settings.CurrentDaySteps = 0;
+				Helpers.Settings.StepsBeforeToday = Helpers.Settings.TotalSteps;
+				StepsToday = 0;
+			}
 		}
 
 		#region INotifyPropertyChanged implementation

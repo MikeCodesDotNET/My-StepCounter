@@ -31,6 +31,11 @@ namespace MyStepCounterAndroid
 				return day  + " " + month+ " " + dayNum;
 			}
 		}
+
+		public static bool IsSameDay{
+			get { return DateTime.Today.DayOfYear == Helpers.Settings.CurrentDay.DayOfYear &&
+					DateTime.Today.Year == Helpers.Settings.CurrentDay.Year; }
+		}
 	}
 }
 

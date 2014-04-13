@@ -1,6 +1,6 @@
 using System;
 
-namespace MyStepCounterAndroid.DataBase
+namespace MyStepCounterAndroid.Database
 {
 	/// <summary>
 	/// Task business object

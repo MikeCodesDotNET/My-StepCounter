@@ -123,8 +123,8 @@ namespace MyStepCounterAndroid
 
 			canAnimate = false;
 
-			var start = animation == null ? -height : lastY;
-			var time = animation == null ? 3000 : 300;
+			var start = lastY;
+			var time = 300;
 			IInterpolator interpolator;
 
 
@@ -137,10 +137,14 @@ namespace MyStepCounterAndroid
 				canAnimate = true;
 				return;
 			}
-			if (animation == null)
+			if (animation == null || !Utils.IsSameDay) {
 				interpolator = new BounceInterpolator ();
-			else
+				time = 3000;
+				start = -height;
+				lastY = 0;
+			} else {
 				interpolator = new LinearInterpolator ();
+			}
 			animation = new TranslateAnimation (Dimension.Absolute, 0, 
 				Dimension.Absolute, 0,
 				Dimension.Absolute, start,
@@ -229,8 +233,13 @@ namespace MyStepCounterAndroid
 
 			RunOnUiThread (() => {
 
-
-				var steps = Binder == null ? Helpers.Settings.Steps :Binder.StepService.StepsToday;
+				int steps = 0;
+				if(Binder == null){
+					if(Utils.IsSameDay)
+						steps = Helpers.Settings.CurrentDaySteps;
+				}else{
+					steps = Binder.StepService.StepsToday;
+				}
 				progressView.SetStepCount(steps);
 
 				stepCount.Text = steps.ToString();

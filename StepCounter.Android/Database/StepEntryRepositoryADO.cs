@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace MyStepCounterAndroid.DataBase {
+namespace MyStepCounterAndroid.Database {
 	public class StepEntryRepositoryADO {
 		StepEntryDatabase db = null;
 		protected static string dbLocation;		

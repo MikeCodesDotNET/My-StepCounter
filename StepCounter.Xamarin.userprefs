@@ -1,22 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/StepService.cs">
     <Files>
-      <File FileName="StepCounter.Android/MainActivity.cs" Line="78" Column="54" />
-      <File FileName="StepCounter.Android/Helpers/Settings.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Settings/SettingsActivity.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="30" Column="84" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Analysis/Program.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Helpers/Conversion.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Resources/values/dimen.xml" Line="3" Column="45" />
-      <File FileName="StepCounter.Android/Resources/values/color.xml" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="19" Column="46" />
+      <File FileName="StepCounter.Android/Database/StepEntry.cs" Line="9" Column="3" />
+      <File FileName="StepCounter.Android/StepService.cs" Line="144" Column="69" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="StepCounter.Analysis" expanded="True" />
+          <Node name="StepCounter.Android" expanded="True">
+            <Node name="Database" expanded="True" />
+            <Node name="Helpers" expanded="True" />
+            <Node name="Settings" expanded="True" />
+            <Node name="StepService.cs" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

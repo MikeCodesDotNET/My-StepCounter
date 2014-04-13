@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MyStepCounterAndroid.DataBase {
+namespace MyStepCounterAndroid.Database {
 	/// <summary>
 	/// Manager classes are an abstraction on the data access layers
 	/// </summary>

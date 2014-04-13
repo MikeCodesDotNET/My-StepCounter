@@ -28,24 +28,76 @@ namespace MyStepCounterAndroid.Helpers
 		public const string WeightKey = "Weight";
 		private static readonly int WeightDefault = 0;
 
-		public const string StepsKey = "Steps";
-		private static readonly int StepsDefault = 0;
-
 		public const string EnhancedKey = "Enhanced";
 		private static readonly bool EnhancedDefault = false;
 
+		private const string CurrentDayKey = "CurrentDay";
+		private static readonly DateTime CurrentDayDefault = DateTime.Today;
+
+		private const string CurrentDayStepsKey = "CurrentDaySteps";
+		private static readonly int CurrentDayStepsDefault = 0;
+
+
+		private const string StepsBeforeTodayKey = "StepsBeforeToday";
+		private static readonly int StepsBeforeTodayDefault = 0;
+
+		private const string TotalStepsKey = "TotalSteps";
+		private static readonly int TotalStepsDefault = 0;
+
     #endregion
 
-		public static int Steps
+		public static DateTime CurrentDay
 		{
 			get
 			{
-				return AppSettings.GetValueOrDefault(StepsKey, StepsDefault);
+				return AppSettings.GetValueOrDefault(CurrentDayKey, CurrentDayDefault);
 			}
 			set
 			{
 				//if value has changed then save it!
-				if (AppSettings.AddOrUpdateValue(StepsKey, value))
+				if (AppSettings.AddOrUpdateValue(CurrentDayKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		public static int StepsBeforeToday
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(StepsBeforeTodayKey, StepsBeforeTodayDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(StepsBeforeTodayKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		public static int CurrentDaySteps
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(CurrentDayStepsKey, CurrentDayStepsDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(CurrentDayStepsKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		public static int TotalSteps
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(TotalStepsKey, TotalStepsDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(TotalStepsKey, value))
 					AppSettings.Save();
 			}
 		}
