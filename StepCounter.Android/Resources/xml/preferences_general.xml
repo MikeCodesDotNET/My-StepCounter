@@ -3,6 +3,12 @@
 	<PreferenceCategory android:title="@string/category_general_preferences">
 		<CheckBoxPreference android:key="Enhanced" android:title="@string/enhanced" android:summary="@string/enhanced_summary" android:defaultValue="false" />
 		<mystepcounterandroid.settings.IntEditTextPreference android:key="Weight" android:defaultValue="0" android:dependency="Enhanced" />
+		<ListPreference 
+		    android:key="Cadence3"
+		    android:title="@string/cadence"
+		    android:entries="@array/cadence_names"
+		    android:entryValues="@array/cadence_values"
+		    android:defaultValue="3"/>
 	</PreferenceCategory>
 	<PreferenceCategory android:title="@string/about">
 		<Preference android:title="@string/created_by" android:summary="@string/created_by_summary">

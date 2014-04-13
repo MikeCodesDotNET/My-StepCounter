@@ -27,5 +27,20 @@
 	<string name="created_with">Created with</string>
 	<string name="created_with_summary">C# and Xamarin</string>
 	<string name="ok">OK</string>
+	<string name="cadence">Pace</string>
+	<string name="cadence0">2.0 mph (30 min) or slower</string>
+	<string name="cadence1">2.0 mph (30 min) or faster</string>
+	<string name="cadence2">2.5 mph (24 min) or faster</string>
+	<string name="cadence3">3.0 mph (20 min) or faster</string>
+	<string name="cadence4">4.0 mph (15 min) or faster</string>
+	<string name="cadence5">4.5 mph (13 min) or faster</string>
+	<string name="cadence6">5.0 mph (12 min) or faster</string>
+	<string name="cadence0_km">3.2 km/h (30 min) or slower</string>
+	<string name="cadence1_km">3.2 km/h (30 min) or faster</string>
+	<string name="cadence2_km">4.0 km/h (24 min) or faster</string>
+	<string name="cadence3_km">5.8 km/h (20 min) or faster</string>
+	<string name="cadence4_km">6.4 km/h( 15 min) or faster</string>
+	<string name="cadence5_km">7.2 km/h( 13 min) or faster</string>
+	<string name="cadence6_km">8.0 km/h (12 min) or faster</string>
 	<string name="no_step_sensor">I am sorry there is no step sensor on your device :( My StepCounter requires a device with this sensor.</string>
 </resources>

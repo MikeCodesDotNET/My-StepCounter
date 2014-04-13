@@ -28,6 +28,9 @@ namespace MyStepCounterAndroid.Helpers
 		public const string WeightKey = "Weight";
 		private static readonly int WeightDefault = 0;
 
+		public const string CadenceKey = "Cadence3";
+		private static readonly string CadenceDefault = "3";
+
 		public const string EnhancedKey = "Enhanced";
 		private static readonly bool EnhancedDefault = false;
 
@@ -70,6 +73,20 @@ namespace MyStepCounterAndroid.Helpers
 			{
 				//if value has changed then save it!
 				if (AppSettings.AddOrUpdateValue(StepsBeforeTodayKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		public static string Cadence
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(CadenceKey, CadenceDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(CadenceKey, value))
 					AppSettings.Save();
 			}
 		}

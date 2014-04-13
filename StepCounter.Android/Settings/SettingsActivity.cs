@@ -26,6 +26,37 @@ namespace MyStepCounterAndroid.Settings
 			case Helpers.Settings.WeightKey:
 				this.SetWeight ();
 				break;
+			case Helpers.Settings.CadenceKey:
+				this.SetCadence ();
+				break;
+			}
+		}
+
+		private void SetCadence(){
+			var pref = (ListPreference)this.FindPreference (Helpers.Settings.CadenceKey);
+			//pref.SetEntries (Helpers.Settings.UseKilometeres ? Resource.Array.cadence_names_km : Resource.Array.cadence_names);
+			switch (Helpers.Settings.Cadence) {
+			case "0":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence0_km : Resource.String.cadence0);
+				break;
+			case "1":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence1_km : Resource.String.cadence1);
+				break;
+			case "2":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence2_km : Resource.String.cadence2);
+				break;
+			case "3":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence3_km : Resource.String.cadence3);
+				break;
+			case "4":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence4_km : Resource.String.cadence4);
+				break;
+			case "5":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence5_km : Resource.String.cadence5);
+				break;
+			case "6":
+				pref.SetSummary (Helpers.Settings.UseKilometeres ? Resource.String.cadence6_km : Resource.String.cadence6);
+				break;
 			}
 		}
 
@@ -43,6 +74,7 @@ namespace MyStepCounterAndroid.Settings
 		{
 			base.OnStart ();
 			this.SetWeight ();
+			this.SetCadence ();
 		}
 
 		protected override void OnPause ()

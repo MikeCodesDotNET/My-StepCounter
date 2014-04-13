@@ -143,8 +143,6 @@ namespace MyStepCounterAndroid
 			if (fullAnimation || !Utils.IsSameDay) {
 				interpolator = new BounceInterpolator ();
 				time = 3000;
-				start = -height;
-				lastY = 0;
 				fullAnimation = false;
 			} else {
 				interpolator = new LinearInterpolator ();
@@ -280,7 +278,7 @@ namespace MyStepCounterAndroid
 				var lbs = Helpers.Settings.UseKilometeres ? Helpers.Settings.Weight * 2.20462 : Helpers.Settings.Weight;
 				calorieCount.Text = string.Format(calorieString, 
 					Helpers.Settings.Enhanced ? 
-					Conversion.CaloriesBurnt(miles, (float)lbs) :
+					Conversion.CaloriesBurnt(miles, (float)lbs, Helpers.Settings.Cadence) :
 					Conversion.CaloriesBurnt(miles));
 
 				var percent = Conversion.StepCountToPercentage(steps);
