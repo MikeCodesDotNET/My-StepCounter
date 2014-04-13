@@ -131,18 +131,25 @@ namespace MyStepCounterAndroid
 				//save our day from yesterday
 				var yesterday = DateTime.Today.AddDays (-1);
 				var dayEntry = StepEntryManager.GetStepEntry (yesterday);
-				if (dayEntry == null) {
+				if (dayEntry == null || dayEntry.Date.DayOfYear != yesterday.DayOfYear) {
 					dayEntry = new StepEntry ();
-					dayEntry.Date = yesterday;
 				}
+
+				dayEntry.Date = yesterday;
 				dayEntry.Steps = Helpers.Settings.CurrentDaySteps;
 
-				StepEntryManager.SaveStepEntry (dayEntry);
+
 
 				Helpers.Settings.CurrentDay = DateTime.Today;
 				Helpers.Settings.CurrentDaySteps = 0;
 				Helpers.Settings.StepsBeforeToday = Helpers.Settings.TotalSteps;
 				StepsToday = 0;
+				try{
+					StepEntryManager.SaveStepEntry (dayEntry);
+				}catch(Exception ex){
+					Console.WriteLine ("Something horrible has gone wrong attempting to save database entry, it is lost forever :(");
+				}
+
 			} else if (startup) {
 				StepsToday = Helpers.Settings.TotalSteps - Helpers.Settings.StepsBeforeToday;
 			}

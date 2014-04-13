@@ -167,6 +167,15 @@ namespace MyStepCounterAndroid
 				topLayer.Visibility = Android.Views.ViewStates.Visible;
 		}
 
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+			if (IsBound) {
+				UnbindService (serviceConnection);
+				IsBound = false;
+			}
+		}
+
 		protected override void OnDestroy ()
 		{
 			base.OnDestroy ();
@@ -194,10 +203,24 @@ namespace MyStepCounterAndroid
 			BindService (serviceIntent, serviceConnection, Bind.AdjustWithActivity);
 		}
 
+		protected override void OnPause ()
+		{
+			base.OnPause ();
+			if (registered && binder != null) {
+				binder.StepService.PropertyChanged -= HandlePropertyChanged;
+				registered = false;
+			}
+		}
+
 		protected override void OnResume ()
 		{
 			base.OnResume ();
 			UpdateUI ();
+
+			if (!registered && binder != null) {
+				binder.StepService.PropertyChanged -= HandlePropertyChanged;
+				registered = true;
+			}
 		}
 
 

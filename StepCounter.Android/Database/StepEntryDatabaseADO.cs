@@ -127,7 +127,7 @@ namespace MyStepCounterAndroid.Database
 					connection = new SqliteConnection ("Data Source=" + path);
 					connection.Open ();
 					using (var command = connection.CreateCommand ()) {
-						command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?, ?)";
+						command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?)";
 						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.Steps });
 						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy") });
 						r = command.ExecuteNonQuery ();
