@@ -3,13 +3,14 @@ using Android.App;
 using Android.Preferences;
 using Android.OS;
 using Android.Content;
+using Android.Content.PM;
 
 namespace MyStepCounterAndroid.Settings
 {
 	/// <summary>
 	/// Parent setting activity, all ti does is load up the headers
 	/// </summary>
-	[Activity (Label = "Settings", Icon="@drawable/ic_launcher", Theme = "@style/ThemeActionBar")]
+	[Activity (Label = "Settings", Icon="@drawable/ic_launcher", Theme = "@style/ThemeActionBar", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class SettingsActivity : PreferenceActivity, ISharedPreferencesOnSharedPreferenceChangeListener
 	{
 

@@ -72,9 +72,9 @@ namespace MyStepCounterAndroid.Database
 				connection.Open ();
 				using (var contents = connection.CreateCommand ()) {
 					if(count == 0)
-						contents.CommandText = "SELECT [_id], [Name], [Notes], [Done] from [Items]";
+						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items]";
 					else
-						contents.CommandText = "SELECT TOP " + count +" [_id], [Name], [Notes], [Done] from [Items]";
+						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items] ORDER BY _id LIMIT " + count;
 
 					var r = contents.ExecuteReader ();
 					while (r.Read ()) {

@@ -5,7 +5,7 @@
 	<string name="about">About</string>
 	<string name="about_title">My StepCounter 1.0</string>
 	<string name="category_general_preferences">General</string>
-	<string name="steps">Steps</string>
+	<string name="steps">steps</string>
 	<string name="today">Today you\'ve taken</string>
 	<string name="percent_complete">{0}% Complete</string>
 	<string name="completed">Completed</string>
@@ -42,5 +42,7 @@
 	<string name="cadence4_km">6.4 km/h( 15 min) or faster</string>
 	<string name="cadence5_km">7.2 km/h( 13 min) or faster</string>
 	<string name="cadence6_km">8.0 km/h (12 min) or faster</string>
+	<string name="no_history">No history yet, come back tomorrow.</string>
+	<string name="menu_history">History</string>
 	<string name="no_step_sensor">I am sorry there is no step sensor on your device :( My StepCounter requires a device with this sensor.</string>
 </resources>

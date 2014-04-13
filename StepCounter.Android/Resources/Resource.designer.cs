@@ -123,44 +123,53 @@ namespace MyStepCounterAndroid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0b000a
-			public const int calories = 2131427338;
-			
-			// aapt resource value: 0x7f0b0005
-			public const int counter_layout = 2131427333;
-			
-			// aapt resource value: 0x7f0b000b
-			public const int distance = 2131427339;
-			
 			// aapt resource value: 0x7f0b000c
-			public const int menu_settings = 2131427340;
-			
-			// aapt resource value: 0x7f0b0002
-			public const int no_sensor_box = 2131427330;
-			
-			// aapt resource value: 0x7f0b0003
-			public const int no_sensor_image = 2131427331;
-			
-			// aapt resource value: 0x7f0b0004
-			public const int no_step_sensor = 2131427332;
-			
-			// aapt resource value: 0x7f0b0009
-			public const int percentage = 2131427337;
-			
-			// aapt resource value: 0x7f0b0000
-			public const int progressView = 2131427328;
+			public const int calories = 2131427340;
 			
 			// aapt resource value: 0x7f0b0007
-			public const int stepcount = 2131427335;
+			public const int counter_layout = 2131427335;
 			
-			// aapt resource value: 0x7f0b0008
-			public const int steps = 2131427336;
-			
-			// aapt resource value: 0x7f0b0006
-			public const int today = 2131427334;
+			// aapt resource value: 0x7f0b000d
+			public const int distance = 2131427341;
 			
 			// aapt resource value: 0x7f0b0001
-			public const int top_layer = 2131427329;
+			public const int fragment_host = 2131427329;
+			
+			// aapt resource value: 0x7f0b0000
+			public const int main_layout = 2131427328;
+			
+			// aapt resource value: 0x7f0b000e
+			public const int menu_history = 2131427342;
+			
+			// aapt resource value: 0x7f0b000f
+			public const int menu_settings = 2131427343;
+			
+			// aapt resource value: 0x7f0b0004
+			public const int no_sensor_box = 2131427332;
+			
+			// aapt resource value: 0x7f0b0005
+			public const int no_sensor_image = 2131427333;
+			
+			// aapt resource value: 0x7f0b0006
+			public const int no_step_sensor = 2131427334;
+			
+			// aapt resource value: 0x7f0b000b
+			public const int percentage = 2131427339;
+			
+			// aapt resource value: 0x7f0b0002
+			public const int progressView = 2131427330;
+			
+			// aapt resource value: 0x7f0b0009
+			public const int stepcount = 2131427337;
+			
+			// aapt resource value: 0x7f0b000a
+			public const int steps = 2131427338;
+			
+			// aapt resource value: 0x7f0b0008
+			public const int today = 2131427336;
+			
+			// aapt resource value: 0x7f0b0003
+			public const int top_layer = 2131427331;
 			
 			static Id()
 			{
@@ -176,7 +185,10 @@ namespace MyStepCounterAndroid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int main = 2130903040;
+			public const int history = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int main = 2130903041;
 			
 			static Layout()
 			{
@@ -300,6 +312,9 @@ namespace MyStepCounterAndroid
 			// aapt resource value: 0x7f08000b
 			public const int kilometeres = 2131230731;
 			
+			// aapt resource value: 0x7f08002b
+			public const int menu_history = 2131230763;
+			
 			// aapt resource value: 0x7f080001
 			public const int menu_settings = 2131230721;
 			
@@ -307,7 +322,10 @@ namespace MyStepCounterAndroid
 			public const int miles = 2131230730;
 			
 			// aapt resource value: 0x7f08002a
-			public const int no_step_sensor = 2131230762;
+			public const int no_history = 2131230762;
+			
+			// aapt resource value: 0x7f08002c
+			public const int no_step_sensor = 2131230764;
 			
 			// aapt resource value: 0x7f08001a
 			public const int ok = 2131230746;

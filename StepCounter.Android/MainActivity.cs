@@ -237,6 +237,10 @@ namespace MyStepCounterAndroid
 				StartActivity (intent);
 
 				return true;
+			case Resource.Id.menu_history:
+				var intent2 = new Intent (this, typeof(HistoryActivity));
+				StartActivity (intent2);
+				return true;
 			}
 			return base.OnOptionsItemSelected (item);
 		}
@@ -267,7 +271,7 @@ namespace MyStepCounterAndroid
 				}
 				progressView.SetStepCount(steps);
 
-				stepCount.Text = steps.ToString();
+				stepCount.Text = string.Format("{0:n0}", steps);
 
 				var miles = Conversion.StepsToMiles(steps);
 				distance.Text = string.Format(distanceString, 
@@ -283,7 +287,7 @@ namespace MyStepCounterAndroid
 
 				var percent = Conversion.StepCountToPercentage(steps);
 				if(steps <= 10000)
-						percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent);
+					percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent);
 				else
 					percentage.Text = completedString;
 
