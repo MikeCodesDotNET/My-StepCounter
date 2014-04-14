@@ -57,5 +57,9 @@
 	<string name="awesome_title">New Achievement</string>
 	<string name="high_score">{0} in one day!</string>
 	<string name="awesome">{0} steps total!</string>
+	<string name="share_steps_on">Share Steps On</string>
+	<string name="menu_share">Share</string>
+	<string name="share_steps_today">I have taken {0} steps today using #MyStepCounter!</string>
+	<string name="share_steps_total">I have taken {0} steps, which is {1}, and burned {2} using #MyStepCounter!</string>
 	<string name="no_step_sensor">I am sorry there is no step sensor on your device :( My StepCounter requires a device with this sensor.</string>
 </resources>

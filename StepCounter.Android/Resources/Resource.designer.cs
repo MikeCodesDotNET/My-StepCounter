@@ -108,16 +108,19 @@ namespace StepCounter
 			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_highscore = 2130837505;
+			public const int ic_action_social_share = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_launcher = 2130837506;
+			public const int ic_highscore = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int ic_notification = 2130837507;
+			public const int ic_launcher = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int ic_unsupporteddevice = 2130837508;
+			public const int ic_notification = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int ic_unsupporteddevice = 2130837509;
 			
 			static Drawable()
 			{
@@ -156,11 +159,14 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0000
 			public const int main_layout = 2131427328;
 			
-			// aapt resource value: 0x7f0b0012
-			public const int menu_history = 2131427346;
-			
 			// aapt resource value: 0x7f0b0013
-			public const int menu_settings = 2131427347;
+			public const int menu_history = 2131427347;
+			
+			// aapt resource value: 0x7f0b0014
+			public const int menu_settings = 2131427348;
+			
+			// aapt resource value: 0x7f0b0012
+			public const int menu_share = 2131427346;
 			
 			// aapt resource value: 0x7f0b0008
 			public const int no_sensor_box = 2131427336;
@@ -228,7 +234,10 @@ namespace StepCounter
 		{
 			
 			// aapt resource value: 0x7f0a0000
-			public const int main = 2131361792;
+			public const int history = 2131361792;
+			
+			// aapt resource value: 0x7f0a0001
+			public const int main = 2131361793;
 			
 			static Menu()
 			{
@@ -369,14 +378,17 @@ namespace StepCounter
 			// aapt resource value: 0x7f080001
 			public const int menu_settings = 2131230721;
 			
+			// aapt resource value: 0x7f08003a
+			public const int menu_share = 2131230778;
+			
 			// aapt resource value: 0x7f08000f
 			public const int miles = 2131230735;
 			
 			// aapt resource value: 0x7f08002f
 			public const int no_history = 2131230767;
 			
-			// aapt resource value: 0x7f080039
-			public const int no_step_sensor = 2131230777;
+			// aapt resource value: 0x7f08003d
+			public const int no_step_sensor = 2131230781;
 			
 			// aapt resource value: 0x7f080008
 			public const int notifications_accumulative = 2131230728;
@@ -395,6 +407,15 @@ namespace StepCounter
 			
 			// aapt resource value: 0x7f08000c
 			public const int percent_complete = 2131230732;
+			
+			// aapt resource value: 0x7f080039
+			public const int share_steps_on = 2131230777;
+			
+			// aapt resource value: 0x7f08003b
+			public const int share_steps_today = 2131230779;
+			
+			// aapt resource value: 0x7f08003c
+			public const int share_steps_total = 2131230780;
 			
 			// aapt resource value: 0x7f08000a
 			public const int steps = 2131230730;

@@ -110,6 +110,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_notification.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_social_share.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_social_share.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_social_share.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_social_share.png" />
+    <AndroidResource Include="Resources\menu\history.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

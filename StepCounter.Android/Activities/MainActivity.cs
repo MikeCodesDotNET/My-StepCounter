@@ -273,6 +273,13 @@ namespace StepCounter.Activities
 				var intent2 = new Intent (this, typeof(HistoryActivity));
 				StartActivity (intent2);
 				return true;
+			case Resource.Id.menu_share:
+				var intent3 = new Intent(Intent.ActionSend);
+				intent3.PutExtra(Intent.ExtraText,string.Format(Resources.GetString(Resource.String.share_steps_today), stepCount.Text));
+				intent3.SetType("text/plain");
+				StartActivity(Intent.CreateChooser(intent3, Resources.GetString(Resource.String.share_steps_on)));
+
+				return true;
 			}
 			return base.OnOptionsItemSelected (item);
 		}

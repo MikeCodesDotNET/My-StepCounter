@@ -27,6 +27,9 @@ using StepCounter.Database;
 using Android.Content.PM;
 using StepCounter.Helpers;
 using StepCounter.Adapters;
+using Android.Views;
+using Android.Runtime;
+using Android.Content;
 
 namespace StepCounter.Activities
 {
@@ -35,7 +38,7 @@ namespace StepCounter.Activities
 	{
 		ListFragment list;
 		HistoryAdapter adapter;
-
+		string shareText;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -60,6 +63,8 @@ namespace StepCounter.Activities
 				Conversion.CaloriesBurnt (miles));
 			this.ActionBar.Subtitle = distance + " | " + calories;
 
+			shareText = string.Format (Resources.GetString (Resource.String.share_steps_total), string.Format ("{0:n0}", steps), distance, calories.ToLower ());
+
 			list = new ListFragment ();
 
 			FragmentManager
@@ -71,6 +76,24 @@ namespace StepCounter.Activities
 
 			LoadList ();
 
+		}
+
+		Android.Widget.ShareActionProvider actionProvider;
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			this.MenuInflater.Inflate(Resource.Menu.history, menu);
+
+			var shareItem = menu.FindItem(Resource.Id.menu_share);
+			actionProvider = shareItem.ActionProvider.JavaCast<Android.Widget.ShareActionProvider>();
+
+			var intent = new Intent(Intent.ActionSend);
+			intent.SetType("text/plain");
+			intent.PutExtra(Intent.ExtraText, shareText);
+
+			actionProvider.SetShareIntent(intent);
+
+
+			return base.OnCreateOptionsMenu(menu);
 		}
 
 		Random random = new Random();
