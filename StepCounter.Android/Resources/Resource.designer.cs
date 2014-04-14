@@ -339,6 +339,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f08001e
 			public const int created_with_summary = 2131230750;
 			
+			// aapt resource value: 0x7f08003f
+			public const int custom_step_goal = 2131230783;
+			
 			// aapt resource value: 0x7f080015
 			public const int enhanced = 2131230741;
 			
@@ -387,8 +390,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f08002f
 			public const int no_history = 2131230767;
 			
-			// aapt resource value: 0x7f08003d
-			public const int no_step_sensor = 2131230781;
+			// aapt resource value: 0x7f080040
+			public const int no_step_sensor = 2131230784;
 			
 			// aapt resource value: 0x7f080008
 			public const int notifications_accumulative = 2131230728;
@@ -407,6 +410,12 @@ namespace StepCounter
 			
 			// aapt resource value: 0x7f08000c
 			public const int percent_complete = 2131230732;
+			
+			// aapt resource value: 0x7f08003d
+			public const int review_app = 2131230781;
+			
+			// aapt resource value: 0x7f08003e
+			public const int review_app_summary = 2131230782;
 			
 			// aapt resource value: 0x7f080039
 			public const int share_steps_on = 2131230777;

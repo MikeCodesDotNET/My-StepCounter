@@ -33,7 +33,7 @@ using Android.Content;
 
 namespace StepCounter.Activities
 {
-	[Activity (Label = "HistoryActivity", Icon = "@drawable/ic_launcher", Theme = "@style/ThemeActionBar", ScreenOrientation = ScreenOrientation.Portrait)]			
+	[Activity (Label = "@string/menu_history", Icon = "@drawable/ic_launcher", Theme = "@style/ThemeActionBar", ScreenOrientation = ScreenOrientation.Portrait)]			
 	public class HistoryActivity : Activity
 	{
 		ListFragment list;

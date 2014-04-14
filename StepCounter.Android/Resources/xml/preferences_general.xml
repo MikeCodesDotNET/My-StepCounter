@@ -32,5 +32,11 @@
 		<Preference android:title="@string/created_with" android:summary="@string/created_with_summary">
 			<intent android:action="android.intent.action.VIEW" android:data="http://www.xamarin.com" />
 		</Preference>
+ 		<Preference
+	            android:title="@string/review_app"
+	            android:summary="@string/review_app_summary">
+	      <intent android:action="android.intent.action.VIEW"
+	              android:data="http://market.android.com/details?id=com.refractored.mystepcounter" />
+	    </Preference>
 	</PreferenceCategory>
 </PreferenceScreen>

@@ -84,7 +84,16 @@ namespace StepCounter.Activities
 			var pref = (EditTextPreference)this.FindPreference (Helpers.Settings.WeightKey);
 			var format = Helpers.Settings.UseKilometeres ? Resource.String.weight_kg : Resource.String.weight_lbs;
 			var title = Helpers.Settings.UseKilometeres ? Resource.String.weight_title_kg : Resource.String.weight_title_lbs;
-			pref.Summary = string.Format (Resources.GetString (format), Helpers.Settings.Weight);
+			var weight = Helpers.Settings.Weight;
+			//check for accuracy
+			if (weight > 1000)
+				weight = 1000;
+			else if (weight < 0)
+				weight = 0;
+
+			if (weight != Helpers.Settings.Weight)
+				Helpers.Settings.Weight = weight;
+			pref.Summary = string.Format (Resources.GetString (format), weight);
 			pref.SetTitle (title);
 			pref.SetDialogTitle (title);
 		}
