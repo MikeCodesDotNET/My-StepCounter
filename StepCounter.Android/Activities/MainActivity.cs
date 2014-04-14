@@ -1,4 +1,22 @@
-﻿
+﻿/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -6,18 +24,14 @@ using Android.Widget;
 using Android.Content.PM;
 using System;
 using StepCounter.Helpers;
-using MyStepCounterAndroid.Controls;
+using StepCounter.Controls;
 using Android.Views.Animations;
+using StepCounter.Services;
+using System.Collections.Generic;
 
-namespace MyStepCounterAndroid
+namespace StepCounter.Activities
 {
-
-	internal class MainActivityState : Java.Lang.Object
-	{
-
-	}
-
-	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher", MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
+	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher", LaunchMode = LaunchMode.SingleTask, MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : Activity
 	{
 
@@ -29,6 +43,9 @@ namespace MyStepCounterAndroid
 		private FrameLayout topLayer;
 		private bool canAnimate = true;
 		private bool fullAnimation = true;
+		private Handler handler;
+		private bool firstRun = true;
+		private ImageView highScore;
 
 		public StepServiceBinder Binder 
 		{
@@ -53,7 +70,7 @@ namespace MyStepCounterAndroid
 
 
 		private StepServiceConnection serviceConnection;
-
+		private int testSteps = 1;
 		private TextView stepCount, calorieCount, distance, percentage;
 		private TranslateAnimation animation;
 		private float height, lastY;
@@ -65,7 +82,7 @@ namespace MyStepCounterAndroid
 			SetContentView (Resource.Layout.main);
 
 			topLayer = FindViewById<FrameLayout> (Resource.Id.top_layer);
-
+			handler = new Handler ();
 			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
 				//no step detector detected :(
 				var counter_layout = FindViewById<FrameLayout> (Resource.Id.counter_layout);
@@ -75,7 +92,6 @@ namespace MyStepCounterAndroid
 				no_sensor.Visibility = Android.Views.ViewStates.Visible;
 				counter_layout.Visibility = Android.Views.ViewStates.Gone;
 				this.Title = Resources.GetString (Resource.String.app_name);
-				var handler = new Handler ();
 				handler.PostDelayed (() => AnimateTopLayer (0), 500);
 				return;
 			}
@@ -85,6 +101,8 @@ namespace MyStepCounterAndroid
 			distance = FindViewById<TextView> (Resource.Id.distance);
 			percentage = FindViewById<TextView> (Resource.Id.percentage);
 			progressView = FindViewById<ProgressView> (Resource.Id.progressView);
+			highScore = FindViewById<ImageView> (Resource.Id.high_score);
+
 
 			calorieString = Resources.GetString (Resource.String.calories);
 			distanceString = Resources.GetString (Helpers.Settings.UseKilometeres ? Resource.String.kilometeres : Resource.String.miles);
@@ -93,23 +111,31 @@ namespace MyStepCounterAndroid
 
 			this.Title = Utils.DateString;
 
-			UpdateUI ();
+			handler.PostDelayed (() => UpdateUI (), 500);
 
 			var service = new Intent (this, typeof(StepService));
 			StartService (service);
 
 			//for testing
-			/*var timer = new System.Threading.Timer (delegate {
-				if(Binder == null)
-					return;
-				Binder.StepService.StepsToday += 10;
-			}, null, 0, 50);*/
+
+			/*stepCount.Clickable = true;
+			stepCount.Click += (object sender, EventArgs e) => {
+				if(binder != null)
+				{
+					if(testSteps == 1)
+						testSteps = (int)binder.StepService.StepsToday;
+					testSteps += 500;
+					if(testSteps > 10000)
+						testSteps += 10000;
+					binder.StepService.AddSteps(testSteps);
+				}
+			};*/
 
 		}
 
 	
 
-		private void AnimateTopLayer(float percent)
+		private void AnimateTopLayer(float percent, bool force = false)
 		{
 			if (!canAnimate)
 				return;
@@ -134,7 +160,7 @@ namespace MyStepCounterAndroid
 
 			lastY = -height * (percent / 100F);
 
-			if ((int)lastY == (int)start) {
+			if ((int)lastY == (int)start && !force) {
 				canAnimate = true;
 				return;
 			}
@@ -213,10 +239,16 @@ namespace MyStepCounterAndroid
 		protected override void OnResume ()
 		{
 			base.OnResume ();
-			UpdateUI ();
+			if (!firstRun) {
+				if (handler == null)
+					handler = new Handler ();
+				handler.PostDelayed (() => UpdateUI (true), 500);
+			}
+
+			firstRun = false;
 
 			if (!registered && binder != null) {
-				binder.StepService.PropertyChanged -= HandlePropertyChanged;
+				binder.StepService.PropertyChanged += HandlePropertyChanged;
 				registered = true;
 			}
 		}
@@ -233,7 +265,7 @@ namespace MyStepCounterAndroid
 			switch (item.ItemId) {
 			case Resource.Id.menu_settings:
 
-				var intent = new Intent (this, typeof(Settings.SettingsActivity));
+				var intent = new Intent (this, typeof(SettingsActivity));
 				StartActivity (intent);
 
 				return true;
@@ -255,7 +287,7 @@ namespace MyStepCounterAndroid
 
 		}
 
-		private void UpdateUI()
+		private void UpdateUI(bool force = false)
 		{
 			if (progressView == null)
 				return;
@@ -291,7 +323,18 @@ namespace MyStepCounterAndroid
 				else
 					percentage.Text = completedString;
 
-				AnimateTopLayer((float)percent);
+				//set high score day
+				highScore.Visibility = Settings.TodayIsHighScore ? Android.Views.ViewStates.Visible : Android.Views.ViewStates.Invisible;
+
+				//Show daily goal message.
+				if(!string.IsNullOrWhiteSpace(Settings.GoalTodayMessage) && 
+					Settings.GoalTodayDay.DayOfYear == DateTime.Today.DayOfYear && 
+					Settings.GoalTodayDay.Year == DateTime.Today.Year){
+					Toast.MakeText(this, Settings.GoalTodayMessage, ToastLength.Long).Show();
+					Settings.GoalTodayMessage = string.Empty;
+				}
+
+				AnimateTopLayer((float)percent, force);
 
 				this.Title = Utils.DateString;
 			});

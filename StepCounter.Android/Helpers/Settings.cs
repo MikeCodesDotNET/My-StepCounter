@@ -1,11 +1,29 @@
-// Helpers/Settings.cs
+/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 using System.Globalization;
 using Android.Content;
 using Android.Preferences;
 using System;
 using Android.App;
 
-namespace MyStepCounterAndroid.Helpers
+namespace StepCounter.Helpers
 {
   /// <summary>
   /// This is the Settings static class that can be used in your Core solution or in any
@@ -23,6 +41,7 @@ namespace MyStepCounterAndroid.Helpers
       }
     }
 
+
     #region Setting Constants
 
 		public const string WeightKey = "Weight";
@@ -33,6 +52,12 @@ namespace MyStepCounterAndroid.Helpers
 
 		public const string EnhancedKey = "Enhanced";
 		private static readonly bool EnhancedDefault = false;
+
+		public const string ProgressNotificationsKey = "ProgressNotifications";
+		private static readonly bool ProgressNotificationsDefault = true;
+
+		public const string AccumulativeNotificationsKey = "AccumulativeNotifications";
+		private static readonly bool AccumulativeNotificationsDefault = true;
 
 		private const string CurrentDayKey = "CurrentDay";
 		private static readonly DateTime CurrentDayDefault = DateTime.Today;
@@ -47,8 +72,195 @@ namespace MyStepCounterAndroid.Helpers
 		private const string TotalStepsKey = "TotalSteps";
 		private static readonly Int64 TotalStepsDefault = 0;
 
+		private const string GoalTodayMessageKey = "GoalTodayMessage";
+		private static readonly string GoalTodayMessageDefault = string.Empty;
+
+		private const string GoalTodayDayKey = "GoalTodayDay";
+		private static readonly DateTime GoalTodayDayDefault = DateTime.Today.AddDays(-1);
+
+		private const string NextGoalKey = "NextGoal";
+		private const Int64 NextGoalDefault = 100000;
+
+		private const string HighScoreKey = "HighScore";
+		private const Int64 HighScoreDefault = 0;
+
+		private const string HighScoreDayKey = "HighScoreDay";
+		private static readonly DateTime HighScoreDayDefault = DateTime.Today;
+
+
+		private const string FirstDayOfUseKey = "FirstDayOfUse";
+		private static readonly DateTime FirstDayOfUseDefault = DateTime.Today;
+
     #endregion
 
+		/// <summary>
+		/// Gets or sets the next goal. for total
+		/// </summary>
+		/// <value>The next goal.</value>
+		public static Int64 NextGoal
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(NextGoalKey, NextGoalDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(NextGoalKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether to show progress notifications.
+		/// </summary>
+		/// <value><c>true</c> if progress notifications; otherwise, <c>false</c>.</value>
+		public static bool ProgressNotifications
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(ProgressNotificationsKey, ProgressNotificationsDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(ProgressNotificationsKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets a value indicating whether to show accumulative notifications.
+		/// </summary>
+		/// <value><c>true</c> if accumulative notifications; otherwise, <c>false</c>.</value>
+		public static bool AccumulativeNotifications
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(AccumulativeNotificationsKey, AccumulativeNotificationsDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(AccumulativeNotificationsKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the high score day.
+		/// </summary>
+		/// <value>The high score day.</value>
+		public static DateTime FirstDayOfUse
+		{
+			get
+			{
+				var firstDay = AppSettings.GetValueOrDefault (FirstDayOfUseKey, (long)-1);
+				if (firstDay == -1) {
+					FirstDayOfUse = DateTime.Today;
+					return DateTime.Today;
+				}
+				else
+					return new DateTime(firstDay);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(FirstDayOfUseKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Ensure that high score is not today
+		/// </summary>
+		/// <value><c>true</c> if today is high score; otherwise, <c>false</c>.</value>
+		public static bool TodayIsHighScore
+		{
+			get
+			{
+				return (FirstDayOfUse.DayOfYear != HighScoreDayDefault.DayOfYear && FirstDayOfUse.Year != HighScoreDayDefault.Year) &&
+				(DateTime.Today.DayOfYear == HighScoreDay.DayOfYear && DateTime.Today.Year == HighScoreDay.Year);
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the goal message to display to user
+		/// </summary>
+		/// <value>The goal today message.</value>
+		public static string GoalTodayMessage
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(GoalTodayMessageKey, GoalTodayMessageDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(GoalTodayMessageKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the high score.
+		/// </summary>
+		/// <value>The high score.</value>
+		public static Int64 HighScore
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(HighScoreKey, HighScoreDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(HighScoreKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the goal today day.
+		/// Only display messages if it is currenlty the same day.
+		/// </summary>
+		/// <value>The goal today day.</value>
+		public static DateTime GoalTodayDay
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(GoalTodayDayKey, GoalTodayDayDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(GoalTodayDayKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the high score day.
+		/// </summary>
+		/// <value>The high score day.</value>
+		public static DateTime HighScoreDay
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(HighScoreDayKey, HighScoreDayDefault);
+			}
+			set
+			{
+				//if value has changed then save it!
+				if (AppSettings.AddOrUpdateValue(HighScoreDayKey, value))
+					AppSettings.Save();
+			}
+		}
+
+		/// <summary>
+		/// Gets or sets the day we are currently tracking
+		/// </summary>
+		/// <value>The current day.</value>
 		public static DateTime CurrentDay
 		{
 			get
@@ -63,6 +275,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the steps before today.
+		/// </summary>
+		/// <value>The steps before today.</value>
 		public static Int64 StepsBeforeToday
 		{
 			get
@@ -77,6 +293,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the cadence. (pace of walking)
+		/// </summary>
+		/// <value>The cadence.</value>
 		public static string Cadence
 		{
 			get
@@ -91,6 +311,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the current day steps.
+		/// </summary>
+		/// <value>The current day steps.</value>
 		public static Int64 CurrentDaySteps
 		{
 			get
@@ -105,6 +329,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the total steps since the beginning of tracking
+		/// </summary>
+		/// <value>The total steps.</value>
 		public static Int64 TotalSteps
 		{
 			get
@@ -119,6 +347,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets or sets the weight. (used for calulations)
+		/// </summary>
+		/// <value>The weight.</value>
 		public static int Weight
     {
       get
@@ -133,6 +365,10 @@ namespace MyStepCounterAndroid.Helpers
       }
     }
 
+		/// <summary>
+		/// Gets or sets a value indicating whether we want to use enhanced tracking
+		/// </summary>
+		/// <value><c>true</c> if enhanced; otherwise, <c>false</c>.</value>
 		public static bool Enhanced
 		{
 			get
@@ -147,6 +383,10 @@ namespace MyStepCounterAndroid.Helpers
 			}
 		}
 
+		/// <summary>
+		/// Gets a value indicating whether to use kilometeres.
+		/// </summary>
+		/// <value><c>true</c> if use kilometeres; otherwise, <c>false</c>.</value>
 		public static bool UseKilometeres 
 		{
 			get 
@@ -157,7 +397,7 @@ namespace MyStepCounterAndroid.Helpers
 
 		private class SettingsHelper
 		{
-		private static ISharedPreferences SharedPreferences { get; set; }
+						public static ISharedPreferences SharedPreferences { get; set; }
 		private static ISharedPreferencesEditor SharedPreferencesEditor { get; set; }
 		private readonly object locker = new object();
 

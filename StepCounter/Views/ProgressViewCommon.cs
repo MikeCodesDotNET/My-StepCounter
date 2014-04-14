@@ -8,7 +8,7 @@ using Color = MonoTouch.UIKit.UIColor;
 #endif
 
 #if __ANDROID__
-namespace MyStepCounterAndroid.Controls
+namespace StepCounter.Controls
 #elif __IOS__
 namespace StepCounter.Views
 #endif

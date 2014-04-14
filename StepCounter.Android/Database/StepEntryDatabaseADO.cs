@@ -1,16 +1,32 @@
+/*
+ * My StepCounter:
+ * Copyright (C) 2014 Refractored LLC | http://refractored.com
+ * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
+ * 
+ * Michael James | http://twitter.com/micjames6 | http://micjames.co.uk/
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 using System;
-using System.Linq;
 using System.Collections.Generic;
 
 using Mono.Data.Sqlite;
 using System.IO;
 using System.Data;
 
-namespace MyStepCounterAndroid.Database
+namespace StepCounter.Database
 {
-	/// <summary>
-	/// TaskDatabase uses ADO.NET to create the [Items] table and create,read,update,delete data
-	/// </summary>
+
 	public class StepEntryDatabase 
 	{
 		static object locker = new object ();
@@ -19,10 +35,7 @@ namespace MyStepCounterAndroid.Database
 
 		public string path;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Tasky.DL.TaskDatabase"/> TaskDatabase. 
-		/// if the database doesn't exist, it will create the database and all the tables.
-		/// </summary>
+
 		public StepEntryDatabase (string dbPath) 
 		{
 			var output = "";

@@ -4,7 +4,7 @@ using Android.App;
 
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
-[assembly: AssemblyTitle ("MyStepCounterAndroid")]
+[assembly: AssemblyTitle ("StepCounter")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("Refractored LLC")]

@@ -17,43 +17,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using Android.Content;
-using Android.Util;
-using Android.Widget;
-using Android.Graphics;
-using Android.Runtime;
+using Android.OS;
 
-namespace StepCounter.Controls
+namespace StepCounter.Services
 {
-	public partial class ProgressView : FrameLayout
+	public class StepServiceBinder : Binder
 	{
-
-	
-
-		public ProgressView (Context context) :
-			base (context)
+		StepService stepService;
+		public StepServiceBinder (StepService service)
 		{
-			Initialize ();
+			this.stepService = service;
 		}
 
-		public ProgressView (Context context, IAttributeSet attrs) :
-			base (context, attrs)
+		public StepService StepService
 		{
-			Initialize ();
+			get { return stepService; }
 		}
-
-		public ProgressView (Context context, IAttributeSet attrs, int defStyle) :
-			base (context, attrs, defStyle)
-		{
-			Initialize ();
-		}
-		public ProgressView(IntPtr pointer, JniHandleOwnership handle) : base (pointer, handle)
-		{
-			Initialize ();
-		}
-
-
 	}
 }
 

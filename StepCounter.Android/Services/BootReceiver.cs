@@ -17,43 +17,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
+using Android.App;
 using Android.Content;
-using Android.Util;
-using Android.Widget;
-using Android.Graphics;
-using Android.Runtime;
 
-namespace StepCounter.Controls
+namespace StepCounter.Services
 {
-	public partial class ProgressView : FrameLayout
+	[BroadcastReceiver]
+	[IntentFilter(new []{"android.intent.action.BOOT_COMPLETED"})]
+	public class BootReceiver : BroadcastReceiver
 	{
-
-	
-
-		public ProgressView (Context context) :
-			base (context)
+		public override void OnReceive (Context context, Intent intent)
 		{
-			Initialize ();
+			var stepServiceIntent = new Intent(context, typeof(StepService));
+			context.StartService(stepServiceIntent);
 		}
-
-		public ProgressView (Context context, IAttributeSet attrs) :
-			base (context, attrs)
-		{
-			Initialize ();
-		}
-
-		public ProgressView (Context context, IAttributeSet attrs, int defStyle) :
-			base (context, attrs, defStyle)
-		{
-			Initialize ();
-		}
-		public ProgressView(IntPtr pointer, JniHandleOwnership handle) : base (pointer, handle)
-		{
-			Initialize ();
-		}
-
-
 	}
 }
 

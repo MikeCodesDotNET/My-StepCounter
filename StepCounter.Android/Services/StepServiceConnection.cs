@@ -17,43 +17,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
 using Android.Content;
-using Android.Util;
-using Android.Widget;
-using Android.Graphics;
-using Android.Runtime;
+using Android.OS;
+using StepCounter.Activities;
 
-namespace StepCounter.Controls
+namespace StepCounter.Services
 {
-	public partial class ProgressView : FrameLayout
+	public class StepServiceConnection : Java.Lang.Object, IServiceConnection
 	{
+		MainActivity activity;
 
-	
-
-		public ProgressView (Context context) :
-			base (context)
+		public StepServiceConnection (MainActivity activity)
 		{
-			Initialize ();
+			this.activity = activity;
 		}
 
-		public ProgressView (Context context, IAttributeSet attrs) :
-			base (context, attrs)
+		public void OnServiceConnected (ComponentName name, IBinder service)
 		{
-			Initialize ();
+			var serviceBinder = service as StepServiceBinder;
+			if (serviceBinder != null) {
+				activity.Binder = serviceBinder;
+				activity.IsBound = true;
+			}
 		}
 
-		public ProgressView (Context context, IAttributeSet attrs, int defStyle) :
-			base (context, attrs, defStyle)
+		public void OnServiceDisconnected (ComponentName name)
 		{
-			Initialize ();
+			activity.IsBound = false;
 		}
-		public ProgressView(IntPtr pointer, JniHandleOwnership handle) : base (pointer, handle)
-		{
-			Initialize ();
-		}
-
-
 	}
 }
 

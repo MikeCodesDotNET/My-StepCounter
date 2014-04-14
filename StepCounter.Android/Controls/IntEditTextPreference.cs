@@ -1,4 +1,4 @@
-﻿/*
+/*
  * My StepCounter:
  * Copyright (C) 2014 Refractored LLC | http://refractored.com
  * James Montemagno | http://twitter.com/JamesMontemagno | http://MotzCod.es
@@ -17,43 +17,45 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
 using Android.Content;
+using Android.Preferences;
 using Android.Util;
-using Android.Widget;
-using Android.Graphics;
-using Android.Runtime;
 
 namespace StepCounter.Controls
 {
-	public partial class ProgressView : FrameLayout
+	/// <summary>
+	/// Enforces and integer be entered in the edit text preference
+	/// </summary>
+	public class IntEditTextPreference : EditTextPreference
 	{
-
-	
-
-		public ProgressView (Context context) :
-			base (context)
+		public IntEditTextPreference (Context context)
+            : base (context)
 		{
-			Initialize ();
 		}
 
-		public ProgressView (Context context, IAttributeSet attrs) :
-			base (context, attrs)
+		public IntEditTextPreference (Context context, IAttributeSet attrs)
+            : base (context, attrs)
 		{
-			Initialize ();
+
 		}
 
-		public ProgressView (Context context, IAttributeSet attrs, int defStyle) :
-			base (context, attrs, defStyle)
+		public IntEditTextPreference (Context context, IAttributeSet attrs, int defStyle)
+            : base (context, attrs, defStyle)
 		{
-			Initialize ();
-		}
-		public ProgressView(IntPtr pointer, JniHandleOwnership handle) : base (pointer, handle)
-		{
-			Initialize ();
 		}
 
+		protected override string GetPersistedString (string defaultReturnValue)
+		{
 
+			return GetPersistedInt (1).ToString ();
+		}
+
+		protected override bool PersistString (string value)
+		{
+			int persistValue;
+			int.TryParse (value, out persistValue);
+
+			return PersistInt (persistValue);
+		}
 	}
 }
-
