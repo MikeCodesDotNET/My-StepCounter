@@ -74,7 +74,6 @@ namespace StepCounter.Activities
 		private TextView stepCount, calorieCount, distance, percentage;
 		private TranslateAnimation animation;
 		private float height, lastY;
-		private bool startService = true;
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -135,15 +134,11 @@ namespace StepCounter.Activities
 
 		private void StartStepService()
 		{
-			if (!startService)
-				return;
 
 			try
 			{
 				var service = new Intent (this, typeof(StepService));
 				var componentName = StartService (service);
-				if(componentName != null)
-					startService = false;
 			}
 			catch(Exception ex) {
 			}
