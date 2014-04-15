@@ -66,6 +66,7 @@ namespace StepCounter.Activities
 			shareText = string.Format (Resources.GetString (Resource.String.share_steps_total), Utils.FormatSteps(steps), distance, calories.ToLower ());
 
 			list = new ListFragment ();
+			list.RetainInstance = true;
 
 			FragmentManager
 				.BeginTransaction ()

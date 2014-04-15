@@ -74,6 +74,7 @@ namespace StepCounter.Activities
 		private TextView stepCount, calorieCount, distance, percentage;
 		private TranslateAnimation animation;
 		private float height, lastY;
+		private bool startService = true;
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
@@ -113,8 +114,7 @@ namespace StepCounter.Activities
 
 			handler.PostDelayed (() => UpdateUI (), 500);
 
-			var service = new Intent (this, typeof(StepService));
-			StartService (service);
+			StartStepService ();
 
 			//for testing
 
@@ -130,6 +130,23 @@ namespace StepCounter.Activities
 					binder.StepService.AddSteps(testSteps);
 				}
 			};*/
+
+		}
+
+		private void StartStepService()
+		{
+			if (!startService)
+				return;
+
+			try
+			{
+				var service = new Intent (this, typeof(StepService));
+				var componentName = StartService (service);
+				if(componentName != null)
+					startService = false;
+			}
+			catch(Exception ex) {
+			}
 
 		}
 
@@ -219,6 +236,9 @@ namespace StepCounter.Activities
 				return;
 			}
 
+			if(!firstRun)
+				StartService ();
+
 			if (IsBound)
 				return;
 
@@ -240,11 +260,12 @@ namespace StepCounter.Activities
 		{
 			base.OnResume ();
 			if (!firstRun) {
+
 				if (handler == null)
 					handler = new Handler ();
 				handler.PostDelayed (() => UpdateUI (true), 500);
 			}
-
+				
 			firstRun = false;
 
 			if (!registered && binder != null) {
