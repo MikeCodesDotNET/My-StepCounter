@@ -93,7 +93,7 @@ namespace StepCounter.Database
 					if(count == 0)
 						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items]";
 					else
-						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items] ORDER BY _id LIMIT " + count;
+						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items] ORDER BY _id DESC LIMIT " + count;
 
 					var r = contents.ExecuteReader ();
 					while (r.Read ()) {
