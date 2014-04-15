@@ -237,7 +237,7 @@ namespace StepCounter.Activities
 			}
 
 			if(!firstRun)
-				StartService ();
+				StartStepService ();
 
 			if (IsBound)
 				return;
