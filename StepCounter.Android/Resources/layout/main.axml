@@ -76,7 +76,7 @@
                 android:layout_gravity="right"
                 android:textColor="@color/white" />
             <ImageView
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="50dp"
                 android:id="@+id/high_score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

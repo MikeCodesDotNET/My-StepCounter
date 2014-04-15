@@ -35,6 +35,7 @@ namespace StepCounter.Adapters
 		public FrameLayout Remaining { get; set; }
 		public TextView Steps { get; set; }
 		public TextView Day {get;set;}
+		public ImageView HighScore { get; set; }
 	}
 	public class HistoryAdapter : BaseAdapter<StepEntry>
 	{
@@ -57,6 +58,7 @@ namespace StepCounter.Adapters
 				wrapper.Remaining = view.FindViewById<FrameLayout>(Resource.Id.remaining);
 				wrapper.Day = view.FindViewById<TextView>(Resource.Id.day);
 				wrapper.Steps = view.FindViewById<TextView>(Resource.Id.steps);
+				wrapper.HighScore = view.FindViewById<ImageView> (Resource.Id.high_score);
 				view.Tag = wrapper;
 			}
 			else
@@ -84,7 +86,18 @@ namespace StepCounter.Adapters
 			wrapper.Remaining.LayoutParameters = paramRemaining;
 			wrapper.Completed.LayoutParameters = paramCompleted;
 			wrapper.Completed.SetStepCount (entry.Steps);
+			bool isHighScore = false;
+			if (entry.Date.DayOfYear == Helpers.Settings.HighScoreDay.DayOfYear &&
+				entry.Date.Year == Helpers.Settings.HighScoreDay.Year) {
 
+				if (Helpers.Settings.FirstDayOfUse.DayOfYear == Helpers.Settings.HighScoreDay.DayOfYear &&
+				    Helpers.Settings.FirstDayOfUse.Year == Helpers.Settings.HighScoreDay.Year) {
+				} else {
+					isHighScore = true;
+				}
+			}
+
+			wrapper.HighScore.Visibility = isHighScore ? ViewStates.Visible : ViewStates.Invisible;
 			return view;
 		}
 

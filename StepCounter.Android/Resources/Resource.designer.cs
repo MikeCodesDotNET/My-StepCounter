@@ -141,8 +141,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0002
 			public const int completed = 2131427330;
 			
-			// aapt resource value: 0x7f0b000b
-			public const int counter_layout = 2131427339;
+			// aapt resource value: 0x7f0b000c
+			public const int counter_layout = 2131427340;
 			
 			// aapt resource value: 0x7f0b0004
 			public const int day = 2131427332;
@@ -153,8 +153,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0001
 			public const int fragment_host = 2131427329;
 			
-			// aapt resource value: 0x7f0b000e
-			public const int high_score = 2131427342;
+			// aapt resource value: 0x7f0b0005
+			public const int high_score = 2131427333;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int main_layout = 2131427328;
@@ -168,35 +168,35 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0012
 			public const int menu_share = 2131427346;
 			
-			// aapt resource value: 0x7f0b0008
-			public const int no_sensor_box = 2131427336;
-			
 			// aapt resource value: 0x7f0b0009
-			public const int no_sensor_image = 2131427337;
+			public const int no_sensor_box = 2131427337;
 			
 			// aapt resource value: 0x7f0b000a
-			public const int no_step_sensor = 2131427338;
+			public const int no_sensor_image = 2131427338;
+			
+			// aapt resource value: 0x7f0b000b
+			public const int no_step_sensor = 2131427339;
 			
 			// aapt resource value: 0x7f0b000f
 			public const int percentage = 2131427343;
 			
-			// aapt resource value: 0x7f0b0006
-			public const int progressView = 2131427334;
+			// aapt resource value: 0x7f0b0007
+			public const int progressView = 2131427335;
 			
 			// aapt resource value: 0x7f0b0003
 			public const int remaining = 2131427331;
 			
+			// aapt resource value: 0x7f0b000e
+			public const int stepcount = 2131427342;
+			
+			// aapt resource value: 0x7f0b0006
+			public const int steps = 2131427334;
+			
 			// aapt resource value: 0x7f0b000d
-			public const int stepcount = 2131427341;
+			public const int today = 2131427341;
 			
-			// aapt resource value: 0x7f0b0005
-			public const int steps = 2131427333;
-			
-			// aapt resource value: 0x7f0b000c
-			public const int today = 2131427340;
-			
-			// aapt resource value: 0x7f0b0007
-			public const int top_layer = 2131427335;
+			// aapt resource value: 0x7f0b0008
+			public const int top_layer = 2131427336;
 			
 			static Id()
 			{
