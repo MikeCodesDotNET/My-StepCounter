@@ -46,7 +46,7 @@ namespace StepCounter.Activities
 			SetContentView (Resource.Layout.history);
 
 			var steps = Helpers.Settings.TotalSteps;
-			this.ActionBar.Title = string.Format ("{0:n0}", steps) + " " + Resources.GetString (Resource.String.steps);
+			this.ActionBar.Title = Utils.FormatSteps(steps) + " " + Resources.GetString (Resource.String.steps);
 			var miles = Conversion.StepsToMiles (steps);
 			var calorieString = Resources.GetString (Resource.String.calories);
 			var distanceString = Resources.GetString (Helpers.Settings.UseKilometeres ? Resource.String.kilometeres : Resource.String.miles);
@@ -63,7 +63,7 @@ namespace StepCounter.Activities
 				Conversion.CaloriesBurnt (miles));
 			this.ActionBar.Subtitle = distance + " | " + calories;
 
-			shareText = string.Format (Resources.GetString (Resource.String.share_steps_total), string.Format ("{0:n0}", steps), distance, calories.ToLower ());
+			shareText = string.Format (Resources.GetString (Resource.String.share_steps_total), Utils.FormatSteps(steps), distance, calories.ToLower ());
 
 			list = new ListFragment ();
 

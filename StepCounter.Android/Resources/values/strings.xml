@@ -12,7 +12,7 @@
 	<string name="notifications_accumulative_summary">Special achievements for total steps.</string>
 	<string name="steps">steps</string>
 	<string name="today">Today you\'ve taken</string>
-	<string name="percent_complete">{0}% Complete</string>
+	<string name="percent_complete">{0} Complete</string>
 	<string name="completed">Completed</string>
 	<string name="calories">{0} Calories</string>
 	<string name="miles">{0} mi</string>
@@ -50,8 +50,8 @@
 	<string name="no_history">No history yet, please come back tomorrow.</string>
 	<string name="menu_history">History</string>
 	<string name="goal_half">Half way there! Keep it up!</string>
-	<string name="goal_full">You did it! 10,000 steps!</string>
-	<string name="goal_double">Wow! Over 20,000 steps today!</string>
+	<string name="goal_full">You did it! {0} steps!</string>
+	<string name="goal_double">Wow! Over {0} steps today!</string>
 	<string name="goal_update">Progress Update</string>
 	<string name="high_score_title">New Record</string>
 	<string name="awesome_title">New Achievement</string>

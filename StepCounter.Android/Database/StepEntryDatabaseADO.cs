@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using Mono.Data.Sqlite;
 using System.IO;
 using System.Data;
+using System.Globalization;
 
 namespace StepCounter.Database
 {
@@ -68,8 +69,10 @@ namespace StepCounter.Database
 			t.ID = Convert.ToInt32 (r ["_id"]);
 			t.Steps = Convert.ToInt64(r ["Steps"]);
 			var date = r ["Date"].ToString ();
+			var culture = CultureInfo.CreateSpecificCulture("en-US");
+			var styles = DateTimeStyles.None;
 			DateTime dateOut;
-			DateTime.TryParse(date, out dateOut );
+			DateTime.TryParse(date, culture, styles, out dateOut );
 			t.Date = dateOut;
 			return t;
 		}
@@ -108,7 +111,8 @@ namespace StepCounter.Database
 				connection.Open ();
 				using (var command = connection.CreateCommand ()) {
 					command.CommandText = "SELECT [_id], [Steps], [Date] from [Items] WHERE [Date] = ?";
-					command.Parameters.Add (new SqliteParameter (DbType.String) { Value = date.ToString("MM/dd/yyyy") });
+					var culture = CultureInfo.CreateSpecificCulture("en-US");
+					command.Parameters.Add (new SqliteParameter (DbType.String) { Value = date.ToString("MM/dd/yyyy", culture) });
 					var r = command.ExecuteReader ();
 					while (r.Read ()) {
 						t = FromReader (r);
@@ -130,7 +134,8 @@ namespace StepCounter.Database
 					using (var command = connection.CreateCommand ()) {
 						command.CommandText = "UPDATE [Items] SET [Steps] = ?, [Date] = ? WHERE [_id] = ?;";
 						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
-						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy") });
+						var culture = CultureInfo.CreateSpecificCulture("en-US");
+						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy", culture) });
 						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.ID });
 						r = command.ExecuteNonQuery ();
 					}
@@ -142,7 +147,8 @@ namespace StepCounter.Database
 					using (var command = connection.CreateCommand ()) {
 						command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?)";
 						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
-						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy") });
+						var culture = CultureInfo.CreateSpecificCulture("en-US");
+						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy", culture) });
 						r = command.ExecuteNonQuery ();
 					}
 					connection.Close ();

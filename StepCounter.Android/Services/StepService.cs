@@ -167,15 +167,18 @@ namespace StepCounter.Services
 		{
 			bool notification = Helpers.Settings.ProgressNotifications;
 
-			if (stepsToday < 5000 && stepsToday + newSteps >= 5000) {
+			int halfGoal = 5000;
+			int fullGoal = 10000;
+			int doubleGoal = 20000;
+			if (stepsToday < halfGoal && stepsToday + newSteps >= halfGoal) {
 				Helpers.Settings.GoalTodayDay = DateTime.Today;
 				Helpers.Settings.GoalTodayMessage = Resources.GetString (Resource.String.goal_half);
-			} else if (stepsToday < 10000 && stepsToday + newSteps >= 10000) {
+			} else if (stepsToday < fullGoal && stepsToday + newSteps >= fullGoal) {
 				Helpers.Settings.GoalTodayDay = DateTime.Today;
-				Helpers.Settings.GoalTodayMessage = Resources.GetString (Resource.String.goal_full);
-			} else if (stepsToday < 20000 && stepsToday + newSteps >= 20000) {
+				Helpers.Settings.GoalTodayMessage = string.Format(Resources.GetString (Resource.String.goal_full), (fullGoal).ToString("N0"));
+			} else if (stepsToday < doubleGoal && stepsToday + newSteps >= doubleGoal) {
 				Helpers.Settings.GoalTodayDay = DateTime.Today;
-				Helpers.Settings.GoalTodayMessage = Resources.GetString (Resource.String.goal_double);
+				Helpers.Settings.GoalTodayMessage = string.Format(Resources.GetString (Resource.String.goal_double), (doubleGoal).ToString("N0"));
 			} else {
 				notification = false;
 			}
@@ -205,13 +208,13 @@ namespace StepCounter.Services
 			if (notification) {
 				PopUpNotification (1, Resources.GetString (Resource.String.high_score_title),
 					string.Format(Resources.GetString(Resource.String.high_score),
-						string.Format ("{0:n0}", Helpers.Settings.HighScore)));
+						Utils.FormatSteps(Helpers.Settings.HighScore)));
 			}
 
 			notification = Helpers.Settings.AccumulativeNotifications;
 			var notificationString = string.Empty;
 			if (Helpers.Settings.TotalSteps + newSteps > Helpers.Settings.NextGoal) {
-				notificationString = string.Format (Resources.GetString (Resource.String.awesome), string.Format ("{0:n0}", Helpers.Settings.NextGoal));
+				notificationString = string.Format (Resources.GetString (Resource.String.awesome), Utils.FormatSteps(Helpers.Settings.NextGoal));
 				if (Helpers.Settings.NextGoal < 500000) {
 					Helpers.Settings.NextGoal = 500000;
 				} else if (Helpers.Settings.NextGoal < 1000000) {

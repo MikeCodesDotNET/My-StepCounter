@@ -55,6 +55,11 @@ namespace StepCounter.Helpers
 			get { return DateTime.Today.DayOfYear == Helpers.Settings.CurrentDay.DayOfYear &&
 					DateTime.Today.Year == Helpers.Settings.CurrentDay.Year; }
 		}
+
+		public static string FormatSteps (Int64 steps)
+		{
+			return steps.ToString ("N0");
+		}
 	}
 }
 

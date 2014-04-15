@@ -132,11 +132,11 @@ namespace StepCounter.Views
             //Distance 
             if (Settings.DistanceIsMetric == false)
             {
-                btnDistance.SetTitle(Conversion.StepsToMiles(stepCount).ToString("0.00") + " mi", UIControlState.Normal);
+							btnDistance.SetTitle(Conversion.StepsToMiles(stepCount).ToString("N2") + " mi", UIControlState.Normal);
             }
             else
             {
-                btnDistance.SetTitle(Conversion.StepsToKilometers(stepCount).ToString("0.00") + " km",
+				btnDistance.SetTitle(Conversion.StepsToKilometers(stepCount).ToString("N2") + " km",
                     UIControlState.Normal);
             }
 

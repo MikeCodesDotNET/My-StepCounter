@@ -310,13 +310,13 @@ namespace StepCounter.Activities
 				}
 				progressView.SetStepCount(steps);
 
-				stepCount.Text = string.Format("{0:n0}", steps);
+				stepCount.Text = Utils.FormatSteps(steps);
 
 				var miles = Conversion.StepsToMiles(steps);
 				distance.Text = string.Format(distanceString, 
 					Helpers.Settings.UseKilometeres ? 
-					Conversion.StepsToKilometers(steps).ToString("0.00") : 
-					miles.ToString("0.00"));
+					Conversion.StepsToKilometers(steps).ToString("N2") : 
+					miles.ToString("N2"));
 
 				var lbs = Helpers.Settings.UseKilometeres ? Helpers.Settings.Weight * 2.20462 : Helpers.Settings.Weight;
 				calorieCount.Text = string.Format(calorieString, 
@@ -325,8 +325,9 @@ namespace StepCounter.Activities
 					Conversion.CaloriesBurnt(miles));
 
 				var percent = Conversion.StepCountToPercentage(steps);
+				int test = 200;
 				if(steps <= 10000)
-					percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent);
+					percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent.ToString("P2"));
 				else
 					percentage.Text = completedString;
 

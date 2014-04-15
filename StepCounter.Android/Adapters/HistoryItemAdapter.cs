@@ -67,12 +67,13 @@ namespace StepCounter.Adapters
 			}
 
 			var entry = entries[position];
+			var seperator = CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator;
 			if(Helpers.Settings.UseKilometeres)
-				wrapper.Day.Text =  entry.Date.Day + "/" + entry.Date.Month;
+				wrapper.Day.Text =  entry.Date.Day + seperator + entry.Date.Month;
 			else
-				wrapper.Day.Text =  entry.Date.Month  + "/" + entry.Date.Day;
+				wrapper.Day.Text =  entry.Date.Month  + seperator + entry.Date.Day;
 
-			wrapper.Steps.Text = string.Format ("{0:n0}", entry.Steps);
+			wrapper.Steps.Text = Utils.FormatSteps (entry.Steps);
 			var percent = (int)Conversion.StepCountToPercentage(entry.Steps);
 			if (percent > 100)
 				percent = 100;

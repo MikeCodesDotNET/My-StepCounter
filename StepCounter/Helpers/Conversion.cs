@@ -56,7 +56,7 @@ namespace StepCounter.Helpers
         {
             const int caloriesBurntPerMile = 100;
             var val = miles*caloriesBurntPerMile;
-						return val <= 0 ? "0" : val.ToString("###");
+						return val <= 0 ? "0" : val.ToString("N0");
         }
 
 				/// <summary>
@@ -105,8 +105,8 @@ namespace StepCounter.Helpers
 					}
 
 					var adjusted_weight = lbs / 2.2;
-			var val = Math.Round (((adjusted_weight * met) / pace) * miles);
-					return val <= 0 ? "0" : val.ToString ("###");
+					var val = Math.Round (((adjusted_weight * met) / pace) * miles);
+					return val <= 0 ? "0" : val.ToString ("N0");
 				}
   }
 }
