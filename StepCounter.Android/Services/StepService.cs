@@ -187,11 +187,17 @@ namespace StepCounter.Services
 			notification = false;
 			if (stepsToday + newSteps > Helpers.Settings.HighScore) {
 				Helpers.Settings.HighScore = stepsToday + newSteps;
-				if (!Helpers.Settings.TodayIsHighScore && 
-					Helpers.Settings.FirstDayOfUse.DayOfYear != DateTime.Today.DayOfYear &&
-					Helpers.Settings.FirstDayOfUse.Year != DateTime.Today.Year) {
-					notification = Helpers.Settings.ProgressNotifications;
+				//if not today
+				if (!Helpers.Settings.TodayIsHighScore) {
+					//if first day of use then no notifications, else pop it up
+					if (Helpers.Settings.FirstDayOfUse.DayOfYear == DateTime.Today.DayOfYear &&
+					    Helpers.Settings.FirstDayOfUse.Year == DateTime.Today.Year) {
+						notification = false;
+					} else {
+						notification = Helpers.Settings.ProgressNotifications;
+					}
 				}
+				//this triggers a new high score day so the next tiem it comes in TodayIsHighScore will be true
 				Helpers.Settings.HighScoreDay = DateTime.Today;
 			}
 

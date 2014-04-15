@@ -1,13 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Activities/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Helpers/Settings.cs">
     <Files>
       <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="285" Column="4" />
       <File FileName="StepCounter.Android/Services/StepService.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Activities/HistoryActivity.cs" Line="91" Column="47" />
-      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Activities/HistoryActivity.cs" Line="36" Column="42" />
       <File FileName="StepCounter.Android/Resources/menu/main.xml" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Resources/menu/history.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/xml/preferences_general.xml" Line="37" Column="57" />
+      <File FileName="StepCounter.Android/Activities/SettingsActivity.cs" Line="43" Column="4" />
+      <File FileName="StepCounter.Android/Helpers/Settings.cs" Line="17" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -182,8 +182,12 @@ namespace StepCounter.Helpers
 		{
 			get
 			{
-				return (FirstDayOfUse.DayOfYear != HighScoreDayDefault.DayOfYear && FirstDayOfUse.Year != HighScoreDayDefault.Year) &&
-				(DateTime.Today.DayOfYear == HighScoreDay.DayOfYear && DateTime.Today.Year == HighScoreDay.Year);
+				//if first day then always return false;
+				if (FirstDayOfUse.DayOfYear == HighScoreDay.DayOfYear && FirstDayOfUse.Year == HighScoreDay.Year)
+					return false;
+
+				//else is same day.
+				return DateTime.Today.DayOfYear == HighScoreDay.DayOfYear && DateTime.Today.Year == HighScoreDay.Year;
 			}
 		}
 

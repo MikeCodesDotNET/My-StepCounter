@@ -153,8 +153,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0001
 			public const int fragment_host = 2131427329;
 			
-			// aapt resource value: 0x7f0b000c
-			public const int high_score = 2131427340;
+			// aapt resource value: 0x7f0b000e
+			public const int high_score = 2131427342;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int main_layout = 2131427328;
@@ -186,14 +186,14 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0003
 			public const int remaining = 2131427331;
 			
-			// aapt resource value: 0x7f0b000e
-			public const int stepcount = 2131427342;
+			// aapt resource value: 0x7f0b000d
+			public const int stepcount = 2131427341;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int steps = 2131427333;
 			
-			// aapt resource value: 0x7f0b000d
-			public const int today = 2131427341;
+			// aapt resource value: 0x7f0b000c
+			public const int today = 2131427340;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int top_layer = 2131427335;
