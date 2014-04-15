@@ -72,7 +72,10 @@ namespace StepCounter.Database
 			var culture = CultureInfo.CreateSpecificCulture("en-US");
 			var styles = DateTimeStyles.None;
 			DateTime dateOut;
-			DateTime.TryParse(date, culture, styles, out dateOut );
+			if (!DateTime.TryParse (date, culture, styles, out dateOut)) {
+				//back compat, but will never come in here really.
+				DateTime.TryParse (date, out dateOut);
+			}
 			t.Date = dateOut;
 			return t;
 		}
