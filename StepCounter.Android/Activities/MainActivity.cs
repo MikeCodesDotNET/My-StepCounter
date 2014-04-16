@@ -340,10 +340,11 @@ namespace StepCounter.Activities
 					Conversion.CaloriesBurnt(miles, (float)lbs, Helpers.Settings.Cadence) :
 					Conversion.CaloriesBurnt(miles));
 
-				var percent = Conversion.StepCountToPercentage(steps) / 100;
-				int test = 200;
+				var percent = Conversion.StepCountToPercentage(steps);
+				var percent2 = percent / 100;
+
 				if(steps <= 10000)
-					percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent.ToString("P2"));
+					percentage.Text = steps == 0 ? string.Empty : string.Format(percentString, percent2.ToString("P2"));
 				else
 					percentage.Text = completedString;
 

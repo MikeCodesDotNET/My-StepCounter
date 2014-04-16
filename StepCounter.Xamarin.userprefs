@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Database/StepEntryDatabaseADO.cs">
+    <Files>
+      <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="343" Column="64" />
+      <File FileName="StepCounter.Android/Database/StepEntryDatabaseADO.cs" Line="96" Column="92" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
