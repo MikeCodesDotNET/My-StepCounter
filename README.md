@@ -12,7 +12,7 @@ Time to get active, lose weight, lower your blood pressure, live longer, and fee
 The easiest-to-use, most beautifully designed Pedometer App developed exclusively for iPhone 5s. Beautiful animations & user interface for daily tracking of your steps to reach your 10,000 step goal.
 
 
-<a href=“https://itunes.apple.com/gb/app/my-stepcounter/id789817499?mt=8” target=“_blank”>![Get it on the App Store](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/AppleAppStore.png)</a>
+<a href=“https://itunes.apple.com/gb/app/my-stepcounter/id789817499?mt=8” target=“_blank”><img alt=“Download on iOS app store now” src=“https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/AppleAppStore.png”/></a>
 
 
 #### Android
@@ -34,7 +34,7 @@ Use the built in Android step counter sensor found on select Android 4.4+ device
 
 Both the Android and iOS versions of My StepCounter were built in C# with Xamarin Starter Edition!
 
-<a href=“http://www.xamarin.com/starter” target=“_blank”>![Compatible with Xamarin Starter](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/XamarinStarterCompatible.png)</a>
+<a href=“http://www.xamarin.com/starter” target=“_blank”><img alt=“Xamarin Starter Compatible” src=“https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/XamarinStarterCompatible.png”/></a>
 
 
 ### More Information
