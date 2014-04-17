@@ -1,14 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Database/StepEntryDatabaseADO.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Resources/values/strings.xml">
     <Files>
-      <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="343" Column="64" />
-      <File FileName="StepCounter.Android/Database/StepEntryDatabaseADO.cs" Line="96" Column="92" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="67" Column="34" />
+      <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="294" Column="89" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="T062005D5Z" />
+  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="emulator-5554" />
 </Properties>
