@@ -21,11 +21,7 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="StepCounter.Android" expanded="True" selected="True">
-            <Node name="Activities" expanded="True" />
-            <Node name="Helpers" expanded="True" />
-            <Node name="Resources" expanded="True" />
-          </Node>
+          <Node name="StepCounter.Android" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
