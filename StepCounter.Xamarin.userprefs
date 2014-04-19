@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Activities/HistoryActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Activities/MainActivity.cs">
     <Files>
       <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="331" Column="18" />
+      <File FileName="StepCounter.Android/Activities/MainActivity.cs" Line="329" Column="6" />
       <File FileName="StepCounter.Android/Services/StepService.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Services/StepServiceBinder.cs" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Services/StepServiceConnection.cs" Line="1" Column="1" />
@@ -11,12 +11,12 @@
       <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Activities/HistoryActivity.cs" Line="108" Column="5" />
+      <File FileName="StepCounter.Android/Activities/HistoryActivity.cs" Line="112" Column="8" />
       <File FileName="StepCounter.Android/Activities/SettingsActivity.cs" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Properties/AndroidManifest.xml" Line="10" Column="12" />
+      <File FileName="StepCounter.Android/Properties/AndroidManifest.xml" Line="9" Column="12" />
       <File FileName="StepCounter.Android/Resources/menu/main.xml" Line="1" Column="1" />
       <File FileName="StepCounter.Android/Resources/menu/history.xml" Line="1" Column="1" />
-      <File FileName="StepCounter.Android/Helpers/Utils.cs" Line="31" Column="16" />
+      <File FileName="StepCounter.Android/Helpers/Utils.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

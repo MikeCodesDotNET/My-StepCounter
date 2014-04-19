@@ -6,5 +6,4 @@
 	<uses-feature android:name="android.hardware.sensor.stepcounter" />
 	<uses-feature android:name="android.hardware.sensor.stepdetector" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
