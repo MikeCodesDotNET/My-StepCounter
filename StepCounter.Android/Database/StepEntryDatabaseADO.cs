@@ -45,17 +45,19 @@ namespace StepCounter.Database
 			bool exists = File.Exists (dbPath);
 
 			if (!exists) {
-				connection = new SqliteConnection ("Data Source=" + dbPath);
+				using (connection = new SqliteConnection ("Data Source=" + dbPath)) {
 
-				connection.Open ();
-				var commands = new[] {
-					"CREATE TABLE [Items] (_id INTEGER PRIMARY KEY ASC, Steps BIGINT, Date NTEXT);"
-				};
-				foreach (var command in commands) {
-					using (var c = connection.CreateCommand ()) {
-						c.CommandText = command;
-						var i = c.ExecuteNonQuery ();
+					connection.Open ();
+					var commands = new[] {
+						"CREATE TABLE [Items] (_id INTEGER PRIMARY KEY ASC, Steps BIGINT, Date NTEXT);"
+					};
+					foreach (var command in commands) {
+						using (var c = connection.CreateCommand ()) {
+							c.CommandText = command;
+							var i = c.ExecuteNonQuery ();
+						}
 					}
+					connection.Close ();
 				}
 			} else {
 				// already exists, do nothing. 
@@ -87,20 +89,22 @@ namespace StepCounter.Database
 			var tl = new List<StepEntry> ();
 
 			lock (locker) {
-				connection = new SqliteConnection ("Data Source=" + path);
-				connection.Open ();
-				using (var contents = connection.CreateCommand ()) {
-					if(count == 0)
-						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items]";
-					else
-						contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items] ORDER BY _id DESC LIMIT " + count;
+				using (connection = new SqliteConnection ("Data Source=" + path)) {
+					connection.Open ();
+					using (var contents = connection.CreateCommand ()) {
+						if (count == 0)
+							contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items]";
+						else
+							contents.CommandText = "SELECT [_id], [Steps], [Date] from [Items] ORDER BY _id DESC LIMIT " + count;
 
-					var r = contents.ExecuteReader ();
-					while (r.Read ()) {
-						tl.Add (FromReader(r));
+						var r = contents.ExecuteReader ();
+						while (r.Read ()) {
+							tl.Add (FromReader (r));
+						}
+						r.Close ();
 					}
+					connection.Close ();
 				}
-				connection.Close ();
 			}
 			return tl;
 		}
@@ -110,19 +114,21 @@ namespace StepCounter.Database
 		{
 			var t = new StepEntry ();
 			lock (locker) {
-				connection = new SqliteConnection ("Data Source=" + path);
-				connection.Open ();
-				using (var command = connection.CreateCommand ()) {
-					command.CommandText = "SELECT [_id], [Steps], [Date] from [Items] WHERE [Date] = ?";
-					var culture = CultureInfo.CreateSpecificCulture("en-US");
-					command.Parameters.Add (new SqliteParameter (DbType.String) { Value = date.ToString("MM/dd/yyyy", culture) });
-					var r = command.ExecuteReader ();
-					while (r.Read ()) {
-						t = FromReader (r);
-						break;
+				using (connection = new SqliteConnection ("Data Source=" + path)) {
+					connection.Open ();
+					using (var command = connection.CreateCommand ()) {
+						command.CommandText = "SELECT [_id], [Steps], [Date] from [Items] WHERE [Date] = ?";
+						var culture = CultureInfo.CreateSpecificCulture ("en-US");
+						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = date.ToString ("MM/dd/yyyy", culture) });
+						var r = command.ExecuteReader ();
+						while (r.Read ()) {
+							t = FromReader (r);
+							break;
+						}
+						r.Close ();
 					}
+					connection.Close ();
 				}
-				connection.Close ();
 			}
 			return t;
 		}
@@ -132,29 +138,31 @@ namespace StepCounter.Database
 			int r;
 			lock (locker) {
 				if (item.ID != 0) {
-					connection = new SqliteConnection ("Data Source=" + path);
-					connection.Open ();
-					using (var command = connection.CreateCommand ()) {
-						command.CommandText = "UPDATE [Items] SET [Steps] = ?, [Date] = ? WHERE [_id] = ?;";
-						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
-						var culture = CultureInfo.CreateSpecificCulture("en-US");
-						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy", culture) });
-						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.ID });
-						r = command.ExecuteNonQuery ();
+					using (connection = new SqliteConnection ("Data Source=" + path)) {
+						connection.Open ();
+						using (var command = connection.CreateCommand ()) {
+							command.CommandText = "UPDATE [Items] SET [Steps] = ?, [Date] = ? WHERE [_id] = ?;";
+							command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
+							var culture = CultureInfo.CreateSpecificCulture ("en-US");
+							command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString ("MM/dd/yyyy", culture) });
+							command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = item.ID });
+							r = command.ExecuteNonQuery ();
+						}
+						connection.Close ();
 					}
-					connection.Close ();
 					return r;
 				} else {
-					connection = new SqliteConnection ("Data Source=" + path);
-					connection.Open ();
-					using (var command = connection.CreateCommand ()) {
-						command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?)";
-						command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
-						var culture = CultureInfo.CreateSpecificCulture("en-US");
-						command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString("MM/dd/yyyy", culture) });
-						r = command.ExecuteNonQuery ();
+					using (connection = new SqliteConnection ("Data Source=" + path)) {
+						connection.Open ();
+						using (var command = connection.CreateCommand ()) {
+							command.CommandText = "INSERT INTO [Items] ([Steps], [Date]) VALUES (? ,?)";
+							command.Parameters.Add (new SqliteParameter (DbType.Int64) { Value = item.Steps });
+							var culture = CultureInfo.CreateSpecificCulture ("en-US");
+							command.Parameters.Add (new SqliteParameter (DbType.String) { Value = item.Date.ToString ("MM/dd/yyyy", culture) });
+							r = command.ExecuteNonQuery ();
+						}
+						connection.Close ();
 					}
-					connection.Close ();
 					return r;
 				}
 
@@ -165,14 +173,15 @@ namespace StepCounter.Database
 		{
 			lock (locker) {
 				int r;
-				connection = new SqliteConnection ("Data Source=" + path);
-				connection.Open ();
-				using (var command = connection.CreateCommand ()) {
-					command.CommandText = "DELETE FROM [Items] WHERE [_id] = ?;";
-					command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = id});
-					r = command.ExecuteNonQuery ();
+				using (connection = new SqliteConnection ("Data Source=" + path)) {
+					connection.Open ();
+					using (var command = connection.CreateCommand ()) {
+						command.CommandText = "DELETE FROM [Items] WHERE [_id] = ?;";
+						command.Parameters.Add (new SqliteParameter (DbType.Int32) { Value = id });
+						r = command.ExecuteNonQuery ();
+					}
+					connection.Close ();
 				}
-				connection.Close ();
 				return r;
 			}
 		}

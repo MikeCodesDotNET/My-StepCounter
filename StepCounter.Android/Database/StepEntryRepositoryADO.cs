@@ -55,7 +55,7 @@ namespace StepCounter.Database {
 
 				#if __ANDROID__
 				// Just use whatever directory SpecialFolder.Personal returns
-				string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
+				string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 				#else
 				// we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
 				// (they don't want non-user-generated data in Documents)

@@ -133,9 +133,6 @@ namespace StepCounter.Services
 
 			//calculate new steps
 			newSteps = count - lastSteps;
-			//first one
-			if (newSteps == 0)
-				newSteps = 1;
 
 			lastSteps = count;
 
@@ -270,8 +267,9 @@ namespace StepCounter.Services
 		private void CrunchDates(bool startup = false)
 		{
 			if (!Utils.IsSameDay) {
-				//save our day from yesterday
-				var yesterday = DateTime.Today.AddDays (-1);
+				//save our day from yesterday, we dont' do datetime.adddays(-1) because phone might have been off
+				//for more then 1 day and it would not be correct!
+				var yesterday = Helpers.Settings.CurrentDay;
 				var dayEntry = StepEntryManager.GetStepEntry (yesterday);
 				if (dayEntry == null || dayEntry.Date.DayOfYear != yesterday.DayOfYear) {
 					dayEntry = new StepEntry ();

@@ -161,6 +161,7 @@ namespace StepCounter.Helpers
 				var firstDay = AppSettings.GetValueOrDefault (FirstDayOfUseKey, (long)-1);
 				if (firstDay == -1) {
 					FirstDayOfUse = DateTime.Today;
+					CurrentDay = DateTime.Today;
 					return DateTime.Today;
 				}
 				else

@@ -23,7 +23,7 @@ using Android.Content;
 namespace StepCounter.Services
 {
 	[BroadcastReceiver]
-	[IntentFilter(new []{"android.intent.action.BOOT_COMPLETED"})]
+	[IntentFilter(new []{"android.intent.action.BOOT_COMPLETED", "android.intent.action.MY_PACKAGE_REPLACED"})]
 	public class BootReceiver : BroadcastReceiver
 	{
 		public override void OnReceive (Context context, Intent intent)

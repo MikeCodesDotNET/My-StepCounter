@@ -88,7 +88,6 @@
     <AndroidResource Include="Resources\values\styles.xml" />
     <AndroidResource Include="Resources\values\strings.xml" />
     <AndroidResource Include="Resources\layout\main.axml" />
-    <AndroidResource Include="Resources\drawable\background.xml" />
     <AndroidResource Include="Resources\values\color.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_unsupporteddevice.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_unsupporteddevice.png" />
@@ -115,6 +114,9 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_highscore.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_highscore.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_highscore.png" />
+    <AndroidResource Include="Resources\values-de\strings.xml" />
+    <AndroidResource Include="Resources\values-ro\strings.xml" />
+    <AndroidResource Include="Resources\values-es\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -130,5 +132,9 @@
     <Folder Include="Adapters\" />
     <Folder Include="Services\" />
     <Folder Include="Activities\" />
+    <Folder Include="Resources\values-de\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\values-ro\" />
+    <Folder Include="Resources\values-es\" />
   </ItemGroup>
 </Project>

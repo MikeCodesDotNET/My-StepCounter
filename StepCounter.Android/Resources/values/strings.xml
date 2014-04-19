@@ -15,6 +15,7 @@
 	<string name="percent_complete">{0} Complete</string>
 	<string name="completed">Completed</string>
 	<string name="calories">{0} Calories</string>
+	<string name="calories_short">{0} Cals</string>
 	<string name="miles">{0} mi</string>
 	<string name="kilometeres">{0} km</string>
 	<string name="weight_kg">{0} kg</string>

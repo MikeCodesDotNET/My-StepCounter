@@ -23,10 +23,6 @@
   </style>
 
 	<style name="ThemeActionBar" parent="@android:style/Theme.Holo.Light">
-		<item name="android:windowTranslucentNavigation">true</item>
-	    <item name="android:windowTranslucentStatus">false</item>
 	</style>
 
-	<style name="ThemeActionBarSettings" parent="@android:style/Theme.Holo.Light">
-	</style>
 </resources>

@@ -30,6 +30,7 @@ using StepCounter.Adapters;
 using Android.Views;
 using Android.Runtime;
 using Android.Content;
+using Android.Graphics.Drawables;
 
 namespace StepCounter.Activities
 {
@@ -48,7 +49,7 @@ namespace StepCounter.Activities
 			var steps = Helpers.Settings.TotalSteps;
 			this.ActionBar.Title = Utils.FormatSteps(steps) + " " + Resources.GetString (Resource.String.steps);
 			var miles = Conversion.StepsToMiles (steps);
-			var calorieString = Resources.GetString (Resource.String.calories);
+			var calorieString = Resources.GetString (Resource.String.calories_short);
 			var distanceString = Resources.GetString (Helpers.Settings.UseKilometeres ? Resource.String.kilometeres : Resource.String.miles);
 
 			var distance = string.Format (distanceString, 
@@ -105,11 +106,11 @@ namespace StepCounter.Activities
 
 				var entries = StepEntryManager.GetStepEntries ();
 
-				/*entries.Clear();
+				entries.Clear();
 				for(int i = 0; i < 31; i++)
 				{
 					entries.Add(new StepEntry{ Date = DateTime.Today.AddDays(-i), Steps = random.Next(3000, 11000)});
-				}*/
+				}
 
 				adapter = new HistoryAdapter(this, entries);
 			
@@ -119,10 +120,13 @@ namespace StepCounter.Activities
 						FindViewById<LinearLayout> (Resource.Id.main_layout).SetPadding (5, 5, 5, 5);
 					};
 
-					list.ListView.SetClipToPadding (false);
-					list.ListView.SetFitsSystemWindows (true);
+					//list.ListView.SetClipToPadding (false);
+					//list.ListView.SetFitsSystemWindows (true);
 					list.SetEmptyText (Resources.GetString (Resource.String.no_history));
-					list.ListView.SetPadding(0, 0, 0, Resources.GetDimensionPixelSize(Resource.Dimension.paddingBottom));
+
+					//list.ListView.SetPadding(0, 0, 0, Resources.GetDimensionPixelSize(Resource.Dimension.paddingBottom));
+					list.ListView.Divider = new ColorDrawable(Resources.GetColor(Resource.Color.ab_white));
+					list.ListView.DividerHeight = 3;
 					list.ListAdapter = adapter;
 				});
 			});
