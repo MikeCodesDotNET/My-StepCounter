@@ -88,6 +88,9 @@ namespace StepCounter
 		public partial class Dimension
 		{
 			
+			// aapt resource value: 0x7f070001
+			public const int paddingBottom = 2131165185;
+			
 			// aapt resource value: 0x7f070000
 			public const int standard_padding = 2131165184;
 			
@@ -471,6 +474,9 @@ namespace StepCounter
 			
 			// aapt resource value: 0x7f090003
 			public const int ThemeActionBar = 2131296259;
+			
+			// aapt resource value: 0x7f090004
+			public const int ThemeActionBarSettings = 2131296260;
 			
 			static Style()
 			{

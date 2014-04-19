@@ -70,7 +70,7 @@ namespace StepCounter.Activities
 
 
 		private StepServiceConnection serviceConnection;
-		private int testSteps = 1;
+		//private int testSteps = 1;
 		private TextView stepCount, calorieCount, distance, percentage;
 		private TranslateAnimation animation;
 		private float height, lastY;
@@ -121,12 +121,15 @@ namespace StepCounter.Activities
 			stepCount.Click += (object sender, EventArgs e) => {
 				if(binder != null)
 				{
-					if(testSteps == 1)
-						testSteps = (int)binder.StepService.StepsToday;
-					testSteps += 500;
+					//if(testSteps == 1)
+					//	testSteps = (int)binder.StepService.StepsToday;
+					testSteps += 100;
 					if(testSteps > 10000)
-						testSteps += 10000;
-					binder.StepService.AddSteps(testSteps);
+						testSteps += 1000;
+					//binder.StepService.AddSteps(testSteps);
+
+
+					HandlePropertyChanged (null, new System.ComponentModel.PropertyChangedEventArgs ("StepsToday"));
 				}
 			};*/
 
@@ -324,6 +327,7 @@ namespace StepCounter.Activities
 				}else{
 					steps = Binder.StepService.StepsToday;
 				}
+
 				progressView.SetStepCount(steps);
 
 				stepCount.Text = Utils.FormatSteps(steps);

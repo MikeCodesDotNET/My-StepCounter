@@ -119,12 +119,16 @@ namespace StepCounter.Activities
 						FindViewById<LinearLayout> (Resource.Id.main_layout).SetPadding (5, 5, 5, 5);
 					};
 
+					list.ListView.SetClipToPadding (false);
+					list.ListView.SetFitsSystemWindows (true);
 					list.SetEmptyText (Resources.GetString (Resource.String.no_history));
-
+					list.ListView.SetPadding(0, 0, 0, Resources.GetDimensionPixelSize(Resource.Dimension.paddingBottom));
 					list.ListAdapter = adapter;
 				});
 			});
 		}
+
+
 	}
 }
 

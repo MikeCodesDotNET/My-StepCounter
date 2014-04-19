@@ -7,6 +7,8 @@
 		<item name="android:actionBarStyle">@style/MyTheme.ActionBar</item>
 		<item name="android:windowContentOverlay">@null</item>
 		<item name="android:windowBackground">@color/red_background</item>
+		<item name="android:windowTranslucentNavigation">true</item>
+	    <item name="android:windowTranslucentStatus">true</item>
 	</style>
 	<style name="MyTheme.ActionBar" parent="android:Widget.Holo.ActionBar">
 		<item name="android:background">@android:color/transparent</item>
@@ -21,5 +23,10 @@
   </style>
 
 	<style name="ThemeActionBar" parent="@android:style/Theme.Holo.Light">
+		<item name="android:windowTranslucentNavigation">true</item>
+	    <item name="android:windowTranslucentStatus">false</item>
+	</style>
+
+	<style name="ThemeActionBarSettings" parent="@android:style/Theme.Holo.Light">
 	</style>
 </resources>
