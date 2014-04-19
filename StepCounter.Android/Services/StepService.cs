@@ -49,19 +49,40 @@ namespace StepCounter.Services
 
 		public override StartCommandResult OnStartCommand (Intent intent, StartCommandFlags flags, int startId)
 		{
-			Startup ();
+			Console.WriteLine ("StartCommand Called, setting alarm");
+			#if DEBUG
+			Android.Util.Log.Debug ("STEPSERVICE", "Start command result called, incoming startup");
+			#endif
+
+			var alarmManager = ((AlarmManager)ApplicationContext.GetSystemService (Context.AlarmService));
+			var stepIntent = PendingIntent.GetService (ApplicationContext, 10, new Intent (this,
+				                 typeof(StepService)), PendingIntentFlags.UpdateCurrent);
+			// Workaround as on Android 4.4.2 START_STICKY has currently no
+			// effect
+			// -> restart service every 20 mins
+			alarmManager.Set(AlarmType.Rtc, Java.Lang.JavaSystem
+				.CurrentTimeMillis() + 1000 * 60 * 20, stepIntent);
+
+				Startup ();
 
 			return StartCommandResult.Sticky;
 		}
 
+	
 
-
-		public override void OnStart (Intent intent, int startId)
+		public override void OnTaskRemoved (Intent rootIntent)
 		{
-			base.OnStart (intent, startId);
-			Startup ();
+			base.OnTaskRemoved (rootIntent);
+			#if DEBUG
+			Console.WriteLine ("OnTaskRemoved Called, setting alarm for 500 ms");
+			#endif
+			Android.Util.Log.Debug ("STEPSERVICE", "Task Removed, going down");
+			// Restart service in 500 ms
+			((AlarmManager) GetSystemService(Context.AlarmService)).Set(AlarmType.Rtc, Java.Lang.JavaSystem
+				.CurrentTimeMillis() + 500,
+				PendingIntent.GetService(this, 11, new Intent(this, typeof(StepService)), 0));
 		}
-
+			
 		private void Startup()
 		{
 			//check if kit kat can sensor compatible
@@ -133,6 +154,10 @@ namespace StepCounter.Services
 
 			//calculate new steps
 			newSteps = count - lastSteps;
+
+			#if DEBUG
+			Android.Util.Log.Debug ("STEPSERVICE", "New steps: " + newSteps);
+			#endif
 
 			lastSteps = count;
 
