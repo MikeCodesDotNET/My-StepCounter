@@ -98,7 +98,7 @@ namespace StepCounter.Activities
 			return base.OnCreateOptionsMenu(menu);
 		}
 
-		Random random = new Random();
+		//Random random = new Random();
 		async void LoadList ()
 		{
 
@@ -106,11 +106,11 @@ namespace StepCounter.Activities
 
 				var entries = StepEntryManager.GetStepEntries ();
 
-				entries.Clear();
+				/*entries.Clear();
 				for(int i = 0; i < 31; i++)
 				{
 					entries.Add(new StepEntry{ Date = DateTime.Today.AddDays(-i), Steps = random.Next(3000, 11000)});
-				}
+				}*/
 
 				adapter = new HistoryAdapter(this, entries);
 			
