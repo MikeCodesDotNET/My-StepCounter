@@ -27,6 +27,24 @@ h2 {
 	font-weight: 300; 
 }
 
+h1#mobileh1 {
+	font-size: 250%;
+	margin-bottom: 5px;
+	margin-top: 0;
+	padding-top: 15px;
+	text-align: center;
+	font-weight: 100;
+}
+
+h2#mobileh2{
+	font-size: 125%;
+	text-align: center;
+	margin: 0 0 0px 100px;
+	font-weight: 300; 
+}
+
+
+
 p {
 	text-align: center;
 }
@@ -38,6 +56,23 @@ p.bottomline {
 img {
 	margin: auto;
 }
+
+img.mobile_hero{
+	max-width: 80%;
+}
+
+@media screen and (orientation: portrait) {
+  img.mobile_hero {
+      max-width: 90%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  img.mobile_hero {
+      max-height: 90%;
+  }
+}
+
 
 div#contain 
 { 
