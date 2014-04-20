@@ -155,9 +155,7 @@ namespace StepCounter.Services
 			//calculate new steps
 			newSteps = count - lastSteps;
 
-			#if DEBUG
-			Android.Util.Log.Debug ("STEPSERVICE", "New steps: " + newSteps);
-			#endif
+
 
 			lastSteps = count;
 
@@ -170,7 +168,10 @@ namespace StepCounter.Services
 
 			StepsToday = Helpers.Settings.TotalSteps - Helpers.Settings.StepsBeforeToday;
 
-			Console.WriteLine ("New step detected by STEP_COUNTER sensor. Total step count: " + stepsToday);
+			Console.WriteLine ("New step detected by STEP_COUNTER sensor. Total step count: " + stepsToday );
+			#if DEBUG
+			Android.Util.Log.Debug ("STEPSERVICE", "New steps: " + newSteps + " total: " + stepsToday);
+			#endif
 		}
 
 		Int64 newSteps = 0;
