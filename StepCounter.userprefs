@@ -1,24 +1,24 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Michael's iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/Views/StepCounterViewController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/MainActivity.cs">
     <Files>
-      <File FileName="StepCounter/AppDelegate.cs" Line="18" Column="1" />
-      <File FileName="StepCounter/Main.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Views/StepCounterViewController.cs" Line="57" Column="88" />
-      <File FileName="StepCounter/Views/StepCounterViewController.designer.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Views/ProgressView.cs" Line="72" Column="10" />
-      <File FileName="StepCounter/StepManager.cs" Line="41" Column="30" />
-      <File FileName="StepCounter/Views/UnsupportedDevice.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Views/ProgressView.designer.cs" Line="1" Column="1" />
-      <File FileName="StepCounter/Info.plist" />
+      <File FileName="StepCounter.Android/MainActivity.cs" Line="97" Column="22" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="11" Column="45" />
+      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="4" Column="24" />
+      <File FileName="StepCounter.Android/StepService.cs" Line="89" Column="4" />
+      <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="75" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="StepCounter" expanded="True" selected="True">
-            <Node name="Views" expanded="True">
-              <Node name="StepCounterViewController.xib" expanded="True" />
+          <Node name="StepCounter.Android" expanded="True">
+            <Node name="Controls" expanded="True" />
+            <Node name="Resources" expanded="True">
+              <Node name="layout" expanded="True" />
+              <Node name="values" expanded="True" />
+              <Node name="xml" expanded="True" />
             </Node>
+            <Node name="MainActivity.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -30,8 +30,5 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.StepCounter>
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="37Y4Z8A9XA" TeamId="BCTYCQPYCZ" />
-    <IPhoneTestFlightSettings_27CAd-Hoc ApiToken="1c1039339b30c6e0df1812b75f3d212a_MTU0OTk0MjIwMTQtMDEtMDYgMTc6Mzg6MjUuOTY0ODA5" TeamToken="371858be818a3646893de47ca4847b92_MzIwOTQ5MjAxNC0wMS0wNiAxNzo0NDoxNy42MzU5MDY" ReleaseNotes="First Release" NotifyTeamMembers="True" ReplaceBinaries="False" DistributionLists="Xamarin Friends" UploadDSYMs="False" />
-  </MonoDevelop.Ide.ItemProperties.StepCounter>
+  <MonoDevelop.Ide.ItemProperties.StepCounter.Android MonoForAntroid.PreferredDevice="3.7&quot; WVGA (Nexus One)" AndroidDeviceId-Debug="T062005D5Z" MonoForAntroid.PreferredTheme="Theme.DeviceDefault" />
 </Properties>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string-array name="cadence_names">
+    <item>@string/cadence0</item>
+    <item>@string/cadence1</item>
+    <item>@string/cadence2</item>
+    <item>@string/cadence3</item>
+    <item>@string/cadence4</item>
+    <item>@string/cadence5</item>
+    <item>@string/cadence6</item>
+  </string-array>
+<string-array name="cadence_names_km">
+    <item>@string/cadence0_km</item>
+    <item>@string/cadence1_km</item>
+    <item>@string/cadence2_km</item>
+    <item>@string/cadence3_km</item>
+    <item>@string/cadence4_km</item>
+    <item>@string/cadence5_km</item>
+    <item>@string/cadence6_km</item>
+  </string-array>
+<string-array name="cadence_values">
+    <item>0</item>
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>5</item>
+    <item>6</item>
+  </string-array>
+</resources>

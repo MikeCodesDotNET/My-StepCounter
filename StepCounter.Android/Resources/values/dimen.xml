@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <dimen name="standard_padding">15dp</dimen>
+  <dimen name="paddingBottom">48dp</dimen>
+</resources>

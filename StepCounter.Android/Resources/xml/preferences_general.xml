@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/category_general_preferences">
+		<CheckBoxPreference android:key="Enhanced" android:title="@string/enhanced" android:summary="@string/enhanced_summary" android:defaultValue="false" />
+		<stepcounter.controls.IntEditTextPreference android:key="Weight" android:defaultValue="0" android:dependency="Enhanced" />
+		<ListPreference 
+		    android:key="Cadence3"
+		    android:title="@string/cadence"
+		    android:entries="@array/cadence_names"
+		    android:entryValues="@array/cadence_values"
+		    android:defaultValue="3"
+		    android:dependency="Enhanced"/>
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/category_notifications_preferences">
+		<CheckBoxPreference android:key="ProgressNotifications" 
+							android:title="@string/notifications_progress" 
+							android:summary="@string/notifications_progress_summary" 
+							android:defaultValue="true" />
+		<CheckBoxPreference android:key="AccumulativeNotifications" 
+							android:title="@string/notifications_accumulative" 
+							android:summary="@string/notifications_accumulative_summary" 
+							android:defaultValue="true" />
+	</PreferenceCategory>
+	<PreferenceCategory android:title="@string/about">
+		<Preference android:title="@string/created_by" android:summary="@string/created_by_summary">
+			<intent android:action="android.intent.action.VIEW" android:data="http://www.twitter.com/JamesMontemagno" />
+		</Preference>
+		<Preference android:title="@string/inspired_by" android:summary="@string/inspired_by_summary">
+			<intent android:action="android.intent.action.VIEW" android:data="http://www.twitter.com/micjames6" />
+		</Preference>
+		<Preference android:title="@string/version" android:summary="@string/copyright" />
+		<Preference android:title="@string/created_with" android:summary="@string/created_with_summary">
+			<intent android:action="android.intent.action.VIEW" android:data="http://www.xamarin.com" />
+		</Preference>
+ 		<Preference
+	            android:title="@string/review_app"
+	            android:summary="@string/review_app_summary">
+	      <intent android:action="android.intent.action.VIEW"
+	              android:data="http://market.android.com/details?id=com.refractored.mystepcounter" />
+	    </Preference>
+	</PreferenceCategory>
+</PreferenceScreen>

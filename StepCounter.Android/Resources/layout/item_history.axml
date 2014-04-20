@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:minHeight="?android:attr/listPreferredItemHeight">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="100">
+        <stepcounter.controls.ProgressView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/completed"
+            android:layout_weight="50"
+            android:background="@color/red_background" />
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="fill_parent"
+            android:id="@+id/remaining"
+            android:background="@color/blue_background" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp">
+        <TextView
+            android:text="12|31"
+            android:id="@+id/day"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:paddingRight="10dp"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left" />
+        <ImageView
+            android:id="@+id/high_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left"
+            android:src="@drawable/ic_highscore"
+            android:visibility="invisible" />
+        <TextView
+            android:text="7,000"
+            android:paddingLeft="10dp"
+            android:id="@+id/steps"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:layout_gravity="center_vertical|right"
+            android:gravity="center_vertical|right" />
+    </LinearLayout>
+</FrameLayout>

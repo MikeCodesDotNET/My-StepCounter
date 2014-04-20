@@ -1,3 +1,8 @@
+[Bb]in/
+[Oo]bj/
+[Cc]omponents/
+[Pp]ackages/
+APK/
 
 StepCounter/obj/iPhone/AppStore/mtouch-cache/linked-assemblies.txt
 
@@ -106,3 +111,5 @@ StepCounter/obj/iPhone/AppStore/mtouch-cache/monotouch.dll.armv7.o
 /StepCounter/obj/iPhoneSimulator/Debug/mtouch-cache/arguments
 /StepCounter/obj/Xcode/3/
 /StepCounter/obj/Xcode/4/
+
+StepCounter.Android/StoreCopy.txt

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>My StepCounter: A Beautiful StepCounter for iOS and Android</title>
+        <meta name="description" content="My StepCounter is a simple, beautiful, and free pedometer app for you iOS and Android device. Open source and Built with C# and Xamarin!">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="normalize.css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,100" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    </head>
+    <body>
+	  <h1>My StepCounter</h1>
+	  <h2>Simple, Beautiful, & Free Pedometer</h2>
+
+	  <div id="contain"> 
+	  	<div id="leftdiv">
+	  		<video autoplay="true" muted="true" loop>
+			  <source src="stepcounter.webm" type="video/webm" />
+			  <source src="stepcounter.mp4" type="video/mp4" />
+			</video>
+			<a href="https://play.google.com/store/apps/details?id=com.refractored.mystepcounter" target="_blank"><img class="gplay" src="google_play_badge.png"></a>
+		</div> 
+
+	  	<div id="rightdiv">
+		  	<video autoplay="true" muted="true" loop>
+			  <source src="stepcounter_iphone.webm" type="video/webm" />
+			  <source src="stepcounter_iphone.mp4" type="video/mp4" />
+			</video>
+			<a href="https://itunes.apple.com/gb/app/my-stepcounter/id789817499?mt=8" target="_blank"><img class="appstore" src="app_store_badge.png"></a>
+		</div> 
+		 <div class="clear"></div>
+	  </div> 
+
+   <div id="contain_footer">
+	  	
+		 
+  		<a href="http://xamarin.com/starter" target="_blank"><img class="starter" align="left" src="startercompatible.png"></a>
+		  Built with C# and <a href="http://www.xamarin.com" target="_blank">Xamarin</a> - Copyright 2014 Refractored LLC, <a href="http://www.twitter.com/jamesmontemagno" target="_blank">James Montemagno</a>, & <a href="http://www.twitter.com/micjames6" target="_blank">Michael James</a>. 
+		  <iframe src="http://ghbtns.com/github-btn.html?user=MichaelJames6&repo=My-StepCounter&type=watch"
+			allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+	  </div> 
+
+	  
+
+ 	
+	 
+	  <!--<script type="text/javascript">
+		var decr = 177;
+		var img = document.getElementById('leftdiv');
+		img.style.height = (window.innerHeight - decr) + 'px';
+		img.style.width = (0.6 * (window.innerHeight - decr)) + 'px';
+		img.style.backgroundSize = img.style.width + ' ' + img.style.height;
+		window.onresize = function () {
+		var img = document.getElementById('leftdiv');
+		img.style.height = (window.innerHeight - decr) + 'px';
+		img.style.width = (0.6 * (window.innerHeight - decr)) + 'px';
+		img.style.backgroundSize = img.style.width + ' ' + img.style.height;
+		};
+	  </script>-->
+	   <script type="text/javascript">
+		var decr = 240;
+		var multi = .6;
+		var img = document.getElementById('leftdiv');
+		img.style.height = (window.innerHeight - decr) + 'px';
+		img.style.width = (multi * (window.innerHeight - decr)) + 'px';
+		img.style.backgroundSize = img.style.width + ' ' + img.style.height;
+		var img2 = document.getElementById('rightdiv');
+		img2.style.height = (window.innerHeight - decr) + 'px';
+		img2.style.width = (multi* (window.innerHeight - decr)) + 'px';
+		img2.style.backgroundSize = img2.style.width + ' ' + img2.style.height;
+
+		window.onresize = function () {
+		var img = document.getElementById('leftdiv');
+		img.style.height = (window.innerHeight - decr) + 'px';
+		img.style.width = (multi * (window.innerHeight - decr)) + 'px';
+		img.style.backgroundSize = img.style.width + ' ' + img.style.height;
+		var img2 = document.getElementById('rightdiv');
+		img2.style.height = (window.innerHeight - decr) + 'px';
+		img2.style.width = (multi * (window.innerHeight - decr)) + 'px';
+		img2.style.backgroundSize = img2.style.width + ' ' + img2.style.height;
+		};
+	  </script>
+	
+    </body>
+</html>
