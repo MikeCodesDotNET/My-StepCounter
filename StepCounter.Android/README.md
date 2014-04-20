@@ -1,30 +1,20 @@
-![My StepCounter iCon](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/StepCounter/Resources/Icon@2x.png) My StepCounter
+![My StepCounter iCon](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/StepCounter/Resources/Icon@2x.png) My StepCounter Android
 ==============
 
-Time to get active, lose weight, lower your blood pressure, live longer, and feel better! Download My StepCounter for free so you can enjoy this easy-to-use and beautifully designed pedometer app! Developed exclusively for iOS and Android 4.4+ devices, My StepCounter doesn’t require any special permissions and uses your device’s built in step counter, making the app extremely energy efficient. It's perfect for your on-the-go lifestyle!
-
-![My StepCounter](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/Android/Hero.png) 
-
+Created by [@JamesMontemagno](http://www.twitter.com/jamesmontemagno)
+Main Repo: https://github.com/jamesmontemagno/My-StepCounter
 
 
-### iOS
-The easiest-to-use, most beautifully designed Pedometer App developed exclusively for iPhone 5s. Beautiful animations & user interface for daily tracking of your steps to reach your 10,000 step goal.
+### Features
+A lot was packed into this app and it is still starter compatible:
 
-* Beautiful User Interface
-* Accurate activity tracking in your hand, in your pocket, in your jacket, on an armband or in your purse
-* See your distance in Miles or Kilometers
-
-
-<a href="https://itunes.apple.com/gb/app/my-stepcounter/id789817499?mt=8" target="_blank"><img alt="Download on iOS app store now" src="https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/AppleAppStore.png"/></a>
-
-
-### Android
-All the features of the iOS application with:
-
-* Full 31 day history
-* Progress Notifications
-* High Score Achievement Tracking
-* Enhanced Statistics and Customizations.
+* ADO.NET Database: Stores all data for a summary
+* Background service: Listens for steps events
+* Xam.PCL.Settings PCL for cross platform settings
+* Android Animation: For initial and continuous animations
+* Share Action Providers
+* Android 4.4+ Features: Transparent System and Navigation Bar, Step Counter/Detector Sensors
+* ART Support
 
 Uses the built in Android step counter sensor found on select Android 4.4+ devices.
 
@@ -32,6 +22,9 @@ Uses the built in Android step counter sensor found on select Android 4.4+ devic
   <img alt="Android app on Google Play"
        src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
 </a>
+
+![1](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/Android/Screenshot-0-Small.png)
+![2](https://raw.githubusercontent.com/jamesmontemagno/My-StepCounter/master/Artwork/Android/Screenshot-History-Small.png)
 
 ### Built with Xamarin Starter
 
@@ -42,7 +35,7 @@ Both the Android and iOS versions of My StepCounter were built in C# with Xamari
 
 ### More Information
 
-For more information on the iOS and Android apps read their respective read me files. And visit Michael James blog at: http://micjames.co.uk/ and James Montemagno’s blog at http://www.motzcod.es
+For more information on James Montemagno’s blog at http://www.motzcod.es
 
 
 
