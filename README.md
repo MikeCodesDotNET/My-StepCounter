@@ -45,5 +45,9 @@ Both the Android and iOS versions of My StepCounter were built in C# with Xamari
 For more information on the iOS and Android apps read their respective read me files. And visit Michael James blog at: http://micjames.co.uk/ and James Montemagno’s blog at http://www.motzcod.es
 
 
+### Support
+
+You can open an Issue here or leave feed back in our [Google+ Support Community](https://plus.google.com/u/1/communities/106433451512233846972)
+
 
 
