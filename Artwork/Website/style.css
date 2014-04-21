@@ -1,14 +1,9 @@
 body {
-	text-rendering: geometricPrecision;
-	background-color: #3498DB;
-	background-image: -webkit-linear-gradient(top, #3498DB, #2C3E50); /* For Chrome and Safari */
-	background-image:    -moz-linear-gradient(top, #3498DB, #2C3E50); /* For old Fx (3.6 to 15) */
-	background-image:     -ms-linear-gradient(top, #3498DB, #2C3E50); /* For pre-releases of IE 10*/
-	background-image:      -o-linear-gradient(top, #3498DB, #2C3E50); /* For old Opera (11.1 to 12.0) */ 
-	background-image:         linear-gradient(to bottom, #3498DB, #2C3E50); /* Standard syntax; must be last */
+	text-rendering: optimizeLegibility;
+	font-size: 14px;
+	background-color: #2A89AD;
 	font-family: 'Roboto', sans-serif;
-	color: #fbf7ef;
-	
+	color: #fbf7ef;	
 }
 
 a:link {color:#FFFFFF;}      /* unvisited link */
@@ -17,22 +12,38 @@ a:hover {color:#B4BCBC;}  /* mouse over link */
 a:active {color:#B4BCBC;}  /* selected link */
 
 h1 {
-	
-	font-size: 4.5em;
+	font-size: 450%;
 	margin-bottom: 5px;
 	margin-top: 0;
-	padding-top: 20px;
+	padding-top: 15px;
 	text-align: center;
-	font-weight: 100; 
+	font-weight: 100;
 }
 
 h2 {
-	font-size: 23px;
+	font-size: 150%;
 	text-align: center;
 	margin: 0 0 0px 200px;
 	font-weight: 300; 
-
 }
+
+h1#mobileh1 {
+	font-size: 250%;
+	margin-bottom: 5px;
+	margin-top: 0;
+	padding-top: 15px;
+	text-align: center;
+	font-weight: 100;
+}
+
+h2#mobileh2{
+	font-size: 125%;
+	text-align: center;
+	margin: 0 0 0px 100px;
+	font-weight: 300; 
+}
+
+
 
 p {
 	text-align: center;
@@ -46,11 +57,27 @@ img {
 	margin: auto;
 }
 
+img.mobile_hero{
+	max-width: 80%;
+}
+
+@media screen and (orientation: portrait) {
+  img.mobile_hero {
+      max-width: 90%;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  img.mobile_hero {
+      max-height: 90%;
+  }
+}
+
+
 div#contain 
 { 
 	width: 100%;
 	overflow: visible;
-
 	display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -61,11 +88,9 @@ div#contain
 
 div#leftdiv 
 { 
-
 	display: block;
 	width: 49%;
 	float: left;
-	margin: 0 -40px;
 	background: url('frame_bg.png') no-repeat no-repeat;
 	background-size: 100% 100%;
 }
@@ -80,13 +105,11 @@ div#leftdiv video {
 
 div#rightdiv 
 {
-
 	display: block;
- width: 49%;
- float: left;
- margin: 0 -40px;
- background: url('frame_bg_iphone.png') no-repeat no-repeat;
- background-size: 100% 100%;
+	width: 49%;
+	float: left;
+	background: url('frame_bg_iphone.png') no-repeat no-repeat;
+	background-size: 100% 100%;
 } 
 
 div#rightdiv video {
@@ -104,7 +127,6 @@ div#rightdiv video {
 img.appstore {
 	display: block;
 	margin: -10% auto 0 auto;
-	width: 135px;
 	height: 40px;
 	position:relative;
 	z-index:1000
@@ -114,8 +136,8 @@ img.appstore {
 img.gplay {
 	display: block;
 	margin: -10% auto 0 auto;
-	width: 144px;
-	height: 50px;
+	height: 45px;
+	width: 129px;
 	position:relative;
 	z-index:1000
 }
@@ -123,15 +145,21 @@ img.gplay {
 div#contain_footer
 { 
 	padding-top: 30px;
-	padding-bottom: 30px;
-	width: 60%;
+	width: 90%;
 	margin: auto;
 	overflow: hidden;
 } 
 
-
 img.starter {
-	margin: 0px 10px 0 auto;
-	width: 144px;
+	display: inline-block;
 	height: 60px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.copyright {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 90%;
+	font-weight: 300;
 }
