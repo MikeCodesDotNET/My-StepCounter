@@ -119,6 +119,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\values-fr\strings.xml" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\values-fi\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -140,5 +141,6 @@
     <Folder Include="Resources\values-es\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Resources\values-fr\" />
+    <Folder Include="Resources\values-fi\" />
   </ItemGroup>
 </Project>
