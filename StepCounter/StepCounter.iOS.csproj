@@ -135,12 +135,6 @@
     <Compile Include="Views\StepCounterViewController.designer.cs">
       <DependentUpon>StepCounterViewController.xib</DependentUpon>
     </Compile>
-    <Compile Include="Views\ProgressView.cs">
-      <DependentUpon>ProgressView.xib</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProgressView.designer.cs">
-      <DependentUpon>ProgressView.xib</DependentUpon>
-    </Compile>
     <Compile Include="StepManager.cs" />
     <Compile Include="Views\UnsupportedDevice.cs">
       <DependentUpon>UnsupportedDevice.xib</DependentUpon>
@@ -151,10 +145,10 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Conversion.cs" />
     <Compile Include="Views\ProgressViewCommon.cs" />
+    <Compile Include="Views\ProgressView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\StepCounterViewController.xib" />
-    <InterfaceDefinition Include="Views\ProgressView.xib" />
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

@@ -55,26 +55,12 @@ namespace StepCounter.Views
 
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
             {
-                var alert = new UIAlertView("Reset step count", "Are you sure you want to reset todays step count?",
-                    null, "Cancel", "OK");
-                alert.Show();
-                alert.Clicked += delegate(object sender, UIButtonEventArgs args)
-                {
-                    if (args.ButtonIndex == 1)
-                        _stepManager.StartCountingFrom(DateTime.Now);
-                };
+				_stepManager.StartCountingFrom(DateTime.Now);
             }) {Direction = UISwipeGestureRecognizerDirection.Down,});
 
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
             {
-                var alert = new UIAlertView("Steps since midnight?", "Do you want to start counting from Midnight?",
-                    null, "Cancel", "OK");
-                alert.Show();
-                alert.Clicked += delegate(object sender, UIButtonEventArgs args)
-                {
-                    if (args.ButtonIndex == 1)
-                        _stepManager.StartCountingFrom(DateTime.Today);
-                };
+       			 _stepManager.StartCountingFrom(DateTime.Today);
             }) {Direction = UISwipeGestureRecognizerDirection.Up,});
 
             // Perform any additional setup after loading the view, typically from a nib.

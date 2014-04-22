@@ -13,12 +13,7 @@ namespace StepCounter.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-						Initialize ();
-
-            lblPercentage.Hidden = true;
+			Initialize ();
         }
-
-            
     }
 }
