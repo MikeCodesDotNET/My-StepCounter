@@ -4,7 +4,7 @@
   <string name="app_name">My StepCounter</string>
   <string name="menu_settings">Configuración</string>
   <string name="about">Acerca de</string>
-  <string name="about_title">My StepCounter 1.0</string>
+  <string name="about_title">My StepCounter 1.1</string>
   <string name="category_general_preferences">Preferencias</string>
   <string name="category_notifications_preferences">Notificaciones</string>
   <string name="notifications_progress">Progreso</string>
@@ -30,7 +30,7 @@
   <string name="inspired_by">Inspirado por</string>
   <string name="inspired_by_summary">Michael James</string>
   <string name="copyright">Copyright 2014 Refractored LLC</string>
-  <string name="version">v1.0</string>
+  <string name="version">v1.1</string>
   <string name="created_with">Creado con</string>
   <string name="created_with_summary">C# y Xamarin</string>
   <string name="ok">Ok</string>

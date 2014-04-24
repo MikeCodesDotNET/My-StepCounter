@@ -4,7 +4,7 @@
   <string name="app_name">My StepCounter</string>
   <string name="menu_settings">Asetukset</string>
   <string name="about">Tietoja</string>
-  <string name="about_title">My StepCounter 1.0</string>
+  <string name="about_title">My StepCounter 1.1</string>
   <string name="category_general_preferences">Asetukset</string>
   <string name="category_notifications_preferences">Ilmoitukset</string>
   <string name="notifications_progress">Edistyminen</string>
@@ -30,7 +30,7 @@
   <string name="inspired_by">Innoittamana</string>
   <string name="inspired_by_summary">Michael James</string>
   <string name="copyright">Tekijänoikeudet 2014 Refractored LLC</string>
-  <string name="version">v1.0</string>
+  <string name="version">v1.1</string>
   <string name="created_with">Luotu käyttäen</string>
   <string name="created_with_summary">C#- ja Xamarin-ohjelmistoa</string>
   <string name="ok">OK</string>

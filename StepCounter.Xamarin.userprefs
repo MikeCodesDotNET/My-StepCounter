@@ -1,6 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/Services/StepService.cs">
+    <Files>
+      <File FileName="StepCounter.Android/Services/StepService.cs" Line="163" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="StepCounter.Android" expanded="True" selected="True">
+            <Node name="Services" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/My-StepCounter/StepCounter.Android/Database/StepEntryDatabaseADO.cs" line="50" column="1" />

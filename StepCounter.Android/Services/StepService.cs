@@ -63,7 +63,7 @@ namespace StepCounter.Services
 			alarmManager.Set(AlarmType.Rtc, Java.Lang.JavaSystem
 				.CurrentTimeMillis() + 1000 * 60 * 20, stepIntent);
 
-				Startup ();
+			Startup ();
 
 			return StartCommandResult.Sticky;
 		}
@@ -75,8 +75,8 @@ namespace StepCounter.Services
 			base.OnTaskRemoved (rootIntent);
 			#if DEBUG
 			Console.WriteLine ("OnTaskRemoved Called, setting alarm for 500 ms");
-			#endif
 			Android.Util.Log.Debug ("STEPSERVICE", "Task Removed, going down");
+			#endif
 			// Restart service in 500 ms
 			((AlarmManager) GetSystemService(Context.AlarmService)).Set(AlarmType.Rtc, Java.Lang.JavaSystem
 				.CurrentTimeMillis() + 500,
@@ -152,9 +152,16 @@ namespace StepCounter.Services
 				lastSteps = count;
 			}
 
+		
+
 			//calculate new steps
 			newSteps = count - lastSteps;
 
+			//ensure we are never negative
+			//if so, no worries as we are about to re-set the lastSteps to the
+			//current count
+			if (newSteps < 0)
+				newSteps = 1;
 
 
 			lastSteps = count;
