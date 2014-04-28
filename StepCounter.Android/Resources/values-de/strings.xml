@@ -4,7 +4,7 @@
   <string name="app_name">My StepCounter</string>
   <string name="menu_settings">Einstellungen</string>
   <string name="about">Info</string>
-  <string name="about_title">My StepCounter 1.1</string>
+  <string name="about_title">My StepCounter 1.2</string>
   <string name="category_general_preferences">Einstellungen</string>
   <string name="category_notifications_preferences">Benachrichtigungen</string>
   <string name="notifications_progress">Fortschritt</string>
@@ -12,6 +12,7 @@
   <string name="notifications_accumulative">Akkumulativ</string>
   <string name="notifications_accumulative_summary">Besondere Leistungen für gesamte Schritte.</string>
   <string name="steps">schritte</string>
+  <string name="steps_cap">Schritte</string>
   <string name="today">Heute haben Sie</string>
   <string name="percent_complete">{0} abgeschlossen</string>
   <string name="completed">Abgeschlossen</string>

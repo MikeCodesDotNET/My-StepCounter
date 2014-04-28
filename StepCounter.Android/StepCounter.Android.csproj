@@ -120,6 +120,10 @@
     <AndroidResource Include="Resources\values-fr\strings.xml" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\values-fi\strings.xml" />
+    <AndroidResource Include="Resources\layout\step_entry.axml" />
+    <AndroidResource Include="Resources\values-ja\strings.xml" />
+    <AndroidResource Include="Resources\values-it\strings.xml" />
+    <AndroidResource Include="Resources\values-da\strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -142,5 +146,8 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Resources\values-fr\" />
     <Folder Include="Resources\values-fi\" />
+    <Folder Include="Resources\values-ja\" />
+    <Folder Include="Resources\values-da\" />
+    <Folder Include="Resources\values-it\" />
   </ItemGroup>
 </Project>

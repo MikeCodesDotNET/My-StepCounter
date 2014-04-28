@@ -65,6 +65,8 @@ namespace StepCounter.Activities
 				registered = true;
 			}
 
+
+
 		}
 
 
@@ -132,7 +134,7 @@ namespace StepCounter.Activities
 					HandlePropertyChanged (null, new System.ComponentModel.PropertyChangedEventArgs ("StepsToday"));
 				}
 			};*/
-
+		
 		}
 
 		private void StartStepService()
