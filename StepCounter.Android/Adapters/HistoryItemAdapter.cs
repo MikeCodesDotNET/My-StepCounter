@@ -50,7 +50,11 @@ namespace StepCounter.Adapters
 		{
 			HistoryWrapper wrapper = null;
 			var view = convertView;
-			if (convertView == null)
+
+			if(view != null)
+				wrapper = view.Tag as HistoryWrapper;
+
+			if (wrapper == null) 
 			{
 				view = context.LayoutInflater.Inflate(Resource.Layout.item_history, null);
 				wrapper = new HistoryWrapper();
@@ -60,10 +64,6 @@ namespace StepCounter.Adapters
 				wrapper.Steps = view.FindViewById<TextView>(Resource.Id.steps);
 				wrapper.HighScore = view.FindViewById<ImageView> (Resource.Id.high_score);
 				view.Tag = wrapper;
-			}
-			else
-			{
-				wrapper = convertView.Tag as HistoryWrapper;
 			}
 
 			var entry = entries[position];
