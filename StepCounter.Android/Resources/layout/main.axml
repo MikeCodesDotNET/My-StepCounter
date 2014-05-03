@@ -109,6 +109,13 @@
                 android:layout_gravity="bottom|left"
                 android:fontFamily="sans-serif"
                 android:textColor="@color/white" />
+            <ImageView
+                android:id="@+id/warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:src="@drawable/ic_warning"
+                android:layout_gravity="bottom|center_horizontal" />
             <TextView
                 android:text="@string/miles"
                 android:textAppearance="?android:attr/textAppearanceMedium"

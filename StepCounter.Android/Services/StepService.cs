@@ -34,6 +34,10 @@ namespace StepCounter.Services
 	{
 		private bool isRunning;
 		private Int64 stepsToday = 0;
+		public bool WarningState {
+			get;
+			set;
+		}
 
 		public Int64 StepsToday {
 			get{ return stepsToday; }
@@ -119,7 +123,7 @@ namespace StepCounter.Services
 
 			//get faster why not, nearly fast already and when
 			//sensor gets messed up it will be better
-			sensorManager.RegisterListener(this, sensor, SensorDelay.Fastest);
+			sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
 			Console.WriteLine("Sensor listener registered of type: " + sensorType);
 
 		}
@@ -210,9 +214,13 @@ namespace StepCounter.Services
 				//the value flips and gets crazy and this will be -1
 				if (count == -1) {
 					#if DEBUG
-					Android.Util.Log.Debug ("STEPSERVICE", "Something has gone wrong with the step counter, simulating steps, 1.");
+					Android.Util.Log.Debug ("STEPSERVICE", "Something has gone wrong with the step counter, simulating steps, 2.");
 					#endif
-					count = lastSteps + 1;
+					count = lastSteps + 2;
+
+					WarningState = true;
+				} else {
+					WarningState = false;
 				}
 
 				AddSteps (count);

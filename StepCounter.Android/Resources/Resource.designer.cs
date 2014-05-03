@@ -125,6 +125,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f020004
 			public const int ic_unsupporteddevice = 2130837508;
 			
+			// aapt resource value: 0x7f020005
+			public const int ic_warning = 2130837509;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -150,8 +153,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0004
 			public const int day = 2131427332;
 			
-			// aapt resource value: 0x7f0b0011
-			public const int distance = 2131427345;
+			// aapt resource value: 0x7f0b0012
+			public const int distance = 2131427346;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int fragment_host = 2131427329;
@@ -162,14 +165,14 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0000
 			public const int main_layout = 2131427328;
 			
-			// aapt resource value: 0x7f0b0014
-			public const int menu_history = 2131427348;
-			
 			// aapt resource value: 0x7f0b0015
-			public const int menu_settings = 2131427349;
+			public const int menu_history = 2131427349;
 			
-			// aapt resource value: 0x7f0b0013
-			public const int menu_share = 2131427347;
+			// aapt resource value: 0x7f0b0016
+			public const int menu_settings = 2131427350;
+			
+			// aapt resource value: 0x7f0b0014
+			public const int menu_share = 2131427348;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int no_sensor_box = 2131427337;
@@ -189,8 +192,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0003
 			public const int remaining = 2131427331;
 			
-			// aapt resource value: 0x7f0b0012
-			public const int step_count = 2131427346;
+			// aapt resource value: 0x7f0b0013
+			public const int step_count = 2131427347;
 			
 			// aapt resource value: 0x7f0b000e
 			public const int stepcount = 2131427342;
@@ -203,6 +206,9 @@ namespace StepCounter
 			
 			// aapt resource value: 0x7f0b0008
 			public const int top_layer = 2131427336;
+			
+			// aapt resource value: 0x7f0b0011
+			public const int warning = 2131427345;
 			
 			static Id()
 			{
