@@ -4,7 +4,7 @@
   <string name="app_name">My StepCounter</string>
   <string name="menu_settings">Setări</string>
   <string name="about">Despre</string>
-  <string name="about_title">My StepCounter 1.0</string>
+  <string name="about_title">My StepCounter 1.2</string>
   <string name="category_general_preferences">Preferinţe</string>
   <string name="category_notifications_preferences">Notificări</string>
   <string name="notifications_progress">Progres</string>
@@ -12,6 +12,7 @@
   <string name="notifications_accumulative">Acumulative</string>
   <string name="notifications_accumulative_summary">Realizări speciale pentru numărul total de paşi.</string>
   <string name="steps">paşi</string>
+  <string name="steps_cap">Paşi</string>
   <string name="today">Astăzi ai făcut</string>
   <string name="percent_complete">{0} Realizat</string>
   <string name="completed">Realizat</string>
@@ -30,7 +31,7 @@
   <string name="inspired_by">Inspirat de</string>
   <string name="inspired_by_summary">Michael James</string>
   <string name="copyright">Copyright 2014 Refractored LLC</string>
-  <string name="version">v1.0</string>
+  <string name="version">v1.2</string>
   <string name="created_with">Realizat cu</string>
   <string name="created_with_summary">C# şi Xamarin</string>
   <string name="ok">OK</string>

@@ -34,6 +34,10 @@ namespace StepCounter.Services
 	{
 		private bool isRunning;
 		private Int64 stepsToday = 0;
+		public bool WarningState {
+			get;
+			set;
+		}
 
 		public Int64 StepsToday {
 			get{ return stepsToday; }
@@ -59,11 +63,11 @@ namespace StepCounter.Services
 				                 typeof(StepService)), PendingIntentFlags.UpdateCurrent);
 			// Workaround as on Android 4.4.2 START_STICKY has currently no
 			// effect
-			// -> restart service every 20 mins
+			// -> restart service every 60 mins
 			alarmManager.Set(AlarmType.Rtc, Java.Lang.JavaSystem
-				.CurrentTimeMillis() + 1000 * 60 * 20, stepIntent);
+				.CurrentTimeMillis() + 1000 * 60 * 60, stepIntent);
 
-				Startup ();
+			Startup ();
 
 			return StartCommandResult.Sticky;
 		}
@@ -73,10 +77,12 @@ namespace StepCounter.Services
 		public override void OnTaskRemoved (Intent rootIntent)
 		{
 			base.OnTaskRemoved (rootIntent);
+
+			UnregisterListeners ();
 			#if DEBUG
 			Console.WriteLine ("OnTaskRemoved Called, setting alarm for 500 ms");
-			#endif
 			Android.Util.Log.Debug ("STEPSERVICE", "Task Removed, going down");
+			#endif
 			// Restart service in 500 ms
 			((AlarmManager) GetSystemService(Context.AlarmService)).Set(AlarmType.Rtc, Java.Lang.JavaSystem
 				.CurrentTimeMillis() + 500,
@@ -110,15 +116,16 @@ namespace StepCounter.Services
 			CrunchDates ();
 		}
 
-
 		void RegisterListeners(SensorType sensorType) {
-	
 
 			var sensorManager = (SensorManager) GetSystemService(Context.SensorService);
 			var sensor = sensorManager.GetDefaultSensor(sensorType);
 
+			//get faster why not, nearly fast already and when
+			//sensor gets messed up it will be better
 			sensorManager.RegisterListener(this, sensor, SensorDelay.Normal);
 			Console.WriteLine("Sensor listener registered of type: " + sensorType);
+
 		}
 
 
@@ -127,11 +134,20 @@ namespace StepCounter.Services
 			if (!isRunning)
 				return;
 
+			try{
 			var sensorManager = (SensorManager) GetSystemService(Context.SensorService);
 			sensorManager.UnregisterListener(this);
 			Console.WriteLine("Sensor listener unregistered.");
-
-			isRunning = false;
+			#if DEBUG
+			Android.Util.Log.Debug ("STEPSERVICE", "Sensor listener unregistered.");
+			#endif
+				isRunning = false;
+			}
+			catch(Exception ex) {
+				#if DEBUG
+				Android.Util.Log.Debug ("STEPSERVICE", "Unable to unregister: " + ex);
+				#endif
+			}
 		}
 
 		StepServiceBinder binder;
@@ -152,9 +168,16 @@ namespace StepCounter.Services
 				lastSteps = count;
 			}
 
+		
+
 			//calculate new steps
 			newSteps = count - lastSteps;
 
+			//ensure we are never negative
+			//if so, no worries as we are about to re-set the lastSteps to the
+			//current count
+			if (newSteps < 0)
+				newSteps = 1;
 
 
 			lastSteps = count;
@@ -178,13 +201,34 @@ namespace StepCounter.Services
 		Int64 lastSteps = 0;
 		public void OnSensorChanged (SensorEvent e)
 		{
-		
-			if (e.Sensor.Type != SensorType.StepCounter)
-				return;
+			switch (e.Sensor.Type) {
 
-			var count = (Int64)e.Values [0];
-			AddSteps (count);
+			case SensorType.StepCounter:
+
+				if (lastSteps < 0)
+					lastSteps = 0;
+
+				//grab out the current value.
+				var count = (Int64)e.Values [0];
+				//in some instances if things are running too long (about 4 days)
+				//the value flips and gets crazy and this will be -1
+				if (count == -1) {
+					#if DEBUG
+					Android.Util.Log.Debug ("STEPSERVICE", "Something has gone wrong with the step counter, simulating steps, 2.");
+					#endif
+					count = lastSteps + 2;
+
+					WarningState = true;
+				} else {
+					WarningState = false;
+				}
+
+				AddSteps (count);
+
+				break;
+			}
 		}
+			
 
 		private void CrunchHighScores ()
 		{

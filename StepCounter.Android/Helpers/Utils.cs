@@ -32,8 +32,7 @@ namespace StepCounter.Helpers
 				int currentApiVersion = (int)Build.VERSION.SdkInt;
 				// Check that the device supports the step counter and detector sensors
 				return currentApiVersion >= 19
-				&& pm.HasSystemFeature (Android.Content.PM.PackageManager.FeatureSensorStepCounter)
-				&& pm.HasSystemFeature(Android.Content.PM.PackageManager.FeatureSensorStepDetector);
+				&& pm.HasSystemFeature (Android.Content.PM.PackageManager.FeatureSensorStepCounter);
 
 		}
 

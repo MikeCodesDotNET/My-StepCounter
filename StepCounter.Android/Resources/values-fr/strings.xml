@@ -4,7 +4,7 @@
   <string name="app_name">My StepCounter</string>
   <string name="menu_settings">Paramètres</string>
   <string name="about">A Propos</string>
-  <string name="about_title">My StepCounter 1.0</string>
+  <string name="about_title">My StepCounter 1.2</string>
   <string name="category_general_preferences">Préférences</string>
   <string name="category_notifications_preferences">Notifications</string>
   <string name="notifications_progress">Progression</string>
@@ -12,6 +12,7 @@
   <string name="notifications_accumulative">Accumulatif</string>
   <string name="notifications_accumulative_summary">Récompense spéciales pour nombre total de pas.</string>
   <string name="steps">pas</string>
+  <string name="steps_cap">Pas</string>
   <string name="today">Aujourd\'hui vous avez marché</string>
   <string name="percent_complete">{0} Complet</string>
   <string name="completed">Complété</string>
@@ -30,7 +31,7 @@
   <string name="inspired_by">Inspiré par</string>
   <string name="inspired_by_summary">Michael James</string>
   <string name="copyright">Copyright 2014 Refractored LLC</string>
-  <string name="version">v1.0</string>
+  <string name="version">v1.2</string>
   <string name="created_with">Créé avec</string>
   <string name="created_with_summary">C# and Xamarin</string>
   <string name="ok">OK</string>

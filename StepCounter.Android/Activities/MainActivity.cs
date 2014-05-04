@@ -45,7 +45,7 @@ namespace StepCounter.Activities
 		private bool fullAnimation = true;
 		private Handler handler;
 		private bool firstRun = true;
-		private ImageView highScore;
+		private ImageView highScore, warning;
 
 		public StepServiceBinder Binder 
 		{
@@ -64,6 +64,8 @@ namespace StepCounter.Activities
 				binder.StepService.PropertyChanged += HandlePropertyChanged;
 				registered = true;
 			}
+
+
 
 		}
 
@@ -102,7 +104,7 @@ namespace StepCounter.Activities
 			percentage = FindViewById<TextView> (Resource.Id.percentage);
 			progressView = FindViewById<ProgressView> (Resource.Id.progressView);
 			highScore = FindViewById<ImageView> (Resource.Id.high_score);
-
+			warning = FindViewById<ImageView> (Resource.Id.warning);
 
 			calorieString = Resources.GetString (Resource.String.calories);
 			distanceString = Resources.GetString (Helpers.Settings.UseKilometeres ? Resource.String.kilometeres : Resource.String.miles);
@@ -132,7 +134,7 @@ namespace StepCounter.Activities
 					HandlePropertyChanged (null, new System.ComponentModel.PropertyChangedEventArgs ("StepsToday"));
 				}
 			};*/
-
+		
 		}
 
 		private void StartStepService()
@@ -321,11 +323,13 @@ namespace StepCounter.Activities
 			RunOnUiThread (() => {
 
 				Int64 steps = 0;
+				var showWaring = false;
 				if(Binder == null){
 					if(Utils.IsSameDay)
 						steps = Helpers.Settings.CurrentDaySteps;
 				}else{
 					steps = Binder.StepService.StepsToday;
+					showWaring = binder.StepService.WarningState;
 				}
 
 				progressView.SetStepCount(steps);
@@ -355,6 +359,8 @@ namespace StepCounter.Activities
 				//set high score day
 				highScore.Visibility = Settings.TodayIsHighScore ? Android.Views.ViewStates.Visible : Android.Views.ViewStates.Invisible;
 
+				//detect warning
+				warning.Visibility = showWaring ? Android.Views.ViewStates.Visible : Android.Views.ViewStates.Invisible;
 				//Show daily goal message.
 				if(!string.IsNullOrWhiteSpace(Settings.GoalTodayMessage) && 
 					Settings.GoalTodayDay.DayOfYear == DateTime.Today.DayOfYear && 
