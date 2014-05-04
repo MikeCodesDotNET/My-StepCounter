@@ -11,7 +11,8 @@ namespace StepCounter.Views
 		private StepCounterViewController _stepCounter;
 		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 		{
-			UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+            UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
+
             _window = new UIWindow (UIScreen.MainScreen.Bounds);
             _stepCounter = new StepCounterViewController();
 

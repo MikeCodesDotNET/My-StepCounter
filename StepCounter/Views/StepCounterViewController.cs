@@ -46,10 +46,15 @@ namespace StepCounter.Views
             lblDate.Text = DateString;
         }
 
+
+        public override UIStatusBarStyle PreferredStatusBarStyle()
+        {
+            return UIStatusBarStyle.LightContent;
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
             SetupParallax();
             View.UserInteractionEnabled = true;
 
@@ -134,7 +139,7 @@ namespace StepCounter.Views
 
         private void AnimateToPercentage(double targetPercentage)
         {
-            //To avoid jumping to the new position, we will animate the transition
+			//To avoid jumping to the new position, we will animate the transition
             UIView.Animate(1, 0, UIViewAnimationOptions.CurveEaseIn,
                 () => { _progressView.View.Frame = GetTargetPositionFromPercent(targetPercentage); },
                 () => { }

@@ -1,28 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter.Android/MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Michael's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/Info.plist">
     <Files>
-      <File FileName="StepCounter.Android/MainActivity.cs" Line="97" Column="22" />
-      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="11" Column="45" />
-      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="4" Column="24" />
-      <File FileName="StepCounter.Android/StepService.cs" Line="89" Column="4" />
-      <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="75" Column="4" />
+      <File FileName="StepCounter.Android/Resources/values/strings.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Resources/values/styles.xml" Line="1" Column="1" />
+      <File FileName="StepCounter.Android/Controls/ProgressView.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Views/ProgressViewCommon.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/Views/StepCounterViewController.cs" Line="67" Column="1" />
+      <File FileName="StepCounter/Views/ProgressView.cs" Line="7" Column="6" />
+      <File FileName="StepCounter/AppDelegate.cs" Line="15" Column="1" />
+      <File FileName="StepCounter/Info.plist" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="StepCounter.Android" expanded="True">
-            <Node name="Controls" expanded="True" />
-            <Node name="Resources" expanded="True">
-              <Node name="layout" expanded="True" />
-              <Node name="values" expanded="True" />
-              <Node name="xml" expanded="True" />
-            </Node>
-            <Node name="MainActivity.cs" selected="True" />
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

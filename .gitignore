@@ -113,3 +113,7 @@ StepCounter/obj/iPhone/AppStore/mtouch-cache/monotouch.dll.armv7.o
 /StepCounter/obj/Xcode/4/
 
 StepCounter.Android/StoreCopy.txt
+
+*.userprefs
+
+StepCounter.sln
