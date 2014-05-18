@@ -29,6 +29,7 @@ using Android.Views.Animations;
 using StepCounter.Services;
 using System.Collections.Generic;
 
+
 namespace StepCounter.Activities
 {
 	[Activity (Label = "Step Counter", Icon="@drawable/ic_launcher", LaunchMode = LaunchMode.SingleTask, MainLauncher = true, Theme = "@style/MyTheme", ScreenOrientation = ScreenOrientation.Portrait)]

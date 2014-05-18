@@ -59,14 +59,18 @@ namespace StepCounter.Services
 			#endif
 
 			var alarmManager = ((AlarmManager)ApplicationContext.GetSystemService (Context.AlarmService));
-			var stepIntent = PendingIntent.GetService (ApplicationContext, 10, new Intent (this,
-				                 typeof(StepService)), PendingIntentFlags.UpdateCurrent);
+			var intent2 = new Intent (this, typeof(StepService));
+			intent2.PutExtra ("warning", WarningState);
+			var stepIntent = PendingIntent.GetService (ApplicationContext, 10, intent2, PendingIntentFlags.UpdateCurrent);
 			// Workaround as on Android 4.4.2 START_STICKY has currently no
 			// effect
 			// -> restart service every 60 mins
 			alarmManager.Set(AlarmType.Rtc, Java.Lang.JavaSystem
 				.CurrentTimeMillis() + 1000 * 60 * 60, stepIntent);
 
+			var warning = false;
+			if (intent != null)
+				warning = intent.GetBooleanExtra ("warning", false);
 			Startup ();
 
 			return StartCommandResult.Sticky;
@@ -83,13 +87,15 @@ namespace StepCounter.Services
 			Console.WriteLine ("OnTaskRemoved Called, setting alarm for 500 ms");
 			Android.Util.Log.Debug ("STEPSERVICE", "Task Removed, going down");
 			#endif
+			var intent = new Intent (this, typeof(StepService));
+			intent.PutExtra ("warning", WarningState);
 			// Restart service in 500 ms
 			((AlarmManager) GetSystemService(Context.AlarmService)).Set(AlarmType.Rtc, Java.Lang.JavaSystem
 				.CurrentTimeMillis() + 500,
-				PendingIntent.GetService(this, 11, new Intent(this, typeof(StepService)), 0));
+				PendingIntent.GetService(this, 11, intent, 0));
 		}
 			
-		private void Startup()
+		private void Startup(bool warning = false)
 		{
 			//check if kit kat can sensor compatible
 			if (!Utils.IsKitKatWithStepCounter(PackageManager)) {
@@ -102,7 +108,8 @@ namespace StepCounter.Services
 			CrunchDates (true);
 
 			if (!isRunning) {
-				RegisterListeners (SensorType.StepCounter);
+				RegisterListeners (warning ? SensorType.StepDetector : SensorType.StepCounter);
+				WarningState = warning;
 			}
 
 			isRunning = true;
@@ -212,11 +219,16 @@ namespace StepCounter.Services
 				var count = (Int64)e.Values [0];
 				//in some instances if things are running too long (about 4 days)
 				//the value flips and gets crazy and this will be -1
-				if (count == -1) {
+				//so switch to step detector instead, but put up warning sign.
+				if (count < 0) {
+
+					UnregisterListeners ();
+					RegisterListeners (SensorType.StepDetector);
+					isRunning = true;
 					#if DEBUG
 					Android.Util.Log.Debug ("STEPSERVICE", "Something has gone wrong with the step counter, simulating steps, 2.");
 					#endif
-					count = lastSteps + 2;
+					count = lastSteps + 3;
 
 					WarningState = true;
 				} else {
@@ -225,6 +237,10 @@ namespace StepCounter.Services
 
 				AddSteps (count);
 
+				break;
+			case SensorType.StepDetector:
+				count = lastSteps + 1;
+				AddSteps (count);
 				break;
 			}
 		}
@@ -282,12 +298,12 @@ namespace StepCounter.Services
 			var notificationString = string.Empty;
 			if (Helpers.Settings.TotalSteps + newSteps > Helpers.Settings.NextGoal) {
 				notificationString = string.Format (Resources.GetString (Resource.String.awesome), Utils.FormatSteps(Helpers.Settings.NextGoal));
-				if (Helpers.Settings.NextGoal < 500000) {
-					Helpers.Settings.NextGoal = 500000;
+				if (Settings.NextGoal < 500000) {
+					Settings.NextGoal = 500000;
 				} else if (Helpers.Settings.NextGoal < 1000000) {
-					Helpers.Settings.NextGoal = 1000000;
+					Settings.NextGoal = 1000000;
 				} else {
-					Helpers.Settings.NextGoal += 1000000;
+					Settings.NextGoal += 1000000;
 				}
 			} else {
 				notification = false;
