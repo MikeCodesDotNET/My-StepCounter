@@ -115,7 +115,8 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 android:src="@drawable/ic_warning"
-                android:layout_gravity="bottom|center_horizontal" />
+                android:layout_gravity="bottom|center_horizontal"
+                android:alpha="0.2" />
             <TextView
                 android:text="@string/miles"
                 android:textAppearance="?android:attr/textAppearanceMedium"
