@@ -40,6 +40,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f050002
 			public const int cadence_values = 2131034114;
 			
+			// aapt resource value: 0x7f050003
+			public const int history_spinner = 2131034115;
+			
 			static Array()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -141,6 +144,9 @@ namespace StepCounter
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0b0013
+			public const int RelativeLayout1 = 2131427347;
+			
 			// aapt resource value: 0x7f0b0010
 			public const int calories = 2131427344;
 			
@@ -165,14 +171,14 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0000
 			public const int main_layout = 2131427328;
 			
-			// aapt resource value: 0x7f0b0015
-			public const int menu_history = 2131427349;
-			
 			// aapt resource value: 0x7f0b0016
-			public const int menu_settings = 2131427350;
+			public const int menu_history = 2131427350;
 			
-			// aapt resource value: 0x7f0b0014
-			public const int menu_share = 2131427348;
+			// aapt resource value: 0x7f0b0017
+			public const int menu_settings = 2131427351;
+			
+			// aapt resource value: 0x7f0b0015
+			public const int menu_share = 2131427349;
 			
 			// aapt resource value: 0x7f0b0009
 			public const int no_sensor_box = 2131427337;
@@ -192,8 +198,8 @@ namespace StepCounter
 			// aapt resource value: 0x7f0b0003
 			public const int remaining = 2131427331;
 			
-			// aapt resource value: 0x7f0b0013
-			public const int step_count = 2131427347;
+			// aapt resource value: 0x7f0b0014
+			public const int step_count = 2131427348;
 			
 			// aapt resource value: 0x7f0b000e
 			public const int stepcount = 2131427342;
@@ -233,7 +239,13 @@ namespace StepCounter
 			public const int main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int step_entry = 2130903043;
+			public const int simple_spinner_item_1 = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int simple_spinner_item_2 = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int step_entry = 2130903045;
 			
 			static Layout()
 			{
@@ -405,6 +417,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f080011
 			public const int miles = 2131230737;
 			
+			// aapt resource value: 0x7f080044
+			public const int month = 2131230788;
+			
 			// aapt resource value: 0x7f080031
 			public const int no_history = 2131230769;
 			
@@ -453,8 +468,14 @@ namespace StepCounter
 			// aapt resource value: 0x7f08000c
 			public const int today = 2131230732;
 			
+			// aapt resource value: 0x7f080045
+			public const int total = 2131230789;
+			
 			// aapt resource value: 0x7f08001e
 			public const int version = 2131230750;
+			
+			// aapt resource value: 0x7f080043
+			public const int week = 2131230787;
 			
 			// aapt resource value: 0x7f080013
 			public const int weight_kg = 2131230739;

@@ -8,8 +8,6 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>StepCounter</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <ProductVersion>12.0.0</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <AssemblyName>StepCounteriOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
@@ -52,7 +50,6 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
-    <CodesignProvision>D5664405-A0CD-4CC1-8031-163D97E3953E</CodesignProvision>
     <MtouchI18n>
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
@@ -169,6 +166,15 @@
     <ImageAsset Include="Images.xcassets\AppIcons.appiconset\icon_57x57%402x.png" />
     <ImageAsset Include="Images.xcassets\AppIcons.appiconset\icon_72x72.png" />
     <ImageAsset Include="Images.xcassets\LaunchImages.launchimage\Contents.json" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon-Small.png" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon.png" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
+    <ImageAsset Include="Images.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImages.launchimage\Default%402x.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImages.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Images.xcassets\LaunchImages.launchimage\Default.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />

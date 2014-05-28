@@ -27,4 +27,10 @@
     <item>5</item>
     <item>6</item>
   </string-array>
+
+  <string-array name="history_spinner">
+    <item>@string/week</item>
+    <item>@string/month</item>
+    <item>@string/total</item>
+  </string-array>
 </resources>

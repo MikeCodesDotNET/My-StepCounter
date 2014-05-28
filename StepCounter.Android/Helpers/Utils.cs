@@ -31,8 +31,9 @@ namespace StepCounter.Helpers
 				// Require at least Android KitKat
 				int currentApiVersion = (int)Build.VERSION.SdkInt;
 				// Check that the device supports the step counter and detector sensors
-				return currentApiVersion >= 19
-				&& pm.HasSystemFeature (Android.Content.PM.PackageManager.FeatureSensorStepCounter);
+			return currentApiVersion >= 19
+				&& pm.HasSystemFeature (Android.Content.PM.PackageManager.FeatureSensorStepCounter)
+				&& pm.HasSystemFeature (Android.Content.PM.PackageManager.FeatureSensorStepDetector);
 
 		}
 
@@ -48,6 +49,17 @@ namespace StepCounter.Helpers
 
 				return day  + " " + month+ " " + dayNum;
 			}
+		}
+
+		public static string GetDateStaring(DateTime date)
+		{
+			string day = date.ToString("ddd");
+			string month = date.ToString("MMM");
+			int dayNum = date.Day;
+			if(Helpers.Settings.UseKilometeres)
+				return day + " " + dayNum + " " + month;
+
+			return day  + " " + month+ " " + dayNum;
 		}
 
 		public static bool IsSameDay{

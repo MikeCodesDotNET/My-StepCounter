@@ -23,7 +23,6 @@ using Android.Widget;
 using StepCounter.Database;
 using System.Collections.Generic;
 using System;
-using System.Globalization;
 using StepCounter.Helpers;
 using StepCounter.Controls;
 
@@ -67,12 +66,8 @@ namespace StepCounter.Adapters
 			}
 
 			var entry = entries[position];
-			var seperator = CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator;
-			if(Helpers.Settings.UseKilometeres)
-				wrapper.Day.Text =  entry.Date.Day + seperator + entry.Date.Month;
-			else
-				wrapper.Day.Text =  entry.Date.Month  + seperator + entry.Date.Day;
 
+			wrapper.Day.Text = Utils.GetDateStaring (entry.Date);
 			wrapper.Steps.Text = Utils.FormatSteps (entry.Steps);
 			var percent = (int)Conversion.StepCountToPercentage(entry.Steps);
 			if (percent > 100)
@@ -102,9 +97,9 @@ namespace StepCounter.Adapters
 			return view;
 		}
 
-		public override StepEntry this[int position]
+		public override StepEntry this[int index]
 		{
-			get { return entries[position]; }
+			get { return entries[index]; }
 		}
 
 		public override int Count

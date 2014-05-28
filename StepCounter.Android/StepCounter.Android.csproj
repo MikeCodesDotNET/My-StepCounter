@@ -46,6 +46,7 @@
     <Reference Include="Mono.Data.Sqlite" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Services\StepServiceConnection.cs" />
     <Compile Include="Controls\IntEditTextPreference.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
+    <Compile Include="Adapters\HistorySpinnerAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -126,6 +128,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_warning.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_warning.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_warning.png" />
+    <AndroidResource Include="Resources\layout\simple_spinner_item_2.axml" />
+    <AndroidResource Include="Resources\layout\simple_spinner_item_1.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
