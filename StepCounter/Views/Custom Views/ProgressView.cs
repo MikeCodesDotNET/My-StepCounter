@@ -26,15 +26,13 @@ namespace StepCounter
         {
             //base.Draw(frame);
             Initialize();
-            var color2 = UIColor.Red;
             var rectanglePath = UIBezierPath.FromRect(new RectangleF(frame.GetMinX() + (float)Math.Floor(frame.Width * 0.00000f + 0.5f), frame.GetMinY() + (float)Math.Floor(frame.Height * 0.00000f + 0.5f), (float)Math.Floor(frame.Width * 1.00000f + 0.5f) - (float)Math.Floor(frame.Width * 0.00000f + 0.5f), (float)Math.Floor(frame.Height * 1.00000f + 0.5f) - (float)Math.Floor(frame.Height * 0.00000f + 0.5f)));
-            color2.SetFill();
+            _tmpCol.SetFill();
             rectanglePath.Fill();
         }
 
         void Initialize ()
         {
-
             //TODO Find a nicer way to deal with using nicer colours.
             _redArray = new byte[101]
                 {
@@ -58,10 +56,7 @@ namespace StepCounter
                     21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 09, 08, 07, 06, 05, 04, 03, 02, 01, 0, 0, 2, 4, 6, 8, 10,
                     12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62,
                     64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 100
-                };
-
-            SetStepCount (0);
-
+                };    
         }
 
         public void SetStepCount(Int64 count)
@@ -88,7 +83,10 @@ namespace StepCounter
         {
             var col = CalculateColor(percentage);
             if (col != null)
-                this.BackgroundColor = col;                     
+            {
+                _tmpCol = col;
+                this.SetNeedsDisplay();
+            }
         }
 
         //TODO Convert to HSV or HSB to bump the saturation to something more iOS looking.
