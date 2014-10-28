@@ -62,6 +62,6 @@ Global
 		{E0535745-3089-4824-AF07-D1472F404A0D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = StepCounter.Android\StepCounter.Android.csproj
+		StartupItem = StepCounter\StepCounter.iOS.csproj
 	EndGlobalSection
 EndGlobal

@@ -156,4 +156,7 @@
     <Folder Include="Resources\values-da\" />
     <Folder Include="Resources\values-it\" />
   </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="StepCounter.storyboard" />
+  </ItemGroup>
 </Project>

@@ -44,6 +44,8 @@ namespace StepCounter
 
         private void DailyStepQueryHandler(int stepCount, NSError error)
         {
+            if (DailyStepCountChanged == null)
+                return;
             DailyStepCountChanged(stepCount);
         }
 
