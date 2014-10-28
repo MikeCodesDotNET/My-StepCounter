@@ -1,5 +1,7 @@
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Collections.Generic;
+using Xamarin;
 
 namespace StepCounter.Views
 {
@@ -33,6 +35,7 @@ namespace StepCounter.Views
         public override void WillEnterForeground(UIApplication application)
         {
            _stepCounter.RefreshView();
+
         }
 
         // This method is called when the application is about to terminate. Save data, if needed.
@@ -61,6 +64,7 @@ namespace StepCounter.Views
 		}
 
         StepCounterController _stepCounter;
+      
     }
 }
 

@@ -9,6 +9,8 @@ using StepCounter.Views;
 using System.Globalization;
 using MonoTouch.ObjCRuntime;
 using MonoTouch.CoreAnimation;
+using Xamarin;
+using System.Collections.Generic;
 
 namespace StepCounter
 {
@@ -204,6 +206,20 @@ namespace StepCounter
         partial void btnDistance_TouchUpInside(UIButton sender)
         {
             ConvertDistance();
+            var length = "";
+            if (!Settings.DistanceIsMetric)
+            {
+                length = "Miles";
+            }
+            else
+            {
+                length = "Kilometers";
+            }
+
+            Insights.Track("Length Updated", new Dictionary<string, string> {
+                {"Distance Measured in", length},
+            });
+
         }
 
         public override void ViewDidDisappear(bool animated)
