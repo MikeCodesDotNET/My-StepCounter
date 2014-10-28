@@ -102,7 +102,7 @@ namespace StepCounter
                 AnimateToPercentage(Conversion.StepCountToPercentage(stepCount));
         }
 
-        private void AnimateToPercentage(double targetPercentage)
+        void AnimateToPercentage(double targetPercentage)
         {
             UIView.AnimateNotify(2.0, 0.0, 0.6f, 2.0f, 0,  () => {
                 _progressView.Frame = GetTargetPositionFromPercent(targetPercentage);
@@ -111,7 +111,7 @@ namespace StepCounter
             _progressView.SetPercentage((byte) targetPercentage); //Stops flashing through red
         }
 
-        private void SetupParallax()
+        void SetupParallax()
         {
             var xCenterEffect = new UIInterpolatingMotionEffect("center.x",
                 UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
@@ -140,18 +140,15 @@ namespace StepCounter
             lblPercentage.AddMotionEffect(effectGroup);
             btnDistance.AddMotionEffect(effectGroup);
         }
-
-
-        private RectangleF GetTargetPositionFromPercent(double percentageComplete)
+            
+        RectangleF GetTargetPositionFromPercent(double percentageComplete)
         {
-
             var height = View.Frame.Size.Height;
             var inversePercentage = 100 - (100/100*percentageComplete);
             var position = (height/100)*inversePercentage;
 
             return new RectangleF(0, (float) position, _progressView.Frame.Size.Width, View.Frame.Size.Height);
         }
-
 
 
         #region View lifecycle
@@ -196,10 +193,7 @@ namespace StepCounter
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Normal);
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Selected);
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Highlighted);
-
-            View.BackgroundColor = UIColor.White;
             lblDate.Text = DateString;
-
         }
 
         public override void ViewWillDisappear(bool animated)

@@ -153,7 +153,9 @@
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
     <InterfaceDefinition Include="Example.storyboard" />
-    <InterfaceDefinition Include="Views\StepCounter.storyboard" />
+    <InterfaceDefinition Include="StepCounter.storyboard">
+      <DependentUpon>StepManager.cs</DependentUpon>
+    </InterfaceDefinition>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
