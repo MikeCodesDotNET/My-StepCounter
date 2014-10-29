@@ -157,6 +157,7 @@
       <DependentUpon>StepManager.cs</DependentUpon>
     </InterfaceDefinition>
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Views\StepCounter.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
