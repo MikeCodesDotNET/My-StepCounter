@@ -149,7 +149,6 @@
       <DependentUpon>StepCounterController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Views\BackgroundView.cs" />
-    <Compile Include="Views\Custom Views\SplashGradient.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
