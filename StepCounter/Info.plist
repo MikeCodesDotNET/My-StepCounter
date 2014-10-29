@@ -11,6 +11,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>MinimumOSVersion</key>
 	<string>7.0</string>
@@ -52,5 +53,7 @@
 	<string>UIStatusBarStyleDefault</string>
 	<key>UIMainStoryboardFile</key>
 	<string>StepCounter</string>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>

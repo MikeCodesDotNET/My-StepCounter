@@ -142,13 +142,14 @@
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Conversion.cs" />
-    <Compile Include="Views\BackgroundView.cs" />
     <Compile Include="Views\Custom Views\SadFace.cs" />
     <Compile Include="Views\Custom Views\ProgressView.cs" />
     <Compile Include="Views\StepCounterController.cs" />
     <Compile Include="Views\StepCounterController.designer.cs">
       <DependentUpon>StepCounterController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Custom Views\BackgroundView.cs" />
+    <Compile Include="Views\Custom Views\SplashGradient.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
@@ -156,6 +157,7 @@
     <InterfaceDefinition Include="StepCounter.storyboard">
       <DependentUpon>StepManager.cs</DependentUpon>
     </InterfaceDefinition>
+    <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
