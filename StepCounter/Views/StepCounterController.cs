@@ -106,7 +106,10 @@ namespace StepCounter
 
         void AnimateToPercentage(double targetPercentage)
         {
-            UIView.AnimateNotify(2.0, 0.0, 0.6f, 2.0f, 0,  () => {
+            var duration = 2.0 / 100 * targetPercentage;
+            var inverseDuration = 100 - (100/100*duration);
+
+            UIView.AnimateNotify(inverseDuration, 0.0, 1.6f, 2.0f, 0,  () => {
                 _progressView.Frame = GetTargetPositionFromPercent(targetPercentage);
             }, null);
 
@@ -151,7 +154,6 @@ namespace StepCounter
 
             return new RectangleF(0, (float) position, _progressView.Frame.Size.Width, View.Frame.Size.Height);
         }
-
 
         #region View lifecycle
 
@@ -203,6 +205,28 @@ namespace StepCounter
             base.ViewWillDisappear(animated);
         }
 
+
+        public override void ViewDidDisappear(bool animated)
+        {
+            base.ViewDidDisappear(animated);
+        }
+
+        #endregion
+
+        partial void btnShare_TouchUpInside(UIButton sender)
+        {
+
+            UIGraphics.BeginImageContext(View.Frame.Size);
+            View.DrawViewHierarchy(View.Frame, true);
+            UIImage image = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+
+            var shareText = string.Format("I've taken {0} steps today using #MyStepCounter!", lblStepCount.Text);
+            var social = new UIActivityViewController(new NSObject[] { new NSString(shareText), image}, 
+                new UIActivity[] { new UIActivity() });
+            PresentViewController(social, true, null);
+        }
+
         partial void btnDistance_TouchUpInside(UIButton sender)
         {
             ConvertDistance();
@@ -221,13 +245,6 @@ namespace StepCounter
             });
 
         }
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-        }
-
-        #endregion
 
 	}
 }
