@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Michael's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StepCounter/Views/StepCounterController.cs">
     <Files>
       <File FileName="StepCounter/Views/Custom Views/SadFace.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/StepCounterController.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/StepCounterController.designer.cs" Line="1" Column="1" />
       <File FileName="StepCounter/packages.config" Line="1" Column="1" />
-      <File FileName="StepCounter/StepManager.cs" Line="1" Column="1" />
+      <File FileName="StepCounter/StepManager.cs" Line="14" Column="14" />
       <File FileName="StepCounter/Views/Custom Views/ProgressView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Views/Custom Views/BackgroundView.cs" Line="1" Column="1" />
       <File FileName="StepCounter/Info.plist" />
@@ -19,8 +19,6 @@
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/My-StepCounter/StepCounter.Android/Database/StepEntryDatabaseADO.cs" line="50" column="1" />
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/My-StepCounter/StepCounter/Views/StepCounterViewController.cs" line="56" column="1" />
-      <Breakpoint file="/Users/mikejames/Git/My-StepCounter/StepCounter/Views/Custom Views/ProgressView.cs" line="101" column="1" />
-      <Breakpoint file="/Users/mikejames/Git/My-StepCounter/StepCounter/Views/StepCounterController.cs" line="68" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
