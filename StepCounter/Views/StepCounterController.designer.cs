@@ -20,6 +20,10 @@ namespace StepCounter
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton btnShare { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel lblCalories { get; set; }
 
 		[Outlet]
@@ -46,11 +50,19 @@ namespace StepCounter
 		[GeneratedCode ("iOS Designer", "1.0")]
 		partial void btnDistance_TouchUpInside (UIButton sender);
 
+		[Action ("btnShare_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void btnShare_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
 			if (btnDistance != null) {
 				btnDistance.Dispose ();
 				btnDistance = null;
+			}
+			if (btnShare != null) {
+				btnShare.Dispose ();
+				btnShare = null;
 			}
 			if (lblCalories != null) {
 				lblCalories.Dispose ();
