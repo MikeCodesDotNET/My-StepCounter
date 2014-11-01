@@ -8,9 +8,6 @@ namespace StepCounter.Views
 	[Register ("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate
 	{
-		// class-level declarations
-		private UIWindow _window;
-		//private StepCounterViewController _stepCounter;
 
         public override UIWindow Window
         {
