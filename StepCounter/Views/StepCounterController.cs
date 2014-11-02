@@ -64,7 +64,6 @@ namespace StepCounter
             percentageCountAnimation.TimingFunction = CAMediaTimingFunction.FromName (CAMediaTimingFunction.EaseInEaseOut);
             lblPercentage.Layer.AddAnimation(percentageCountAnimation, "changeTextTransition");
 
-
             if (stepCount == 0)
             {
                 lblCalories.Text = "";
@@ -121,15 +120,15 @@ namespace StepCounter
             var xCenterEffect = new UIInterpolatingMotionEffect("center.x",
                 UIInterpolatingMotionEffectType.TiltAlongHorizontalAxis)
                 {
-                    MinimumRelativeValue = new NSNumber(20),
-                    MaximumRelativeValue = new NSNumber(-20)
+                    MinimumRelativeValue = new NSNumber(-20),
+                    MaximumRelativeValue = new NSNumber(20)
                 };
 
             var yCenterEffect = new UIInterpolatingMotionEffect("center.y",
                 UIInterpolatingMotionEffectType.TiltAlongVerticalAxis)
                 {
-                    MinimumRelativeValue = new NSNumber(20),
-                    MaximumRelativeValue = new NSNumber(-20)
+                    MinimumRelativeValue = new NSNumber(-20),
+                    MaximumRelativeValue = new NSNumber(20)
                 };
 
             var effectGroup = new UIMotionEffectGroup
