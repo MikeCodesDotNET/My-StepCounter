@@ -100,7 +100,13 @@ namespace StepCounter
             //Update progress filler view
             _progressView.SetStepCount(stepCount);
             if (stepCount <= 10000)
+            {
                 AnimateToPercentage(Conversion.StepCountToPercentage(stepCount));
+            }
+            else
+            {
+                 AnimateToPercentage(100); //I want to show something...
+            }
         }
 
         void AnimateToPercentage(double targetPercentage)
