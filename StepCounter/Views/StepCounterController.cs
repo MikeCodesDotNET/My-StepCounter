@@ -171,11 +171,18 @@ namespace StepCounter
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
                 {
                     _stepManager.StartCountingFrom(DateTime.Now);
+                    Insights.Track("User Swiped", new Dictionary<string, string> {
+                        {"Direction", "Down"}
+                    });
+
                 }) {Direction = UISwipeGestureRecognizerDirection.Down,});
 
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
                 {
                     _stepManager.StartCountingFrom(DateTime.Today);
+                    Insights.Track("User Swiped", new Dictionary<string, string> {
+                        {"Direction", "Up"}
+                    });
                 }) {Direction = UISwipeGestureRecognizerDirection.Up,});
 
 
@@ -214,7 +221,6 @@ namespace StepCounter
 
         partial void btnShare_TouchUpInside(UIButton sender)
         {
-
             UIGraphics.BeginImageContext(View.Frame.Size);
             View.DrawViewHierarchy(View.Frame, true);
             UIImage image = UIGraphics.GetImageFromCurrentImageContext();
@@ -224,6 +230,10 @@ namespace StepCounter
             var social = new UIActivityViewController(new NSObject[] { new NSString(shareText), image}, 
                 new UIActivity[] { new UIActivity() });
             PresentViewController(social, true, null);
+
+            Insights.Track("SharedClicked", new Dictionary<string, string> {
+                {"Current Step Count", lblStepCount.Text}
+            });
         }
 
         partial void btnDistance_TouchUpInside(UIButton sender)
