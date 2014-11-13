@@ -61,9 +61,6 @@
     <Compile Include="Database\StepEntryManager.cs" />
     <Compile Include="Database\StepEntryRepositoryADO.cs" />
     <Compile Include="Controls\ProgressView.cs" />
-    <Compile Include="..\StepCounter\Views\ProgressViewCommon.cs">
-      <Link>Controls\ProgressViewCommon.cs</Link>
-    </Compile>
     <Compile Include="Adapters\HistoryItemAdapter.cs" />
     <Compile Include="Helpers\Utils.cs" />
     <Compile Include="Activities\MainActivity.cs" />
@@ -75,6 +72,7 @@
     <Compile Include="Controls\IntEditTextPreference.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
     <Compile Include="Adapters\HistorySpinnerAdapter.cs" />
+    <Compile Include="Controls\ProgressViewCommon.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -155,8 +153,5 @@
     <Folder Include="Resources\values-ja\" />
     <Folder Include="Resources\values-da\" />
     <Folder Include="Resources\values-it\" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="StepCounter.storyboard" />
   </ItemGroup>
 </Project>

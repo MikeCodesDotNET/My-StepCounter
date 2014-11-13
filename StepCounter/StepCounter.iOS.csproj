@@ -124,6 +124,9 @@
     <Reference Include="PLCrashReporter">
       <HintPath>..\packages\Xamarin.Insights.1.7.2.97\lib\MonoTouch10\PLCrashReporter.dll</HintPath>
     </Reference>
+    <Reference Include="Calabash">
+      <HintPath>..\Components\calabash-11.3\lib\ios\Calabash.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -154,7 +157,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
-    <InterfaceDefinition Include="Example.storyboard" />
     <InterfaceDefinition Include="StepCounter.storyboard">
       <DependentUpon>StepManager.cs</DependentUpon>
     </InterfaceDefinition>
@@ -219,5 +221,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Custom Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="calabash">
+      <Version>11.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
