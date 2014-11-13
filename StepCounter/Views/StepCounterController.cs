@@ -210,6 +210,7 @@ namespace StepCounter
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Selected);
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Highlighted);
             lblDate.Text = DateString;
+
         }
 
         public override void ViewWillDisappear(bool animated)
@@ -222,6 +223,12 @@ namespace StepCounter
         {
             base.ViewDidDisappear(animated);
         }
+
+        public override UIStatusBarStyle PreferredStatusBarStyle()
+        {
+            return UIStatusBarStyle.LightContent;
+        }
+
 
         #endregion
 
