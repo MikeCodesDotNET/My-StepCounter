@@ -25,7 +25,9 @@ using System.ComponentModel;
 using StepCounter.Helpers;
 using StepCounter.Database;
 using StepCounter.Activities;
+#if PRO
 using Android.Support.V4.App;
+#endif
 using Android.Graphics;
 
 namespace StepCounter.Services
@@ -320,6 +322,10 @@ namespace StepCounter.Services
 			 
 		}
 
+
+		#if PRO
+		//This requires support v4 NuGet Package. Not supported on Starter.
+
 		private void PopUpNotification(int id, string title, string message){
 
 			var wearableExtender = new NotificationCompat.WearableExtender ()
@@ -368,6 +374,42 @@ namespace StepCounter.Services
 			// mId allows you to update the notification later on.
 			notificationManager.Notify(id, builder.Build());
 		}
+		#else
+
+		private void PopUpNotification(int id, string title, string message){
+			Notification.Builder mBuilder =
+				new Notification.Builder (this)
+					.SetSmallIcon (Resource.Drawable.ic_notification)
+					.SetContentTitle (title)
+					.SetContentText (message)
+					.SetAutoCancel (true);
+			// Creates an explicit intent for an Activity in your app
+			Intent resultIntent = new Intent(this, typeof(MainActivity));
+			resultIntent.SetFlags(ActivityFlags.NewTask|ActivityFlags.ClearTask);
+			// The stack builder object will contain an artificial back stack for the
+			// started Activity.
+			// This ensures that navigating backward from the Activity leads out of
+			// your application to the Home screen.
+			var stackBuilder = Android.App.TaskStackBuilder.Create(this);
+			// Adds the back stack for the Intent (but not the Intent itself)
+			//stackBuilder.AddParentStack();
+			// Adds the Intent that starts the Activity to the top of the stack
+			stackBuilder.AddNextIntent(resultIntent);
+			PendingIntent resultPendingIntent =
+				stackBuilder.GetPendingIntent(
+					0,
+					PendingIntentFlags.UpdateCurrent
+				);
+			mBuilder.SetContentIntent(resultPendingIntent);
+
+
+
+			NotificationManager mNotificationManager =
+				(NotificationManager) GetSystemService(Context.NotificationService);
+			// mId allows you to update the notification later on.
+			mNotificationManager.Notify(id, mBuilder.Build());
+		}
+		#endif
 
 		private void CrunchDates(bool startup = false)
 		{
