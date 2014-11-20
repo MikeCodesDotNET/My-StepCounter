@@ -70,4 +70,7 @@
 	<string name="week">Week</string>
 	<string name="month">Month</string>
 	<string name="total">Total</string>
+	<string name="reset_high_score">Reset High Score</string>
+	<string name="reset_count">Press {0} more times to reset.</string>
+	<string name="has_been_reset">High score has been reset.</string>
 </resources>
