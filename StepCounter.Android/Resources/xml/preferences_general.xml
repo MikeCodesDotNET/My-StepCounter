@@ -38,5 +38,7 @@
 	      <intent android:action="android.intent.action.VIEW"
 	              android:data="http://market.android.com/details?id=com.refractored.mystepcounter" />
 	    </Preference>
+		<Preference android:title="@string/reset_high_score" android:key="reset_high_score">
+		</Preference>
 	</PreferenceCategory>
 </PreferenceScreen>

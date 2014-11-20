@@ -22,6 +22,8 @@ using Android.Preferences;
 using Android.OS;
 using Android.Content;
 using Android.Content.PM;
+using System;
+using Android.Widget;
 
 namespace StepCounter.Activities
 {
@@ -32,11 +34,32 @@ namespace StepCounter.Activities
 	public class SettingsActivity : PreferenceActivity, ISharedPreferencesOnSharedPreferenceChangeListener
 	{
 
+		private int leftToClick = 5;
+		private Toast toast;
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
 			this.AddPreferencesFromResource (Resource.Xml.preferences_general);
+			var reset = this.FindPreference ("reset_high_score");
+			reset.PreferenceClick += (sender, e) => {
+				if(toast != null && leftToClick > 0)
+					toast.Cancel();
+
+				leftToClick--;
+				if(leftToClick ==0) {
+					Helpers.Settings.HighScore = Helpers.Settings.HighScoreDefault;
+					Helpers.Settings.HighScoreDay = DateTime.Today;
+					toast = Toast.MakeText(this, Resource.String.has_been_reset, ToastLength.Long);
+					toast.Show();
+				}
+				else if(leftToClick > 0)
+				{
+					var text = Resources.GetString(Resource.String.reset_count);
+					toast = Toast.MakeText(this, string.Format(text, leftToClick), ToastLength.Short);
+					toast.Show();
+				}
+			};
 		}
 
 		public void OnSharedPreferenceChanged (ISharedPreferences sharedPreferences, string key)
@@ -103,6 +126,7 @@ namespace StepCounter.Activities
 			base.OnStart ();
 			this.SetWeight ();
 			this.SetCadence ();
+
 		}
 
 		protected override void OnPause ()
