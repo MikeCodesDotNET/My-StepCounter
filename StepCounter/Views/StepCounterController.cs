@@ -159,14 +159,15 @@ namespace StepCounter
 
         #region View lifecycle
 
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
-        }
-
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+            if(Settings.OverideDistance == false)
+            {
+                NSLocale locale = NSLocale.CurrentLocale;
+                Settings.DistanceIsMetric = locale.UsesMetricSystem;
+            }           
 
             SetupParallax();
             View.UserInteractionEnabled = true;
@@ -197,22 +198,10 @@ namespace StepCounter
             lblDate.Text = DateString;
         }
 
-        public override void ViewWillDisappear(bool animated)
-        {
-            base.ViewWillDisappear(animated);
-        }
-
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-        }
-
         public override UIStatusBarStyle PreferredStatusBarStyle()
         {
             return UIStatusBarStyle.LightContent;
         }
-
 
         #endregion
 
@@ -226,12 +215,12 @@ namespace StepCounter
             var shareText = string.Format("I've taken {0} steps today using #MyStepCounter!", lblStepCount.Text);
             var social = new UIActivityViewController(new NSObject[] { new NSString(shareText), image}, 
                 new UIActivity[] { new UIActivity() });
-            PresentViewController(social, true, null);
-           
+            PresentViewController(social, true, null);           
         }
 
         partial void btnDistance_TouchUpInside(UIButton sender)
         {
+            Settings.OverideDistance = true;
             ConvertDistance();
         }
 

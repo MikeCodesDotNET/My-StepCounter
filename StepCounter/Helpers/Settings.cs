@@ -15,6 +15,17 @@ namespace StepCounter.Helpers
 			}
 		}
 
+        public static bool OverideDistance
+        {
+            get {
+                return NSUserDefaults.StandardUserDefaults.BoolForKey ("OverideDistance");
+            }
+            set {
+                NSUserDefaults.StandardUserDefaults.SetBool (value, "OverideDistance");
+                NSUserDefaults.StandardUserDefaults.Synchronize ();
+            }
+        }
+
         public static bool HealthKitHeightEnabled
         {
             get {
