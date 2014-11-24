@@ -50,9 +50,7 @@ namespace StepCounter.Views
             if (_stepCounter == null)
                 _stepCounter = new StepCounterController(new System.IntPtr());
 			_stepCounter.RefreshView();
-		}
-
-       
+		}       
         StepCounterController _stepCounter;
 
       
