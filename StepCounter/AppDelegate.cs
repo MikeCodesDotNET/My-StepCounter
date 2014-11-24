@@ -1,7 +1,5 @@
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.Collections.Generic;
-using Xamarin;
 
 namespace StepCounter.Views
 {
@@ -41,14 +39,9 @@ namespace StepCounter.Views
         }
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
-        {
-            Xamarin.Insights.Initialize("16342d92409f5c308924e7e8084a6e06373e7231");
-            Xamarin.Insights.ForceDataTransmission = true;
-
+        {        
             _stepCounter = new StepCounterController(new System.IntPtr());
-
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
-
             return true;
         }     
 
@@ -57,10 +50,11 @@ namespace StepCounter.Views
             if (_stepCounter == null)
                 _stepCounter = new StepCounterController(new System.IntPtr());
 			_stepCounter.RefreshView();
-                  
 		}
 
+       
         StepCounterController _stepCounter;
+
       
     }
 }

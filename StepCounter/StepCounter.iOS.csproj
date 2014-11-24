@@ -118,18 +118,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Xamarin.Insights">
-      <HintPath>..\packages\Xamarin.Insights.1.7.2.97\lib\MonoTouch10\Xamarin.Insights.dll</HintPath>
-    </Reference>
-    <Reference Include="PLCrashReporter">
-      <HintPath>..\packages\Xamarin.Insights.1.7.2.97\lib\MonoTouch10\PLCrashReporter.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Fonts.cs" />
@@ -151,6 +144,10 @@
       <DependentUpon>StepCounterController.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Custom Views\BackgroundView.cs" />
+    <Compile Include="Views\SettingsViewController.cs" />
+    <Compile Include="Views\SettingsViewController.designer.cs">
+      <DependentUpon>SettingsViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
@@ -211,6 +208,9 @@
     <BundleResource Include="Resources\UnsupportedDevice%402x.png" />
     <BundleResource Include="Resources\702-share.png" />
     <BundleResource Include="Resources\702-share%402x.png" />
+    <BundleResource Include="Resources\740-gear-selected.png" />
+    <BundleResource Include="Resources\740-gear-selected%402x.png" />
+    <BundleResource Include="Resources\XamarinLogo.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />

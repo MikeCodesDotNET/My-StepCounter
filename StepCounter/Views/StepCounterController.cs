@@ -1,16 +1,13 @@
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreMotion;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.CodeDom.Compiler;
 using StepCounter.Helpers;
-using System.Drawing;
-using MonoTouch.CoreMotion;
 using StepCounter.Views;
-using System.Globalization;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using Xamarin;
-using System.Collections.Generic;
 
 namespace StepCounter
 {
@@ -175,22 +172,10 @@ namespace StepCounter
             View.UserInteractionEnabled = true;
 
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
-                {
-                    _stepManager.StartCountingFrom(DateTime.Now);
-                    Insights.Track("User Swiped", new Dictionary<string, string> {
-                        {"Direction", "Down"}
-                    });
-
-                }) {Direction = UISwipeGestureRecognizerDirection.Down,});
+                _stepManager.StartCountingFrom(DateTime.Now)) {Direction = UISwipeGestureRecognizerDirection.Down,});
 
             View.AddGestureRecognizer(new UISwipeGestureRecognizer(gesture =>
-                {
-                    _stepManager.StartCountingFrom(DateTime.Today);
-                    Insights.Track("User Swiped", new Dictionary<string, string> {
-                        {"Direction", "Up"}
-                    });
-                }) {Direction = UISwipeGestureRecognizerDirection.Up,});
-
+                _stepManager.StartCountingFrom(DateTime.Today)) {Direction = UISwipeGestureRecognizerDirection.Up,});
 
             // Perform any additional setup after loading the view, typically from a nib.
             _progressView = new ProgressView();
@@ -205,7 +190,7 @@ namespace StepCounter
                 unsupportedDevice.View.Frame = View.Frame;
                 View.Add(unsupportedDevice.View);
             }
-                
+           
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Normal);
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Selected);
             btnDistance.SetTitleColor(UIColor.White, UIControlState.Highlighted);
@@ -242,29 +227,12 @@ namespace StepCounter
             var social = new UIActivityViewController(new NSObject[] { new NSString(shareText), image}, 
                 new UIActivity[] { new UIActivity() });
             PresentViewController(social, true, null);
-
-            Insights.Track("SharedClicked", new Dictionary<string, string> {
-                {"Current Step Count", lblStepCount.Text}
-            });
+           
         }
 
         partial void btnDistance_TouchUpInside(UIButton sender)
         {
             ConvertDistance();
-            var length = "";
-            if (!Settings.DistanceIsMetric)
-            {
-                length = "Miles";
-            }
-            else
-            {
-                length = "Kilometers";
-            }
-
-            Insights.Track("Length Updated", new Dictionary<string, string> {
-                {"Distance Measured in", length},
-            });
-
         }
 
 	}
