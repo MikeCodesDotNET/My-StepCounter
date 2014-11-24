@@ -1,6 +1,6 @@
 using System;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
+using CoreMotion;
+using Foundation;
 
 namespace StepCounter
 {

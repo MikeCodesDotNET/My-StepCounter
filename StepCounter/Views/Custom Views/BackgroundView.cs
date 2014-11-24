@@ -1,8 +1,8 @@
 ﻿using System;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
+using UIKit;
+using Foundation;
 using System.Drawing;
-using MonoTouch.CoreGraphics;
+using CoreGraphics;
 using System.ComponentModel;
 
 namespace StepCounter
@@ -26,7 +26,7 @@ namespace StepCounter
         #endregion
 
         //Generated with PaintCode 2.2
-        public override void Draw(System.Drawing.RectangleF rect)
+        public override void Draw(CGRect rect)
         {
             base.Draw(rect);
 
@@ -40,17 +40,17 @@ namespace StepCounter
 
             // Gradient Declarations
             var backgroundGradientColors = new CGColor [] {lightBlue.CGColor, darkBlue.CGColor};
-            var backgroundGradientLocations = new float [] {0.0f, 1.0f};
+            var backgroundGradientLocations = new nfloat [] {0.0f, 1.0f};
             var backgroundGradient = new CGGradient(colorSpace, backgroundGradientColors, backgroundGradientLocations);
 
             // Rectangle Drawing
-            RectangleF rectangleRect = new RectangleF(rect.GetMinX() + (float)Math.Floor(rect.Width * -0.12917f + 0.5f), rect.GetMinY() + (float)Math.Floor(rect.Height * 0.00000f + 0.5f), (float)Math.Floor(rect.Width * 1.00000f + 0.5f) - (float)Math.Floor(rect.Width * -0.12917f + 0.5f), (float)Math.Floor(rect.Height * 1.00000f + 0.5f) - (float)Math.Floor(rect.Height * 0.00000f + 0.5f));
+            var rectangleRect = new CGRect(rect.GetMinX() + (float)Math.Floor(rect.Width * -0.12917f + 0.5f), rect.GetMinY() + (float)Math.Floor(rect.Height * 0.00000f + 0.5f), (float)Math.Floor(rect.Width * 1.00000f + 0.5f) - (float)Math.Floor(rect.Width * -0.12917f + 0.5f), (float)Math.Floor(rect.Height * 1.00000f + 0.5f) - (float)Math.Floor(rect.Height * 0.00000f + 0.5f));
             var rectanglePath = UIBezierPath.FromRect(rectangleRect);
             context.SaveState();
             rectanglePath.AddClip();
             context.DrawLinearGradient(backgroundGradient,
-                new PointF(rectangleRect.GetMidX(), rectangleRect.GetMinY()),
-                new PointF(rectangleRect.GetMidX(), rectangleRect.GetMaxY()),
+                new PointF((float)rectangleRect.GetMidX(), (float)rectangleRect.GetMinY()),
+                new PointF((float)rectangleRect.GetMidX(), (float)rectangleRect.GetMaxY()),
                 0);
             context.RestoreState();
         }

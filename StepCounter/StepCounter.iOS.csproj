@@ -4,11 +4,13 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectGuid>{E0535745-3089-4824-AF07-D1472F404A0D}</ProjectGuid>
-    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>StepCounter</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>StepCounteriOS</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -117,7 +119,7 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="monotouch" />
+    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -137,7 +139,6 @@
     </Compile>
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Helpers\Conversion.cs" />
-    <Compile Include="Views\Custom Views\SadFace.cs" />
     <Compile Include="Views\Custom Views\ProgressView.cs" />
     <Compile Include="Views\StepCounterController.cs" />
     <Compile Include="Views\StepCounterController.designer.cs">
@@ -151,13 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Views\UnsupportedDevice.xib" />
-    <InterfaceDefinition Include="StepCounter.storyboard">
-      <DependentUpon>StepManager.cs</DependentUpon>
-    </InterfaceDefinition>
+    <InterfaceDefinition Include="StepCounter.storyboard" />
     <InterfaceDefinition Include="Views\LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\StepCounter.storyboard" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <ImageAsset Include="Images.xcassets\AppIcons.appiconset\120 - Retina iPad App Icon.png" />
     <ImageAsset Include="Images.xcassets\AppIcons.appiconset\144 - Retina iPad App Icon.png" />
@@ -219,4 +217,5 @@
   <ItemGroup>
     <Folder Include="Views\Custom Views\" />
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
