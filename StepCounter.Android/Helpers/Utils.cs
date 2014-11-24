@@ -41,9 +41,9 @@ namespace StepCounter.Helpers
 		{
 			get
 			{
-				string day = DateTime.Now.DayOfWeek.ToString();
-				string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month);
-				int dayNum = DateTime.Now.Day;
+        var day = CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek);
+				var month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(DateTime.Now.Month);
+				var dayNum = DateTime.Now.Day;
 				if(Helpers.Settings.UseKilometeres)
 					return day + " " + dayNum + " " + month;
 

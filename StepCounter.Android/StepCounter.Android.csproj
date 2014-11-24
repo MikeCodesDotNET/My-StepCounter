@@ -39,6 +39,7 @@
     <ConsolePause>false</ConsolePause>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidSupportedAbis>armeabi-v7a;x86</AndroidSupportedAbis>
+    <AndroidLinkMode>Full</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -128,6 +129,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_warning.png" />
     <AndroidResource Include="Resources\layout\simple_spinner_item_2.axml" />
     <AndroidResource Include="Resources\layout\simple_spinner_item_1.axml" />
+    <AndroidResource Include="Resources\drawable-nodpi\wear_background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -153,5 +155,9 @@
     <Folder Include="Resources\values-ja\" />
     <Folder Include="Resources\values-da\" />
     <Folder Include="Resources\values-it\" />
+    <Folder Include="Resources\drawable-nodpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidEnvironment Include="environment.txt" />
   </ItemGroup>
 </Project>
