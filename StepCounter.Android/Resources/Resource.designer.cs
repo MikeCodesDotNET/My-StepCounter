@@ -131,6 +131,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f020005
 			public const int ic_warning = 2130837509;
 			
+			// aapt resource value: 0x7f020006
+			public const int wear_background = 2130837510;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -390,6 +393,9 @@ namespace StepCounter
 			// aapt resource value: 0x7f080036
 			public const int goal_update = 2131230774;
 			
+			// aapt resource value: 0x7f080048
+			public const int has_been_reset = 2131230792;
+			
 			// aapt resource value: 0x7f080039
 			public const int high_score = 2131230777;
 			
@@ -443,6 +449,12 @@ namespace StepCounter
 			
 			// aapt resource value: 0x7f08000d
 			public const int percent_complete = 2131230733;
+			
+			// aapt resource value: 0x7f080047
+			public const int reset_count = 2131230791;
+			
+			// aapt resource value: 0x7f080046
+			public const int reset_high_score = 2131230790;
 			
 			// aapt resource value: 0x7f08003f
 			public const int review_app = 2131230783;

@@ -45,7 +45,7 @@ namespace StepCounter.Helpers
     #region Setting Constants
 
 		public const string DailyStepGoalKey = "DailyStepGoal";
-		private static readonly int DailyStepGoalDefault = 10000;
+		public static readonly int DailyStepGoalDefault = 10000;
 
 		public const string WeightKey = "Weight";
 		private static readonly int WeightDefault = 0;
@@ -85,7 +85,7 @@ namespace StepCounter.Helpers
 		private const Int64 NextGoalDefault = 100000;
 
 		private const string HighScoreKey = "HighScore";
-		private const Int64 HighScoreDefault = 0;
+		public const Int64 HighScoreDefault = 0;
 
 		private const string HighScoreDayKey = "HighScoreDay";
 		private static readonly DateTime HighScoreDayDefault = DateTime.Today;

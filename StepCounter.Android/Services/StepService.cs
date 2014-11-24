@@ -25,6 +25,10 @@ using System.ComponentModel;
 using StepCounter.Helpers;
 using StepCounter.Database;
 using StepCounter.Activities;
+#if PRO
+using Android.Support.V4.App;
+#endif
+using Android.Graphics;
 
 namespace StepCounter.Services
 {
@@ -185,6 +189,8 @@ namespace StepCounter.Services
 			//current count
 			if (newSteps < 0)
 				newSteps = 1;
+			else if (newSteps > 100)
+				newSteps = 1;
 
 
 			lastSteps = count;
@@ -316,6 +322,60 @@ namespace StepCounter.Services
 			 
 		}
 
+
+		#if PRO
+		//This requires support v4 NuGet Package. Not supported on Starter.
+
+		private void PopUpNotification(int id, string title, string message){
+
+			var wearableExtender = new NotificationCompat.WearableExtender ()
+				.SetHintHideIcon (true);
+
+			Bitmap bitmap = null;
+
+			try{
+				bitmap = BitmapFactory.DecodeResource (Resources, Resource.Drawable.wear_background);
+
+			}catch(Exception ex) {
+			}
+
+			if(bitmap != null)
+				wearableExtender.SetBackground(bitmap);
+
+			var builder =
+				new NotificationCompat.Builder (this)
+					.SetSmallIcon (Resource.Drawable.ic_notification)
+					.SetContentTitle (title)
+					.SetContentText (message)
+					.Extend(wearableExtender)
+					.SetAutoCancel (true);
+			// Creates an explicit intent for an Activity in your app
+			var resultIntent = new Intent(this, typeof(MainActivity));
+			resultIntent.SetFlags(ActivityFlags.NewTask|ActivityFlags.ClearTask);
+			// The stack builder object will contain an artificial back stack for the
+			// started Activity.
+			// This ensures that navigating backward from the Activity leads out of
+			// your application to the Home screen.
+			var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
+			// Adds the back stack for the Intent (but not the Intent itself)
+			//stackBuilder.AddParentStack();
+			// Adds the Intent that starts the Activity to the top of the stack
+			stackBuilder.AddNextIntent(resultIntent);
+			var resultPendingIntent =
+				stackBuilder.GetPendingIntent(
+					0,
+					(int)PendingIntentFlags.UpdateCurrent
+				);
+			builder.SetContentIntent(resultPendingIntent);
+
+
+
+			var notificationManager = NotificationManagerCompat.From (this);
+			// mId allows you to update the notification later on.
+			notificationManager.Notify(id, builder.Build());
+		}
+		#else
+
 		private void PopUpNotification(int id, string title, string message){
 			Notification.Builder mBuilder =
 				new Notification.Builder (this)
@@ -330,7 +390,7 @@ namespace StepCounter.Services
 			// started Activity.
 			// This ensures that navigating backward from the Activity leads out of
 			// your application to the Home screen.
-			TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
+			var stackBuilder = Android.App.TaskStackBuilder.Create(this);
 			// Adds the back stack for the Intent (but not the Intent itself)
 			//stackBuilder.AddParentStack();
 			// Adds the Intent that starts the Activity to the top of the stack
@@ -349,6 +409,7 @@ namespace StepCounter.Services
 			// mId allows you to update the notification later on.
 			mNotificationManager.Notify(id, mBuilder.Build());
 		}
+		#endif
 
 		private void CrunchDates(bool startup = false)
 		{
