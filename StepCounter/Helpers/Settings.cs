@@ -14,5 +14,16 @@ namespace StepCounter.Helpers
 				NSUserDefaults.StandardUserDefaults.Synchronize ();
 			}
 		}
+
+        public static bool HealthKitHeightEnabled
+        {
+            get {
+                return NSUserDefaults.StandardUserDefaults.BoolForKey ("HealthKitHeightEnabled");
+            }
+            set {
+                NSUserDefaults.StandardUserDefaults.SetBool (value, "HealthKitHeightEnabled");
+                NSUserDefaults.StandardUserDefaults.Synchronize ();
+            }
+        }
 	}
 }

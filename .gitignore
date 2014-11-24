@@ -117,3 +117,5 @@ StepCounter.Android/StoreCopy.txt
 *.userprefs
 
 StepCounter.sln
+
+StepCounter.userprefs
