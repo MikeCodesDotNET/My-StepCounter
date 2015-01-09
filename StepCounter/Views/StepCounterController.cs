@@ -45,7 +45,7 @@ namespace StepCounter
             _stepManager.ForceUpdate();
         }
 
-        private void TodaysStepCountChanged(int stepCount)
+        private void TodaysStepCountChanged(nint stepCount)
         {
             //Setup Animation
             var stepCountAnimation = new CATransition ();
