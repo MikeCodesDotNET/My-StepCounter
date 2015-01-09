@@ -27,7 +27,7 @@ namespace StepCounter
                 _resetTime = DateTime.Today; //Forces update as the day may have changed.
             }
 
-            NSDate sMidnight = (NSDate)DateTime.SpecifyKind(_resetTime, DateTimeKind.Unspecified);
+            NSDate sMidnight = Helpers.DateHelpers.DateTimeToNSDate(_resetTime);
 
             _queue = _queue ?? NSOperationQueue.CurrentQueue;
             if (_stepCounter == null)
@@ -51,7 +51,7 @@ namespace StepCounter
 
         private void Updater(nint stepCount, NSDate date, NSError error)
         {
-            NSDate sMidnight = (NSDate)DateTime.SpecifyKind(_resetTime, DateTimeKind.Unspecified);
+            NSDate sMidnight = Helpers.DateHelpers.DateTimeToNSDate(_resetTime);
             _stepCounter.QueryStepCount(sMidnight, NSDate.Now, _queue, DailyStepQueryHandler);
         }
 
