@@ -1,9 +1,9 @@
-﻿using MonoTouch.UIKit;
+﻿using UIKit;
 using System;
-using MonoTouch.Foundation;
+using Foundation;
 using System.ComponentModel;
 using System.Drawing;
-using MonoTouch.CoreGraphics;
+using CoreGraphics;
 
 namespace StepCounter
 {
@@ -22,11 +22,11 @@ namespace StepCounter
 
         private UIColor _tmpCol;
 
-        public override void Draw(RectangleF frame)
+        public override void Draw(CGRect frame)
         {
             //base.Draw(frame);
             Initialize();
-            var rectanglePath = UIBezierPath.FromRect(new RectangleF(frame.GetMinX() + (float)Math.Floor(frame.Width * 0.00000f + 0.5f), frame.GetMinY() + (float)Math.Floor(frame.Height * 0.00000f + 0.5f), (float)Math.Floor(frame.Width * 1.00000f + 0.5f) - (float)Math.Floor(frame.Width * 0.00000f + 0.5f), (float)Math.Floor(frame.Height * 1.00000f + 0.5f) - (float)Math.Floor(frame.Height * 0.00000f + 0.5f)));
+            var rectanglePath = UIBezierPath.FromRect(new CGRect(frame.GetMinX() + (float)Math.Floor(frame.Width * 0.00000f + 0.5f), frame.GetMinY() + (float)Math.Floor(frame.Height * 0.00000f + 0.5f), (float)Math.Floor(frame.Width * 1.00000f + 0.5f) - (float)Math.Floor(frame.Width * 0.00000f + 0.5f), (float)Math.Floor(frame.Height * 1.00000f + 0.5f) - (float)Math.Floor(frame.Height * 0.00000f + 0.5f)));
             _tmpCol.SetFill();
             rectanglePath.Fill();
         }

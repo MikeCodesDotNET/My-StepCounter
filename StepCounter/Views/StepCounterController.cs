@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreAnimation;
+using CoreMotion;
+using Foundation;
+using UIKit;
 using StepCounter.Helpers;
 using StepCounter.Views;
+using CoreGraphics;
 
 namespace StepCounter
 {
@@ -44,7 +45,7 @@ namespace StepCounter
             _stepManager.ForceUpdate();
         }
 
-        private void TodaysStepCountChanged(int stepCount)
+        private void TodaysStepCountChanged(nint stepCount)
         {
             //Setup Animation
             var stepCountAnimation = new CATransition ();
@@ -148,13 +149,13 @@ namespace StepCounter
             btnDistance.AddMotionEffect(effectGroup);
         }
             
-        RectangleF GetTargetPositionFromPercent(double percentageComplete)
+        CGRect GetTargetPositionFromPercent(double percentageComplete)
         {
             var height = View.Frame.Size.Height;
             var inversePercentage = 100 - (100/100*percentageComplete);
             var position = (height/100)*inversePercentage;
 
-            return new RectangleF(0, (float) position, _progressView.Frame.Size.Width, View.Frame.Size.Height);
+            return new CGRect(0, (float) position, _progressView.Frame.Size.Width, View.Frame.Size.Height);
         }
 
         #region View lifecycle
