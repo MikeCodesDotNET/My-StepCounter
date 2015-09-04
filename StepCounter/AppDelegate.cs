@@ -3,9 +3,9 @@ using UIKit;
 
 namespace StepCounter.Views
 {
-	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
-	{
+    [Register("AppDelegate")]
+    public partial class AppDelegate : UIApplicationDelegate
+    {
 
         public override UIWindow Window
         {
@@ -29,7 +29,7 @@ namespace StepCounter.Views
         // This method is called as part of the transiton from background to active state.
         public override void WillEnterForeground(UIApplication application)
         {
-           _stepCounter.RefreshView();
+            _stepCounter.RefreshView();
 
         }
 
@@ -42,15 +42,19 @@ namespace StepCounter.Views
         {        
             _stepCounter = new StepCounterController(new System.IntPtr());
             UIApplication.SharedApplication.SetStatusBarStyle(UIStatusBarStyle.LightContent, false);
-            return true;
-        }     
 
-		public override void OnActivated(UIApplication application)
-		{
+            Xamarin.Insights.Initialize(Helpers.Keys.InsightsKey);
+
+            return true;
+        }
+
+        public override void OnActivated(UIApplication application)
+        {
             if (_stepCounter == null)
                 _stepCounter = new StepCounterController(new System.IntPtr());
-			_stepCounter.RefreshView();
-		}       
+            _stepCounter.RefreshView();
+        }
+
         StepCounterController _stepCounter;
 
       

@@ -46,6 +46,16 @@ namespace StepCounter
         {
             if (DailyStepCountChanged == null)
                 return;
+
+            #if DEBUG
+            stepCount = 1245;
+
+            //stepCount = 6481;
+
+            //stepCount = 9328;
+            #endif
+
+
             DailyStepCountChanged(stepCount);
         }
 
